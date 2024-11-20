@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
+  m_Name: SekibankiNS3
+  m_EditorClassIdentifier: 
+  isSpellCard: 1
+  spellName: "\u5EFB\u7B26"
+  cardName: "\u6DF1\u5C71\u4E2D\u7684\u82B1\u4E4B\u65CB\u98CE"
+  maxHealth: 100000
+  maxTime: 45
+  maxBonusPoints: 0
+  itemSequence:
+  - type: 0
+    num: 100
+  - type: 6
+    num: 1
+  hasFixedPos: 1
+  hasInitPos: 1
+  initPos: {x: 0, y: 1, z: 0}

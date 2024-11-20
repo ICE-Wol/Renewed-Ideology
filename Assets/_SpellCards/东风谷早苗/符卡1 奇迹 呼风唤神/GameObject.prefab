@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6764669921200684828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6474636356353795669}
+  - component: {fileID: 2057514565993531722}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6474636356353795669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764669921200684828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4571914, y: 1.0899348, z: -3.397423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2057514565993531722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6764669921200684828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede0eec2d1ec3424a808a2b99fa64618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointLaserManager: {fileID: 2319596600116828813, guid: adbe088cfdaa935458f28b3742bd665f, type: 3}
+  jadeSBulletPrefab: {fileID: 1886652902694531072, guid: 0a0f42b5700d8224cabe7654935db81d, type: 3}
+  pointBulletPrefab: {fileID: 1886652902694531072, guid: c50a037592f758449b2300a9ed75a11c, type: 3}
+  riceBulletPrefab: {fileID: 1886652902694531072, guid: c0f7247425963db40938bfda0db84386, type: 3}
+  iceBulletPrefab: {fileID: 1886652902694531072, guid: 0befdfbfcf7572f43b3c8921184b9b44, type: 3}
+  curRadius: 0
+  tarRadius: 1
+  rotation: 0
+  rotSpeed: 1
+  pNum: 5
+  tarPos: {x: 0, y: 0, z: 0}
+  innerBulletAngle: 0
+  innerBulletList: []
+  innerBulletListCopy: []
+  timer: 0

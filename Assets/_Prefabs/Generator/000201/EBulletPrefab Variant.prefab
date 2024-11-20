@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2244774160959950211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 864298687664528469, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_Name
+      value: EBulletPrefab Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108872180144653443, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772626026683119820, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2428dcf1933b56e49825a8c8617c5c05, type: 3}
+    - target: {fileID: 8339787036234628105, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339787036234628105, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339787036234628105, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      propertyPath: color.g
+      value: 0.14669487
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 864298687664528469, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4488496642654810935}
+  m_SourcePrefab: {fileID: 100100000, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+--- !u!1 &1502391547443466710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 864298687664528469, guid: e34b17c8451a9fd4cad39b4fae7c8655, type: 3}
+  m_PrefabInstance: {fileID: 2244774160959950211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4488496642654810935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502391547443466710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9efd133b6b4251aff841786db55d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 0
+  endSpeed: 0
+  direction: 0
+  startFrame: 0
+  approachRate: 0

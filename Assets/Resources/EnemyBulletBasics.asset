@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde2f3ce8d22409439c8f27293221566, type: 3}
+  m_Name: EnemyBulletBasics
+  m_EditorClassIdentifier: 
+  bulletBasics:
+  - type: 0
+    sprite: {fileID: 21300000, guid: 955f9f7be4decb44a913edc1a9dbe810, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 1
+    sprite: {fileID: 21300000, guid: 3de90c819e1dfea43833846d1a43b3ae, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 2
+    sprite: {fileID: 21300000, guid: 5db614dfb67c1684eb9204d0c73fad82, type: 3}
+    checkRadius: 0.03
+    size: 0
+  - type: 3
+    sprite: {fileID: 21300000, guid: ec664f9b34723324e905b22322077925, type: 3}
+    checkRadius: 0.03
+    size: 0
+  - type: 4
+    sprite: {fileID: 21300000, guid: 11cf6cbfef98eba4bbb0a87cd2e55e69, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 5
+    sprite: {fileID: 21300000, guid: 54c9e5b665ec8f94da091f6aff1c7eeb, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 6
+    sprite: {fileID: 21300000, guid: 370c2c1bbbab2674aa645db2937d3ca4, type: 3}
+    checkRadius: 0.03
+    size: 0
+  - type: 7
+    sprite: {fileID: 21300000, guid: 4858adc7c41e53444ac7d9f0edbf1226, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 8
+    sprite: {fileID: 21300000, guid: 38cb8075ff387d74999d54241b03741e, type: 3}
+    checkRadius: 0.03
+    size: 0
+  - type: 9
+    sprite: {fileID: 21300000, guid: 4c1796fdb4b0bc34d9ed205f58d4a30a, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 10
+    sprite: {fileID: 21300000, guid: 63d6585f12d083842b2a5dd5261ef354, type: 3}
+    checkRadius: 0.03
+    size: 0
+  - type: 11
+    sprite: {fileID: 21300000, guid: 20da9d6e8cf322c46afec14bc9f8a546, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 12
+    sprite: {fileID: 21300000, guid: d3640e046aeeba74aa2a8d285a6e1b11, type: 3}
+    checkRadius: 0.15
+    size: 1
+  - type: 13
+    sprite: {fileID: 21300000, guid: 15a3ae9b2bdc32841a1842453e66d135, type: 3}
+    checkRadius: 0.15
+    size: 0
+  - type: 14
+    sprite: {fileID: 21300000, guid: b703963a0476fc846a906c7a301218f9, type: 3}
+    checkRadius: 0.2
+    size: 0
+  - type: 15
+    sprite: {fileID: 21300000, guid: dbd17e4f063fcf24a9949a2a935dade4, type: 3}
+    checkRadius: 0.1
+    size: 0
+  - type: 16
+    sprite: {fileID: 21300000, guid: c89ea1667ab2df2408b1e2975559c91a, type: 3}
+    checkRadius: 0.1
+    size: 0
+  - type: 17
+    sprite: {fileID: 21300000, guid: 06648ccdf4caae74799352822b1fe3de, type: 3}
+    checkRadius: 0.1
+    size: 0
+  - type: 18
+    sprite: {fileID: 21300000, guid: 9df6d5b477f96f74088533edf8baed7d, type: 3}
+    checkRadius: 0.1
+    size: 0
+  - type: 19
+    sprite: {fileID: 21300000, guid: da107a3c40812cf4da5c5c44b0ac19b4, type: 3}
+    checkRadius: 0.2
+    size: 0
+  - type: 20
+    sprite: {fileID: 21300000, guid: 5335b4d5fa215214e9511b886b550aff, type: 3}
+    checkRadius: 0.02
+    size: 0
+  - type: 21
+    sprite: {fileID: 21300000, guid: 2106cd24fdea32f42b540dbd1ff62918, type: 3}
+    checkRadius: 0.02
+    size: 0
+  - type: 22
+    sprite: {fileID: 21300000, guid: b45b11298461a744c92954032118b17f, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 23
+    sprite: {fileID: 21300000, guid: 91a9899982cdef247a10b02627a528fe, type: 3}
+    checkRadius: 0.05
+    size: 0
+  - type: 24
+    sprite: {fileID: 21300000, guid: f9681c3965cebc34f8aaab42931207cc, type: 3}
+    checkRadius: 0.15
+    size: 0
+  - type: 25
+    sprite: {fileID: 21300000, guid: b506ce3b8e0f62e40a8eb560b15dedbd, type: 3}
+    checkRadius: 0.15
+    size: 0
+  - type: 26
+    sprite: {fileID: 21300000, guid: ea1469140533c4a4da83bf9cdf9b6372, type: 3}
+    checkRadius: 0.05
+    size: 0
+  glowMaterials:
+  - {fileID: 2100000, guid: e866b96757898f84c85ca987d2dad91d, type: 2}
+  - {fileID: 2100000, guid: 75f1a6cd0b99b2e47970942224638e15, type: 2}
+  enemyBulletGenerateSprite: {fileID: 21300000, guid: 9cff16ae204c0284ba6437f614b8dd64, type: 3}

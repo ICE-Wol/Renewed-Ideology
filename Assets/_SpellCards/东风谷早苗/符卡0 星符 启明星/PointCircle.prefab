@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3527252980918761420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9189329404147941927}
+  - component: {fileID: 4655696112061424378}
+  m_Layer: 0
+  m_Name: PointCircle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9189329404147941927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527252980918761420}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4655696112061424378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527252980918761420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5426c4271a38d1840a79847672de616e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jadeBulletPrefab: {fileID: 1886652902694531072, guid: 1797f9733bdf6e641b7ba89bd2b9f57a, type: 3}
+  bulletNum: 100
+  radius: 1.5
+  randDir: 0
+  isCreationFinished: 0
+  isClockWise: 1
+  allArrived: 1
+  isOddWave: 0
+  isRandom: 0
+  evenColor: {r: 0.5424528, g: 0.2916963, b: 0.5216885, a: 1}
+  centerPos: {x: 0, y: 0, z: 0}
+  starPos: []
+  bulletPos: []
+  bullets: []

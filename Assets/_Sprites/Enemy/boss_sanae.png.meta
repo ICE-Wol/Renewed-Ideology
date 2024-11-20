@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 8d68f7d3437c2b346a793ae8b8768b12
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6295241207563081392
+    second: boss_sanae_0
+  - first:
+      213: -7806593556281118685
+    second: boss_sanae_1
+  - first:
+      213: 58017386044737277
+    second: boss_sanae_2
+  - first:
+      213: -3418598699776777773
+    second: boss_sanae_3
+  - first:
+      213: 3793009296114675983
+    second: boss_sanae_4
+  - first:
+      213: 1640749817980380655
+    second: boss_sanae_5
+  - first:
+      213: -6086910440578434643
+    second: boss_sanae_6
+  - first:
+      213: -5152159791421340877
+    second: boss_sanae_7
+  - first:
+      213: 4166829147907256717
+    second: boss_sanae_8
+  - first:
+      213: -2647307646948257027
+    second: boss_sanae_9
+  - first:
+      213: 7843753897146013784
+    second: boss_sanae_10
+  - first:
+      213: -8261598204596898987
+    second: boss_sanae_11
+  - first:
+      213: -7582669518720169126
+    second: boss_sanae_12
+  - first:
+      213: 441121421072234926
+    second: boss_sanae_13
+  - first:
+      213: 4181937547412075422
+    second: boss_sanae_14
+  - first:
+      213: -6451906136525300172
+    second: boss_sanae_15
+  - first:
+      213: -4174734196504339335
+    second: boss_sanae_16
+  - first:
+      213: 5191988062287226199
+    second: boss_sanae_17
+  - first:
+      213: -8530283580323778960
+    second: boss_sanae_18
+  - first:
+      213: -2506649003886329347
+    second: boss_sanae_19
+  - first:
+      213: -6834326279993905380
+    second: boss_sanae_20
+  - first:
+      213: -5504580746200513160
+    second: boss_sanae_21
+  - first:
+      213: -3708965413865829741
+    second: boss_sanae_22
+  - first:
+      213: -1901319799331326744
+    second: boss_sanae_23
+  - first:
+      213: -8052440286920193036
+    second: boss_sanae_24
+  - first:
+      213: 6902922620065899534
+    second: boss_sanae_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss_sanae_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d44e2b61cdc05b44aa0da5b354aaadf
+      internalID: 1410658200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc4c54ab66bbf749931b262d84bbc4a
+      internalID: -1530648347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_2
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cb8fd26f30e5b4fbdfb8d3f5e2fbe0
+      internalID: 1759817928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba78fe4afeb3fc479d295ab31cc7e01
+      internalID: 93915104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875a874e5f509074db8160637b16d3e1
+      internalID: 726087699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1919be53f0f0ea14d8b33c928a3c536a
+      internalID: -1648761901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_6
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33b74f2db0d7164790f9aacb1e86dc4
+      internalID: 1357460022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_7
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caed87e8af02cbd49b3f32158f1d0504
+      internalID: 935733683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_8
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae1906849fb08b4c9e0257bda23b0ff
+      internalID: 1926805028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_9
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350987d3a6013f643b4b02f48ed57054
+      internalID: 1978209386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_10
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817b295194492754c8fb7bda5f57ca1e
+      internalID: -642634872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_11
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5baf96a22aa6a554db6aaf6966adb700
+      internalID: 266945060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_12
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc57782a49a611047ad170d097718ac4
+      internalID: -1838207302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_13
+      rect:
+        serializedVersion: 2
+        x: 2054
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002e3ff12d778eb4da5a0cdc92046c83
+      internalID: 322345458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_14
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7de4a51053efba4e9f124179b330d33
+      internalID: -1056319018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_15
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 450
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fac39646b9b22c4cbbdb0db85840162
+      internalID: -425005149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8593fef8ed6c77a4297cb8f7cd22457f
+      internalID: 388641552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_17
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 300
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458f276eef1c4c947b3ea99826a0073a
+      internalID: -1756833821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 300
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c81b4a891191d4d861abf5344fc5bb
+      internalID: -2022864482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a442400ac42aa4da90a7c6ab0d8e33
+      internalID: -1761770934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_20
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 150
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d3b45eaed6b6145965b8c4825cae95
+      internalID: 1452282212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_21
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 150
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9423bdf7b7c3e241a4b32d0cf44c0f8
+      internalID: -987229700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4da4ac68e659cc488ad64c27e73d64d
+      internalID: 779562076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_23
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c921f4e36cf3347b64cade9ef367a8
+      internalID: -615351080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_24
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cc7750b9ad8824c980aaad0a849322
+      internalID: -1007295717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sanae_25
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 158
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c339888b0904124c94e4f28a067b88f
+      internalID: -561302521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3306328573c15e948bd8d723481cbab9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      boss_sanae_0: 1410658200
+      boss_sanae_1: -1530648347
+      boss_sanae_10: -642634872
+      boss_sanae_11: 266945060
+      boss_sanae_12: -1838207302
+      boss_sanae_13: 322345458
+      boss_sanae_14: -1056319018
+      boss_sanae_15: -425005149
+      boss_sanae_16: 388641552
+      boss_sanae_17: -1756833821
+      boss_sanae_18: -2022864482
+      boss_sanae_19: -1761770934
+      boss_sanae_2: 1759817928
+      boss_sanae_20: 1452282212
+      boss_sanae_21: -987229700
+      boss_sanae_22: 779562076
+      boss_sanae_23: -615351080
+      boss_sanae_24: -1007295717
+      boss_sanae_25: -561302521
+      boss_sanae_3: 93915104
+      boss_sanae_4: 726087699
+      boss_sanae_5: -1648761901
+      boss_sanae_6: 1357460022
+      boss_sanae_7: 935733683
+      boss_sanae_8: 1926805028
+      boss_sanae_9: 1978209386
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
