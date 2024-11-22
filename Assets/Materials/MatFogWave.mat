@@ -54,9 +54,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 1
     - _Divide: 20
     - _Radius: 0
     - _Speed: 0.03
-    m_Colors: []
+    m_Colors:
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Power: {r: 4.5, g: 4.5, b: 0, a: 0}
+    - _Scale: {r: 2, g: 2, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

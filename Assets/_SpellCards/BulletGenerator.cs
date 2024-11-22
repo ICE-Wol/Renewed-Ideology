@@ -33,7 +33,9 @@ public abstract class BulletGenerator : MonoBehaviour {
 
     [Tooltip("total number of waves in game")]
     public int waveCount;
-    
+
+    [Header("仅限演示时，发射器位置")]
+    public Vector3 demonstratePos;
     private void Start() {
         Timing.RunCoroutine(AutoShoot(),"Shoot");
     }
@@ -41,7 +43,7 @@ public abstract class BulletGenerator : MonoBehaviour {
     
     private void Awake() {
         bulletGenerators.Add(this);
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = transform.parent == null ? demonstratePos : Vector3.zero;
     }
     private void OnDestroy() {
         bulletGenerators.Remove(this);

@@ -237,7 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tarBulletConfig: {fileID: 699327826745579849}
+  tarBulletState: {fileID: 0}
   highlightSprite: {fileID: 6554748024805511495}
   bottomSprite: {fileID: 298142588021171554}
+  isColorSameAsParentBullet: 1
+  _color: {r: 0, g: 0, b: 0, a: 0}
   tarAlpha: 1
   curAlpha: 0

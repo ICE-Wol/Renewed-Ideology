@@ -1004,10 +1004,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -826.0000610351563,
-            "y": 142.6666717529297,
-            "width": 209.33331298828126,
-            "height": 304.00006103515627
+            "x": -828.0001220703125,
+            "y": 145.33335876464845,
+            "width": 209.3333740234375,
+            "height": 328.0
         }
     },
     "m_Slots": [
@@ -1038,6 +1038,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "Blur",
     "m_FunctionSource": "",
+    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "//float step = 0.004;\r\nfloat n = 5;\r\nfloat4 color = float4(0, 0, 0, 0);\r\nfloat cnt = 0;\r\n\nfor(int i = -5;i <=5;i++){\r\n    for(int j = -5; j <=5 ;j++){\r\n        float2 newUV = _UV + float2(i * step,j*step);\r\n        color += tex2D(_TexIn, newUV);\r\n        cnt+=1;\r\n    }\r\n}\r\n_Out = color / cnt;"
 }
 

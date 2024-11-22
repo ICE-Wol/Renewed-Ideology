@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2253851109780665323}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 3903150588439409512}
   bulletConfig: {fileID: 1355860883582291904}
   state: 0

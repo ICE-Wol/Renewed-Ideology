@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5767096115388195909
 Transform:
   m_ObjectHideFlags: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 408719711
+  m_SortingLayer: 6
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   collideRadius: 0.03
   selfRotSpdInDegree: 0
-  isGlowing: 1
+  isGlowing: 0
   faceMoveDirection: 1
   moveWhenSpawning: 1
   isOutOfBoundFree: 0
@@ -162,10 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6360758670946672622}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 8304031347693300863}
   bulletConfig: {fileID: 3447303903962857540}
   state: 0
-  isCollisionActive: 1
+  hasNoCollisionCheck: 0
   hitRadius: 0.1
   grazeRadius: 0
   isGrazed: 0
@@ -252,10 +253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tarBulletConfig: {fileID: 3447303903962857540}
+  tarBulletState: {fileID: 0}
   highlightSprite: {fileID: 5940007359310399223}
   bottomSprite: {fileID: 6360758670946672622}
+  isColorSameAsParentBullet: 0
+  _color: {r: 1, g: 0.033537947, b: 0, a: 1}
   tarAlpha: 0
-  curAlpha: 1
+  curAlpha: 0
 --- !u!114 &8163629052439834654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,8 +275,8 @@ MonoBehaviour:
   speed: 0
   direction: 0
   endSpeed: 0
-  startFrame: 180
-  approachRate: 16
+  startFrame: 999
+  approachRate: 8
   destroyOnFinish: 0
   destroyOnTime: 240
   trigger: 0

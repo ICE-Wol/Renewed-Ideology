@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4204468225200409482}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 638558914817977999}
   bulletConfig: {fileID: 4496712793951539047}
   state: 0
@@ -310,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6900157505523594848}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 111217654882382992}
   bulletConfig: {fileID: 8807665152133777369}
   state: 0
@@ -460,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4427996127531899534}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 7689398842136178919}
   bulletConfig: {fileID: 2926058529354817680}
   state: 0
@@ -648,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5453793038691449285}
+  highlight: {fileID: 0}
   bulletDetector: {fileID: 9012710361746171492}
   bulletConfig: {fileID: 7927876692326527529}
   state: 0

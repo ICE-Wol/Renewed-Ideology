@@ -17,6 +17,8 @@ namespace _Scripts.EnemyBullet {
     public class State : MonoBehaviour
     {
         public SpriteRenderer spriteRenderer;
+        [Header("已在代码内获取索引")]
+        public Highlight highlight;
         public Detect bulletDetector;
         public Config bulletConfig;
         public static HashSet<State> bulletSet = new(); 
@@ -56,15 +58,31 @@ namespace _Scripts.EnemyBullet {
         private void SetBasicParam() {
             spriteRenderer.sprite
                 = bulletConfig.basic.GetBulletSprite(bulletConfig.type);
+            highlight = GetComponent<Highlight>();
             spriteRenderer.material
-                = bulletConfig.basic.GetBulletMaterial(bulletConfig.isGlowing);
-            float H = 0, S = 0, V = 0;
-            Color.RGBToHSV(bulletConfig.color, out H, out S, out V);
-            spriteRenderer.material.SetFloat(PropHueID, H);
-            spriteRenderer.material.SetFloat(PropSatID, S);
-            
+                = bulletConfig.basic.GetBulletMaterial(bulletConfig.isGlowing ||
+                                                       (highlight != null && highlight.enabled));
+            if (highlight != null && highlight.enabled) {
+                if (highlight.isColorSameAsParentBullet) SetColor(bulletConfig.color);
+                else SetColorAsHighLight();
+            }
+            else SetColor(bulletConfig.color);
         }
 
+        /// <summary>
+        /// 这个设置函数不会覆盖配置中的颜色为高光色
+        /// </summary>
+        private void SetColorAsHighLight() {
+            float H = 0, S = 0, V = 0;
+            Color.RGBToHSV(highlight.HighlightColor, out H, out S, out V);
+            spriteRenderer.material.SetFloat(PropHueID, H);
+            spriteRenderer.material.SetFloat(PropSatID, S);
+        }
+
+        /// <summary>
+        /// 这个设置函数会覆盖配置中的颜色为设定色
+        /// </summary>
+        /// <param name="color"></param>
         public void SetColor(Color color) {
             float H = 0, S = 0, V = 0;
             Color.RGBToHSV(color, out H, out S, out V);
@@ -113,6 +131,16 @@ namespace _Scripts.EnemyBullet {
                 case EBulletStates.Activated:
                     spriteRenderer.sprite = bulletConfig.basic.GetBulletSprite(bulletConfig.type);
                     spriteRenderer.color = spriteRenderer.color.SetAlpha(1f);
+                    
+                    //若被高光脚本替换为高光材质，换回材质后需重设颜色
+                    spriteRenderer.material
+                        = bulletConfig.basic.GetBulletMaterial(bulletConfig.isGlowing);
+                    SetColor(bulletConfig.color);
+                    
+                    if (highlight != null) {
+                        highlight.curAlpha = 1f;
+                        highlight.tarAlpha = 1f;
+                    }
                     break;
                 case EBulletStates.Destroying:
                     _fogScale = 1f;

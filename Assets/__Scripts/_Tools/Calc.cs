@@ -13,6 +13,36 @@ namespace _Scripts.Tools {
             return Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - selfPos);
         }
         
+        public static float GetDirection(Vector3 start, Vector3 end) {
+            return Vector2.SignedAngle(Vector2.right, end - start);
+        }
+
+        public static Vector3 Lerp(Vector3 start, Vector3 end, float t) {
+            return new Vector3(
+                Mathf.Lerp(start.x, end.x, t),
+                Mathf.Lerp(start.y, end.y, t),
+                Mathf.Lerp(start.z, end.z, t)
+            );
+        }
+        
+        public static Color LerpColorInRGB(Color start, Color end, float t) {
+            return new Color(
+                Mathf.Lerp(start.r, end.r, t),
+                Mathf.Lerp(start.g, end.g, t),
+                Mathf.Lerp(start.b, end.b, t),
+                Mathf.Lerp(start.a, end.a, t)
+            );
+        }
+
+        public static Color LerpColorInHSV(Color start, Color end, float t) {
+            Color.RGBToHSV(start, out var startH, out var startS, out var startV);
+            Color.RGBToHSV(end, out var endH, out var endS, out var endV);
+            var h = Mathf.Lerp(startH, endH, t);
+            var s = Mathf.Lerp(startS, endS, t);
+            var v = Mathf.Lerp(startV, endV, t);
+            return Color.HSVToRGB(h, s, v);
+        }
+
         /// <summary>
         /// 计算二次贝塞尔曲线上某个 t 值对应的点
         /// </summary>

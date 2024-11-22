@@ -4426,6 +4426,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "Blur",
     "m_FunctionSource": "",
+    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "float n = _N;\nfloat4 color = float4(0, 0, 0, 0);\nfloat cnt = 0;\nfor(float dx = -n * _Step; dx <= n * _Step; dx += _Step)\n{\n\tcolor += tex2D(_TexIn, _UV);\n\tcnt += 1;\n}\n\n_Out = float4(1, 1, 0, 1);"
 }
 

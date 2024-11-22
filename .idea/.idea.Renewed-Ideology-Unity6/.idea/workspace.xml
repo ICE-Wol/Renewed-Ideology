@@ -4,7 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="" />
+    <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatFogWave.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatFogWave.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TitleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BlurShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BlurShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BlurShader2.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BlurShader2.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BlurShader3.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BlurShader3.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/GlowLineShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/GlowLineShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/GlowLineShader2.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/GlowLineShader2.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/WaveShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/WaveShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Texture/TexSCBG.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Texture/TexSCBG.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/EnemyBullet/EBulletPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/EnemyBullet/EBulletPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/BulletGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/BulletGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/LaserNode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/LaserNode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/普攻1 绿鳞弹乱舞/Scale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/普攻1 绿鳞弹乱舞/Scale.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/秘术 灰色奇术/EBNS2After 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/秘术 灰色奇术/EBNS2After 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/JadeS 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/JadeS 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/JadeS 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/JadeS 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/中玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/中玉.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/光玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/光玉.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/小玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/小玉.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/鳞弹.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/鳞弹.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/SanaeNS0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/SanaeNS0.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/GameObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/GameObject.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Head.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Head.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/SekibankiSC2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/SekibankiSC2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail1.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Head.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Head.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Snip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Snip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Tail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Head.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Head.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Snip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Snip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Tail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Effect/Aura.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Effect/Aura.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Enemy/Bullet/JadeM.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Enemy/Bullet/JadeM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Highlight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Highlight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/_Tools/Calc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/_Tools/Calc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +66,11 @@
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/NPC0/符卡4 鹰已击落/NPC0SC4.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/SanaeSC2.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -29,6 +86,7 @@
   &quot;keyToString&quot;: {
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -47,7 +105,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity\Editor\6000.0.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.0.27f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Unity\Project\Renewed-Ideology-Unity6 -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\Project\Renewed-Ideology-Unity6" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -55,7 +113,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity\Editor\6000.0.25f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\6000.0.27f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Unity\Project\Renewed-Ideology-Unity6 -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Unity\Project\Renewed-Ideology-Unity6" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -115,6 +173,8 @@
       <workItem from="1732072352708" duration="9391000" />
       <workItem from="1732096092147" duration="709000" />
       <workItem from="1732097048860" duration="602000" />
+      <workItem from="1732147472609" duration="24922000" />
+      <workItem from="1732266901927" duration="3993000" />
     </task>
     <servers />
   </component>

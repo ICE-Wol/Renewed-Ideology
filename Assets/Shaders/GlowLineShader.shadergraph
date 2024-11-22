@@ -1080,6 +1080,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "ff",
     "m_FunctionSource": "",
+    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "uvin.y = (uvin.y - 0.5) / n + 0.5;\nuvout = uvin;\n"
 }
 
