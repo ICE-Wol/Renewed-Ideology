@@ -15,7 +15,7 @@ MonoBehaviour:
   isSpellCard: 1
   spellName: 
   cardName: 
-  maxHealth: 80000
+  maxHealth: 8000
   maxTime: 30
   maxBonusPoints: 0
   itemSequence:

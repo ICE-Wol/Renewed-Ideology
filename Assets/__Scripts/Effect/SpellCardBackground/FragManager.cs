@@ -149,6 +149,7 @@ public class FragManager : MonoBehaviour {
             int y = num / 10;
             //Debug.Log("fragsxy" + x + " " + y + " " + (_frags != null));
             _frags[x, y].StartFloat();
+            Debug.Break();
             //if (100 + num < 190) {
             //    _frags[x + 9, y].StartFloat();
             //}
