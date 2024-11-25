@@ -60,6 +60,7 @@ MonoBehaviour:
   moveWhenSpawning: 0
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &6349849436698165526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +282,7 @@ MonoBehaviour:
   moveWhenSpawning: 0
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &5533381863632611686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +451,7 @@ MonoBehaviour:
   moveWhenSpawning: 0
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &630940168765539488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +624,7 @@ MonoBehaviour:
   moveWhenSpawning: 0
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &2716587567320905804
 MonoBehaviour:
   m_ObjectHideFlags: 0

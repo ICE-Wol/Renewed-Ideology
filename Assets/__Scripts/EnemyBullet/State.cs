@@ -130,7 +130,8 @@ namespace _Scripts.EnemyBullet {
                     break;
                 case EBulletStates.Activated:
                     spriteRenderer.sprite = bulletConfig.basic.GetBulletSprite(bulletConfig.type);
-                    spriteRenderer.color = spriteRenderer.color.SetAlpha(1f);
+                    if(bulletConfig.isLaserNode) spriteRenderer.color = spriteRenderer.color.SetAlpha(0f);
+                    else spriteRenderer.color = spriteRenderer.color.SetAlpha(1f);
                     
                     //若被高光脚本替换为高光材质，换回材质后需重设颜色
                     spriteRenderer.material
@@ -155,9 +156,16 @@ namespace _Scripts.EnemyBullet {
 
         private float _curRotation;
         private void Update() {
+            //当子弹是激光节点且没有激光头节点时，直接销毁
+            // if (bulletConfig.isLaserNode && bulletConfig.laserParent != null) {
+            //     bulletSet.Remove(this);
+            //     DestroyImmediate(gameObject);
+            //     return;
+            // }
             
-            
+            //当子弹超出边界且不允许超出边界时，销毁
             if (!bulletConfig.isOutOfBoundFree && bulletDetector.IsOutOfBound(transform.position) && state != EBulletStates.Template) {
+                bulletSet.Remove(this);
                 DestroyImmediate(gameObject);
                 return;
             }

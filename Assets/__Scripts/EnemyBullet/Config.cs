@@ -77,6 +77,10 @@ namespace _Scripts.EnemyBullet {
         public bool isOutOfBoundFree;
         public bool indestructible;
         
+        [Header("激光相关")]
+        public bool isLaserNode;
+        //public CurveLaserHead laserParent;
+        
         private void OnValidate() {
             basic = Resources.Load<EnemyBulletBasics>("EnemyBulletBasics");
             var spriteRenderer = GetComponent<SpriteRenderer>();

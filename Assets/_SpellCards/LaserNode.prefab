@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1651294208587867628}
   - component: {fileID: 8304031347693300863}
   - component: {fileID: 6360758670946672622}
-  - component: {fileID: -6479983525677124145}
+  - component: {fileID: 7824209389372829958}
   m_Layer: 0
   m_Name: LaserNode
   m_TagString: Bullet
@@ -51,7 +51,7 @@ MonoBehaviour:
   basic: {fileID: 11400000, guid: 5399c537cbb3ff142bd00d595ae26e1a, type: 2}
   type: 3
   size: 1
-  color: {r: 0.6307189, g: 0.5568628, b: 1, a: 1}
+  color: {r: 0, g: 0.8464346, b: 1, a: 1}
   scale: {x: 0, y: 0, z: 0}
   collideRadius: 0.03
   selfRotSpdInDegree: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   moveWhenSpawning: 0
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 1
 --- !u!114 &1651294208587867628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ MonoBehaviour:
   hitRadius: 0.1
   grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 0
+  isSelfMovement: 1
   movement: {fileID: 0}
   revZeroDir: 0
 --- !u!114 &8304031347693300863
@@ -151,7 +152,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6479983525677124145
+--- !u!114 &7824209389372829958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,6 +161,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2083206245255294827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3cf5f8ba03c0d40a036ebc6d6a38a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a9efd133b6b4251aff841786db55d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  direction: 0
+  endSpeed: 5
+  startFrame: 0
+  approachRate: 16
+  destroyOnFinish: 0
+  destroyOnTime: 0
+  trigger: 0

@@ -60,6 +60,7 @@ MonoBehaviour:
   moveWhenSpawning: 1
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &1651294208587867628
 MonoBehaviour:
   m_ObjectHideFlags: 0
