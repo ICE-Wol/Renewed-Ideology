@@ -6,35 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/EnemyBullet/EBulletPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/EnemyBullet/EBulletPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/CurveLaserTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/CurveLaserTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/LaserNode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/LaserNode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/普攻1 绿鳞弹乱舞/Scale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/普攻1 绿鳞弹乱舞/Scale.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/秘术 灰色奇术/EBNS2After 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/秘术 灰色奇术/EBNS2After 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/中玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/中玉.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/光玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/光玉.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/小玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/小玉.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/环玉2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/鳞弹.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/鳞弹.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/EBNS2After 3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Head.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Head.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Snip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Snip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符1 绿色旋风/Tail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Head.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Head.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Snip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Snip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/非符3 深岭之花/Tail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Enemy/Bullet/JadeS.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Enemy/Bullet/JadeS.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Config.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/CurveLaser/CurveLaserHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/CurveLaser/CurveLaserHead.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/DoubleSpeedApproach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/DoubleSpeedApproach.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +23,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/1a/981d3320/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/5e/bdbf80d1/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/e0/44973f25/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/NPC0/符卡4 鹰已击落/NPC0SC4.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/SanaeSC2.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -158,7 +132,10 @@
       <workItem from="1732340347290" duration="17192000" />
       <workItem from="1732421835285" duration="674000" />
       <workItem from="1732425022835" duration="20115000" />
-      <workItem from="1732503290204" duration="8187000" />
+      <workItem from="1732503290204" duration="21808000" />
+      <workItem from="1732542917043" duration="61000" />
+      <workItem from="1732543010138" duration="3000" />
+      <workItem from="1732583196032" duration="1164000" />
     </task>
     <servers />
   </component>

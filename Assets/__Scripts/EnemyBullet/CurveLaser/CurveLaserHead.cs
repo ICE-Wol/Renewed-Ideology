@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Scripts.EnemyBullet;
 using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Tools;
 using MEC;
+using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -26,11 +28,12 @@ public class CurveLaserHead : MonoBehaviour
     [Header("激光节点数")] public int length;
     [Header("激光整体宽度因数")] public float width;
     [Header("激光边缘节点数")]public int edgeNodeCount  = 10;
+    [Header("激光节点生成间隔")] public int nodeGenerateInterval = 1;
 
     [Header("不必更改")] 
     [Header("是否由其他激光断开得到")]public bool isLaserGeneratedFromLaser;
     [Header("当前生成到的节点序号")] public int curGenNodeIndex;
-
+    [Header("激光当前是否已被销毁")] public bool isDestroyed;
     [Header("初始生成位置")] public Vector3 initPos;
 
     [Header("激光节点数组")]
@@ -79,18 +82,62 @@ public class CurveLaserHead : MonoBehaviour
         //transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition).SetZ(0);
     }
 
-    public IEnumerator<float> GenerateLaserWithLength(CurveLaserHead head,int startPos,int remLen) {
+    public static IEnumerator<float> GenerateLaserWithLength(CurveLaserHead head,int startPos,int remLen) {
+        //重叠节点bug 的解决方案 yield return Timing.WaitForOneFrame;
+        //原25帧生成节点[0]......[8],该数组为亲代,[0]节点被销毁
+        //新26帧生成节点[0]...[7],该数组为子代,对应亲代[1]...[8]
+        //协程在节点[0]...[7]还未更新位置时就已生成了[8]
+        //所以[8]的位置是[7]的位置
+        //此后每隔一个节点重复这个过程（连续删除时）
+        if(head == null || head.isDestroyed) yield break;
         head.length = startPos + remLen;
         head.initPos = head.transform.position;
+        
+        yield return Timing.WaitForOneFrame;
+        
         for (int i = startPos; i < head.length; i++) {
+            
             head.nodesCondition[i] = 1;
+            
+            // bug：head.initPos == 上一个点的 pos
             head.nodes[i] = Instantiate(head.laserNodePrefab, head.initPos, quaternion.identity).transform;
-            //head.nodes[i].GetComponent<Config>().laserParent = head;
-            Timing.RunCoroutine(ChangeBulletDir(head.nodes[i].GetComponent<DoubleSpeedApproach>(),head.dirAddValue)
+            // var poses = string.Join("\n", head.nodes
+            //     .Where(x => x != null)
+            //     .Select((x, i) => i + " " + x.transform.position));
+            // Debug.Log($"{poses}");
+            
+            //Debug.LogError($"create node {Time.frameCount} {i} {head.gameObject.name} {head.initPos.x}");
+            //if(i > 0 && head.initPos == head.nodes[i - 1].position)
+            //    Debug.Break();
+            
+            Timing.RunCoroutine(ChangeBulletDir(head.nodes[i].GetComponent<DoubleSpeedApproach>(),head.initDir)
                 .CancelWith(head.nodes[i].gameObject));
             head.curGenNodeIndex = i + 1;
-            yield return Calc.WaitForFrames(3);
+            yield return Calc.WaitForFrames(head.nodeGenerateInterval);
         }
+    }
+
+    //实际上不需要这个检查
+    //因为只要有一个节点被销毁，就会查询新的激光段落
+    //同时每个激光段落小于一定长度就不会产生激光
+    //相当于帮忙做了检查
+    bool AllZeroCheck() {
+        var isFullZero = true;
+        for(int i = 0; i < curGenNodeIndex; i++) {
+            //print(nodesCondition.Length + " " + curGenNodeIndex);
+            if(nodesCondition[i] == 1) {
+                isFullZero = false;
+                break;
+            }
+        }
+
+        if (isFullZero) {
+            Debug.Log("All nodes are zero, destroy laser");
+            Destroy(gameObject);
+            return true;
+        }
+
+        return false;
     }
     
     //需要做的事
@@ -121,21 +168,6 @@ public class CurveLaserHead : MonoBehaviour
             radius[i] = /*tmp[i] / 5f */width;
         }
         
-        var isFullZero = true;
-        for(int i = 0; i < curGenNodeIndex; i++) {
-            //print(nodesCondition.Length + " " + curGenNodeIndex);
-            if(nodesCondition[i] == 1) {
-                isFullZero = false;
-                break;
-            }
-        }
-
-        if (isFullZero) {
-            Debug.Log("All nodes are zero, destroy laser");
-            Destroy(gameObject);
-            return true;
-        }
-        
         //1
         var isLaserNodeChanged = false;
         for(int i = 0; i < curGenNodeIndex; i++) {
@@ -159,8 +191,11 @@ public class CurveLaserHead : MonoBehaviour
         for(int i = 0; i < curGenNodeIndex; i++) {
             
             if(nodesCondition[i] == 1) {
+                //要把最开始那个节点也算进去，所以初始长度为1
                 if(i == 0) isHead = i;
-                else if(nodesCondition[i - 1] == 0) isHead = i;
+                else if (nodesCondition[i - 1] == 0) isHead = i;
+                //只要节点是1长度就自增
+                length++;
             }
             
             if(nodesCondition[i] == 0 || i == curGenNodeIndex - 1) {
@@ -178,18 +213,14 @@ public class CurveLaserHead : MonoBehaviour
                 isHead = -1;
                 length = 0;
             }
-
-            if (isHead != -1) {
-                length++;
-            }
         }
 
         //3,4,5
         for(int i = 0; i < laserBlocks.Count; i++) {
             LaserBlock block = laserBlocks[i];
             //4
-            if(block.length <= 10) {
-                print("length <= 10");
+            if(block.length <= edgeNodeCount * 3) {
+                print("长度小于边缘节点数3倍，不生成新激光");
                 for(int j = 0; j < block.length; j++) {
                     Destroy(nodes[block.startIndex + j].gameObject);
                 }
@@ -203,6 +234,7 @@ public class CurveLaserHead : MonoBehaviour
         }
         //print(laserBlocks.Count);
         //print(gameObject.name);
+        isDestroyed = true;
         Destroy(gameObject);
         return true;
 
@@ -210,7 +242,7 @@ public class CurveLaserHead : MonoBehaviour
     
     private void ReStart(LaserBlock block) {
         //print("restarted");
-        //print(block.startIndex + " " + block.length + " "+ block.remainNodeCount);
+        print(block.startIndex + " " + block.length + " "+ block.remainNodeCount);
         var newLaser = Instantiate(this);
         var fullLength = block.length + block.remainNodeCount;
         newLaser.length = fullLength;
@@ -223,7 +255,7 @@ public class CurveLaserHead : MonoBehaviour
         newLaser.curGenNodeIndex = block.length;
         for (int i = 0; i < block.length; i++) {
             if(nodes[block.startIndex + i] == null) {
-                Debug.Log("NULL :start index:" + block.startIndex + " i:" + i);
+                //Debug.Log("NULL :start index:" + block.startIndex + " i:" + i);
                 continue;
             }
             newLaser.nodes[i] = nodes[block.startIndex + i];
@@ -236,17 +268,22 @@ public class CurveLaserHead : MonoBehaviour
             //Debug.DrawLine(node.position, node.position + Vector3.up * 0.1f, Color.red, 1000f);
         }
         if (block.remainNodeCount != 0) {
-            Timing.RunCoroutine(
-                GenerateLaserWithLength(newLaser, block.length, block.remainNodeCount).CancelWith(newLaser.gameObject),
-                "Shoot");
+           // Debug.LogError("build new");
+            var co = GenerateLaserWithLength(newLaser, block.length, block.remainNodeCount)
+                .CancelWith(newLaser.gameObject);
+            //Debug.LogError("run new");
+            Timing.RunCoroutine(co, "Shoot");
         }
 
 
     }
 
-    public IEnumerator<float> ChangeBulletDir(DoubleSpeedApproach bullet,float dirAddValue) {
+    
+    //static为保护措施，保证该协程所有变量都只与内部参数有关
+    public static IEnumerator<float> ChangeBulletDir(DoubleSpeedApproach bullet,float initDir) {
         var timer = 0;
         while (true) {
+            //bullet.direction -=0.1f;
             bullet.direction = 180 * Mathf.Sin(Mathf.Deg2Rad * (timer * 3 + initDir));
             bullet.endSpeed -= 0.01f;
             timer++;
@@ -255,17 +292,22 @@ public class CurveLaserHead : MonoBehaviour
         }
     }
 
-    private Mesh GenerateMeshFromNodes(Transform[] nodes, float[] radius, int edgeNodeCount) {
+    bool isRed = false;
+    private Mesh GenerateMeshFromNodes(Transform[] nodes, float[] radius, int edgeNodeCount,
+        float edgeUVLength = 0.2f) {
         int length = curGenNodeIndex;
 
+        if (length < 2) {
+            return null;
+        }
         // 检查并调整 edgeNodeCount
         if (length < 3) {
-            Debug.LogWarning("节点数量过少，无法生成中间部分。直接使用线性UV分布。");
+            //Debug.LogWarning("节点数量过少，无法生成中间部分。直接使用线性UV分布。");
             edgeNodeCount = 0; // 所有节点线性分布UV
         }
         else if (edgeNodeCount * 2 >= length) {
             edgeNodeCount = (length - 1) / 2; // 限制 edgeNodeCount
-            Debug.LogWarning($"edgeNodeCount 太大，已调整为 {edgeNodeCount} 以确保正确的分布。");
+            //Debug.LogWarning($"edgeNodeCount 太大，已调整为 {edgeNodeCount} 以确保正确的分布。");
         }
 
         Vector3[] vertices = new Vector3[length * 2]; // 每个节点有 upPos 和 downPos 两个顶点
@@ -275,8 +317,11 @@ public class CurveLaserHead : MonoBehaviour
         float dir = 0;
 
         // 计算UV跨度
-        float edgeUVStep = 0.1f / edgeNodeCount; // 边缘UV线性跨度
-        float middleUVStep = 0.8f / (length - edgeNodeCount * 2 - 1); // 中间部分UV跨度
+        float middleUVStart = edgeUVLength; // 中间UV的起点
+        float middleUVEnd = 1f - edgeUVLength; // 中间UV的终点
+        int middleNodeCount = length - edgeNodeCount * 2; // 中间部分节点数量
+        float edgeUVStep = edgeUVLength / edgeNodeCount; // 每个边缘节点的UV跨度
+        float middleUVStep = (middleUVEnd - middleUVStart) / (middleNodeCount - 1); // 每个中间节点的UV跨度
 
         // 当前物体的 Transform
         Transform thisTransform = this.transform;
@@ -284,34 +329,32 @@ public class CurveLaserHead : MonoBehaviour
         // 计算顶点和UV
         for (int i = 0; i < length; i++) {
             if (i != length - 1) {
-                // if (nodes[i] == null || nodes[i + 1] == null) {
-                //     print("null"+i + " " + (i + 1) +" length: " +length);
-                //     continue;
-                // }
                 dir = Calc.GetDirection(nodes[i].position, nodes[i + 1].position);
+                isRed = !isRed;
+                Debug.DrawLine(nodes[i].position, nodes[i + 1].position, isRed ? Color.red : Color.green);
             }
 
             // 世界坐标
-            Vector3 worldUpPos = nodes[i].position + radius[i] * (dir + 90).Deg2Dir3();
-            Vector3 worldDownPos = nodes[i].position + radius[i] * (dir - 90).Deg2Dir3();
+            Vector3 worldUpPos = nodes[i].position + radius[i] * (dir + 90).Deg2Dir3(); // upPos
+            Vector3 worldDownPos = nodes[i].position + radius[i] * (dir - 90).Deg2Dir3(); // downPos
 
-            // 转换为局部坐标 因为mesh的顶点是相对于物体的
-            vertices[i * 2] = thisTransform.InverseTransformPoint(worldUpPos);
-            vertices[i * 2 + 1] = thisTransform.InverseTransformPoint(worldDownPos);
+            // 转换为局部坐标，mesh只认局部坐标，因为要被到处拖动
+            vertices[i * 2] = thisTransform.InverseTransformPoint(worldUpPos); // 局部坐标的 upPos
+            vertices[i * 2 + 1] = thisTransform.InverseTransformPoint(worldDownPos); // 局部坐标的 downPos
 
             // UV计算
             float t;
             if (i < edgeNodeCount) // 前边缘
             {
-                t = edgeUVStep * i; // 从0线性增加
+                t = i * edgeUVStep; // 从0到edgeUVLength
             }
             else if (i >= length - edgeNodeCount) // 后边缘
             {
-                t = 0.9f + edgeUVStep * (i - (length - edgeNodeCount)); // 从0.9线性增加
+                t = middleUVEnd + (i - (length - edgeNodeCount)) * edgeUVStep; // 从middleUVEnd到1
             }
             else // 中间部分
             {
-                t = 0.1f + middleUVStep * (i - edgeNodeCount); // 从0.1线性增加
+                t = middleUVStart + (i - edgeNodeCount) * middleUVStep; // 从middleUVStart到middleUVEnd
             }
 
             uv[i * 2] = new Vector2(t, 1); // upPos UV

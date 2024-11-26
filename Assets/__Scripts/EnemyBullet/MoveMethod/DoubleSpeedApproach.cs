@@ -51,6 +51,7 @@ namespace _Scripts.EnemyBullet.MoveMethod {
             }
             //if (moveOnlyWhenTriggered && !trigger) return;
             transform.localPosition += _curSpeed * Time.fixedDeltaTime * direction.Deg2Dir3();
+            //Debug.LogError($"updatePos { Time.frameCount }");
             _timer++;
         }
     }
