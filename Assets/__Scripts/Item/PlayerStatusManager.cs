@@ -35,7 +35,7 @@ namespace _Scripts {
         private const int MaxPieceRes = 5;
         private const int SingleRotation = 72;
         private const int GapLengthX = 45;
-        private const int GapLengthY = 22;
+        private const int GapLengthY = 35;
 
         private void InitSlot(int numLife, int numBomb) {
             slotLife = new Image[MaxFullRes, MaxPieceRes];
