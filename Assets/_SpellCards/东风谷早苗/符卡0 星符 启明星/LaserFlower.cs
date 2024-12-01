@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 using _Scripts.Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class LaserFlower : MonoBehaviour
+public class LaserFlower : BulletGenerator
 {
     public SingleLineLaserCtrl laserCtrlPrefab;
     public SingleLineLaserCtrl[] lasers;
@@ -15,6 +16,14 @@ public class LaserFlower : MonoBehaviour
     public int laserLiveTime;
     public int laserActiveTime;
     public int timer;
+
+    public override IEnumerator<float> ShootSingleWave() {
+        throw new NotImplementedException();
+    }
+
+    public override IEnumerator<float> AutoShoot() {
+        throw new NotImplementedException();
+    }
 
     private void Start() {
         randDir = UnityEngine.Random.Range(-10, 20);

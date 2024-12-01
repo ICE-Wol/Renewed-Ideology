@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Item/PlayerStatusManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Item/PlayerStatusManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/CurveLaserHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/CurveLaserHead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/LaserFlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/LaserFlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/SingleLineLaser Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡0 星符 启明星/SingleLineLaser Variant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Menu/PauseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Menu/PauseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/321eb2db7c6d43ea8fc39b54eaca345246ae00/b9/2e7d358a/IntPtr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/378523c1e6ba4db992c5a1e98a5541ae10fc00/da/5aba0e42/HashSet`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/1a/981d3320/Object.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/47/7cf932d6/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/5e/bdbf80d1/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b5bf0c891ea345fe93688f835df32fdc1dda00/e0/44973f25/Component.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c7af6a133ab24232b6d4430b4b789a629b6800/93/d21c861a/EditorApplication.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,7 +161,7 @@
       <workItem from="1732938418578" duration="4772000" />
       <workItem from="1732958987967" duration="1386000" />
       <workItem from="1732975399946" duration="9085000" />
-      <workItem from="1733017445722" duration="589000" />
+      <workItem from="1733017441952" duration="5492000" />
     </task>
     <servers />
   </component>

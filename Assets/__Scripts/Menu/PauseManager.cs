@@ -67,6 +67,11 @@ public class PauseManager : MonoBehaviour {
             if(damageable == null) continue;
             damageable.gameObject.SetActive(false);
         }
+        
+        foreach (var curveLaserHead in CurveLaserHead.curveLaserHeads) {
+            if(curveLaserHead == null) continue;
+            curveLaserHead.gameObject.SetActive(false);
+        }
         isPaused = !isPaused;
     }
 
@@ -97,6 +102,11 @@ public class PauseManager : MonoBehaviour {
         foreach (var damageable in Damageable.damageableSet) {
             if(damageable == null) continue;
             damageable.gameObject.SetActive(true);
+        }
+        
+        foreach (var curveLaserHead in CurveLaserHead.curveLaserHeads) {
+            if(curveLaserHead == null) continue;
+            curveLaserHead.gameObject.SetActive(true);
         }
         isPaused = !isPaused;
     }

@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 
 public class CurveLaserHead : MonoBehaviour
 {
+    public static HashSet<CurveLaserHead> curveLaserHeads = new HashSet<CurveLaserHead>();
     private static readonly int Hue = Shader.PropertyToID("_Hue");
     private static readonly int Saturation = Shader.PropertyToID("_Saturation");
     public MeshFilter meshFilter;
@@ -51,6 +52,7 @@ public class CurveLaserHead : MonoBehaviour
     public Vector3[] downPos;
 
     private void Awake() {
+        curveLaserHeads.Add(this);
         nodesCondition = new int[length];
         radius = new float[length];
         upPos = new Vector3[length];
@@ -58,7 +60,11 @@ public class CurveLaserHead : MonoBehaviour
         nodes = new Transform[length];
         nodesCondition = new int[length];
     }
-    
+
+    private void OnDestroy() {
+        curveLaserHeads.Remove(this);
+    }
+
     private void Start() {
         Color.RGBToHSV(color, out var H, out var S, out var V);
         meshRenderer.material.SetFloat(Hue, H);
