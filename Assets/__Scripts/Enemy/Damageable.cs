@@ -14,7 +14,8 @@ namespace _Scripts.Enemy {
         
         [Header("时间(仅用于Boss)")]
         public bool isBoss;
-        [Tooltip("仅Boss状态机处在战斗状态中,时间才会流逝")]public bool inBattle;
+        [Tooltip("仅Boss状态机处在战斗状态中,时间才会流逝")]
+        public bool inBattle;
         public float maxTime;
         public float curTime;
         

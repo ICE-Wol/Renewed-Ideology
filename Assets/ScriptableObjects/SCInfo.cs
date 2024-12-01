@@ -14,7 +14,14 @@ public class SCInfo : ScriptableObject {
     
     public int maxBonusPoints;
 
+    //todo
+    [Header("使用默认掉落物列表：\n" +
+            "非符：收取掉一雷碎片，默认不掉落\n" +
+            "符卡：收取掉一残碎片，默认掉50p")]
+    public bool useDefaultItems;
+
     public ItemSpawnEntry[] itemSequence;
+    public ItemSpawnEntry[] bonusItemSequence;
 
     public bool hasFixedPos;
     public bool hasInitPos;

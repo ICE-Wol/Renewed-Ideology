@@ -111,6 +111,7 @@ namespace _Scripts.Player {
         
         public GameObject playerHitEffect;
         public void GetHit() {
+            GameManager.Manager.curBoss.hasBonus = false;
             if(GameManager.Manager.isHitEffectOn) Instantiate(playerHitEffect, transform.position, Quaternion.identity);
             GameManager.Manager.hits++;
             if (!GameManager.Manager.isCheatModeOn) {

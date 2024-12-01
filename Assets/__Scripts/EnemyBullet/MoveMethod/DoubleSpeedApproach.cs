@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace _Scripts.EnemyBullet.MoveMethod {
     public class DoubleSpeedApproach : BulletMovement {
+        
         public float endSpeed;
         public int startFrame;
         public float approachRate;

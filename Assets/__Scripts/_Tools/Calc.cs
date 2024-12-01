@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using _Scripts.EnemyBullet;
 using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Player;
 using MEC;
@@ -9,6 +10,19 @@ namespace _Scripts.Tools {
         //if too big, the following traces will be a rectangle.
         private const float Epsilon = 0.00001f;
 
+        public static float GetDirBetweenPosAndNeg180(this float dir) {
+            if (dir > 180) {
+                while(dir > 180) {
+                    dir -= 360;
+                }
+            }else if (dir < -180) {
+                while(dir < -180) {
+                    dir += 360;
+                }
+            }
+            return dir;
+        }
+        
         public static float GetPlayerDirection(Vector3 selfPos){
             return Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - selfPos);
         }
@@ -93,6 +107,7 @@ namespace _Scripts.Tools {
             b.transform.position = pos;
             b.transform.rotation = dir.EulerZ();
             b.direction = dir;
+            b.GetComponent<State>().initialRotation = dir;
             return b;
         }
 

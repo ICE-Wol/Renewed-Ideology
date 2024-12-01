@@ -5,6 +5,7 @@ using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Player;
 using _Scripts.Tools;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.EnemyBullet {
     public enum EBulletStates {
@@ -15,30 +16,38 @@ namespace _Scripts.EnemyBullet {
     }
 
     public class State : MonoBehaviour
-    {
-        public SpriteRenderer spriteRenderer;
+    { 
         [Header("已在代码内获取索引")]
         public Highlight highlight;
+        public bool isSelfMovement;
+        public BulletMovement movement;
+        
+        [Header("自行拖动获取索引")]
+        public SpriteRenderer spriteRenderer;
         public Detect bulletDetector;
         public Config bulletConfig;
-        public static HashSet<State> bulletSet = new(); 
         
+        [SerializeField] private EBulletStates state;
+        
+        public static HashSet<State> bulletSet = new(); 
         public event Action OnBulletDestroy;
         //储存方法列表，在销毁时调用回调（Action是委托类型）中的一系列方法
         
-        [SerializeField] private EBulletStates state;
+        
 
         public bool hasNoCollisionCheck;
         public float hitRadius;
-        public float grazeRadius;
-
         public bool isGrazed;
-
-        public bool isSelfMovement;
-        public BulletMovement movement;
-
+        public float grazeRadius;
+        
+        [Header("当速度为0时，是否反转默认方向")]
         public bool revZeroDir;
 
+        /// <summary>
+        /// 弹雾角度随机，防止初始角度丢失，因此提前存好，在生成时赋值，激活时复位
+        /// </summary>
+        [Header("用于弹雾生成角度随机时存储初始角度")]
+        public float initialRotation;
         private int _timer;
         
         private static readonly int PropHueID = Shader.PropertyToID("_Hue");
@@ -52,7 +61,7 @@ namespace _Scripts.EnemyBullet {
             SetBasicParam();
             SetState(EBulletStates.Spawning);
             bulletSet.Add(this);
-            Gizmos.color = Color.red;
+           
         }
 
         private void SetBasicParam() {
@@ -99,6 +108,7 @@ namespace _Scripts.EnemyBullet {
             //防止反复重置fog scale数值.
             if (this.state == state) return;
             this.state = state;
+            
             switch (state) {
                 case EBulletStates.Spawning: 
                     //Debug.Log("Sprite reset" + bulletConfig.basic.enemyBulletGenerateSprite);
@@ -112,6 +122,10 @@ namespace _Scripts.EnemyBullet {
                         //Debug.Log("in 2");
                     }
                     spriteRenderer.color = spriteRenderer.color.SetAlpha(0f);
+                    
+                    //弹雾方向随机
+                    //todo:没做完，只在激光生效
+                    transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
                     switch (bulletConfig.size) {
                         default:
                             _fogScale = 6f;
@@ -129,6 +143,8 @@ namespace _Scripts.EnemyBullet {
                     _fogAlpha = 0f;
                     break;
                 case EBulletStates.Activated:
+                    transform.rotation = Quaternion.Euler(0, 0, initialRotation);
+                    
                     spriteRenderer.sprite = bulletConfig.basic.GetBulletSprite(bulletConfig.type);
                     if(bulletConfig.isLaserNode) spriteRenderer.color = spriteRenderer.color.SetAlpha(0f);
                     else spriteRenderer.color = spriteRenderer.color.SetAlpha(1f);
@@ -156,28 +172,11 @@ namespace _Scripts.EnemyBullet {
 
         private float _curRotation;
         private void Update() {
-            //当子弹是激光节点且没有激光头节点时，直接销毁
-            // if (bulletConfig.isLaserNode && bulletConfig.laserParent != null) {
-            //     bulletSet.Remove(this);
-            //     DestroyImmediate(gameObject);
-            //     return;
-            // }
-            
             //当子弹超出边界且不允许超出边界时，销毁
             if (!bulletConfig.isOutOfBoundFree && bulletDetector.IsOutOfBound(transform.position) && state != EBulletStates.Template) {
                 bulletSet.Remove(this);
                 DestroyImmediate(gameObject);
                 return;
-            }
-
-            if (bulletConfig.faceMoveDirection) {
-                _curRotation.ApproachRef(movement.direction, 32f);
-                spriteRenderer.transform.rotation = movement.speed < 0
-                    ? Quaternion.Euler(0, 0, movement.direction + 180)
-                    : Quaternion.Euler(0, 0, movement.direction);
-                if(movement.speed == 0) {
-                    spriteRenderer.transform.rotation = Quaternion.Euler(0, 0, revZeroDir ? movement.direction + 180 : movement.direction);
-                }
             }
             
 
@@ -219,7 +218,21 @@ namespace _Scripts.EnemyBullet {
                     if (isSelfMovement) {
                         movement.Movement(transform);
                     }
-                    
+
+                    if (bulletConfig.faceMoveDirection) {
+                        _curRotation.ApproachRef(movement.direction, 32f);
+
+                        spriteRenderer.transform.rotation = movement.speed < 0
+                            ? Quaternion.Euler(0, 0, movement.direction + 180)
+                            : Quaternion.Euler(0, 0, movement.direction);
+
+
+                        if (movement.speed == 0) {
+                            spriteRenderer.transform.rotation = Quaternion.Euler(0, 0,
+                                revZeroDir ? movement.direction + 180 : movement.direction);
+                        }
+                    }
+
                     if (!isGrazed) {
                         isGrazed = bulletDetector.CheckPlayerGraze(grazeRadius);
                         if (isGrazed) {
@@ -249,7 +262,9 @@ namespace _Scripts.EnemyBullet {
         }
 
         private void OnDrawGizmos() {
-            if(!hasNoCollisionCheck) Gizmos.DrawSphere(transform.position, bulletConfig.collideRadius);
+            if(!hasNoCollisionCheck) Gizmos.color = Color.green;
+            else Gizmos.color = Color.grey;
+            Gizmos.DrawSphere(transform.position, bulletConfig.collideRadius);
         }
     }
 }

@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
 using _Scripts;
 using _Scripts.Enemy;
 using _Scripts.Item;
+using _Scripts.Player;
 using _Scripts.Tools;
 using MEC;
 using NUnit.Framework;
@@ -43,6 +47,18 @@ public class BossCtrl : MonoBehaviour {
     public BossState bossState;
     
     public EnemyArrowCtrl bossArrowCtrl;
+    
+    [Header("符卡计时器")]
+    public int frameTimer;
+    public float actualTimer;
+    public bool isTimerActivated;
+
+    public SCTimeInfoCtrl scTimeInfoCtrl;
+
+    [Header("收取指示变量")] public bool hasBonus;
+    public BonusBannerCtrl bonusBannerCtrl;
+    public int bonusPoints;
+    public int bonusPointsReducePerFrame = 10;
     
     public void ActivateBulletGenerator() {
         attackPatternSet[curScNumber].SetActive(true);
@@ -101,6 +117,27 @@ public class BossCtrl : MonoBehaviour {
         scNum = num;
         return num;
     }
+    
+    public void StartTimer() {
+        isTimerActivated = true;
+    }
+
+    public void RunTimer() {
+        if (isTimerActivated) {
+            frameTimer++;
+            actualTimer += Time.deltaTime;
+        }
+    }
+
+    public void EndTimer() {
+        scTimeInfoCtrl.breakTime.text = (frameTimer / 60f).ToString("F2") + 's';
+        scTimeInfoCtrl.actualTime.text = actualTimer.ToString("F2") + 's';
+        scTimeInfoCtrl.AppearAll();
+        frameTimer = 0;
+        actualTimer = 0;
+        isTimerActivated = false;
+    }
+    
     private void Awake() {
         scNumText.text = CountSpellCard().ToString();
         ChangeState(BossState.Interval);
@@ -109,6 +146,7 @@ public class BossCtrl : MonoBehaviour {
     private void ChangeState(BossState state) {
         switch (state) {
             case BossState.Interval:
+                hasBonus = true;
                 damageable.inBattle = false;
                 GameManager.Manager.StartEraseBullets(transform.position);
                 
@@ -128,8 +166,6 @@ public class BossCtrl : MonoBehaviour {
                     scNameText.text = spellCardInfos[curScNumber].spellName + "「" +
                                       spellCardInfos[curScNumber].cardName + "」";
                         //spellCardInfos[curScNumber].spellCardName;
-                    
-                    item.RefreshItem(spellCardInfos[curScNumber].itemSequence);
                     
                     enchantMovementRef = attackPatternSet[curScNumber].GetComponent<BulletGenerator>();
                     movement.stayFrames = enchantMovementRef.waveFrameInterval;
@@ -151,6 +187,8 @@ public class BossCtrl : MonoBehaviour {
                 } 
                 break;
             case BossState.SpellCardAnnounce:
+                StartTimer();
+                bonusPoints = spellCardInfos[curScNumber].maxBonusPoints;
                 scAnn.StartAnnouncing();
                 spellCircle.gameObject.SetActive(true);
                 spellCircle.ResetCircle();
@@ -163,6 +201,10 @@ public class BossCtrl : MonoBehaviour {
                 damageable.inBattle = true;
                 break;
             case BossState.SpellCardBreak:
+                EndTimer();
+                bonusBannerCtrl.ActivateBonusState(true,hasBonus,bonusPoints);
+                if (hasBonus)
+                    PlayerCtrl.Player.state.score += bonusPoints;
                 spellCircle.SetState(SpellCircle.SpellCircleState.Shrink);
                 scNum--;
                 scNumText.text = scNum.ToString();
@@ -221,6 +263,8 @@ public class BossCtrl : MonoBehaviour {
 
                 break;
             case BossState.SpellCard:
+                RunTimer();
+                bonusPoints -= bonusPointsReducePerFrame;
                 animator.IsEnchanting = enchantMovementRef.isEnchanting;
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
                     ChangeState(BossState.SpellCardBreak);
@@ -232,6 +276,22 @@ public class BossCtrl : MonoBehaviour {
             case BossState.SpellCardBreak:
                 animator.IsEnchanting = false;
                 scAnn.SpellBreak();
+                if (spellCardInfos[curScNumber].useDefaultItems) {
+                    if (hasBonus)
+                        item.itemSequence = new[]
+                            { new ItemSpawnEntry(ItemType.LifeFrag, 1), new ItemSpawnEntry(ItemType.Power, 50) };
+                    else {
+                        item.itemSequence = new[] { new ItemSpawnEntry(ItemType.Power, 50) };
+                    }
+                }
+                else {
+                    if (hasBonus)
+                        item.itemSequence = spellCardInfos[curScNumber].bonusItemSequence
+                            .Concat(spellCardInfos[curScNumber].itemSequence).ToArray();
+                    else
+                        item.itemSequence = spellCardInfos[curScNumber].itemSequence;
+                }
+
                 item.CreateItem();
                 Timing.KillCoroutines("Shoot");
                 ChangeState(BossState.Interval);
@@ -240,9 +300,20 @@ public class BossCtrl : MonoBehaviour {
             case BossState.NonSpellCard:
                 animator.IsEnchanting = enchantMovementRef.isEnchanting;
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
+                    bonusBannerCtrl.ActivateBonusState(false,hasBonus,0);
                     DeactivateBulletGenerator();
                     Timing.KillCoroutines("Shoot");
                     item.setItemDropEnable = !(damageable.curHealth > 0.001f);
+
+                    if (spellCardInfos[curScNumber].useDefaultItems) {
+                        if(hasBonus) item.itemSequence = new[] { new ItemSpawnEntry(ItemType.BombFrag, 1) };
+                    }
+                    else {
+                        if(hasBonus) item.itemSequence = spellCardInfos[curScNumber].bonusItemSequence
+                            .Concat(spellCardInfos[curScNumber].itemSequence).ToArray();
+                        else item.itemSequence = spellCardInfos[curScNumber].itemSequence;
+                    }
+
                     item.CreateItem();
                     ChangeState(BossState.Interval);
                 }

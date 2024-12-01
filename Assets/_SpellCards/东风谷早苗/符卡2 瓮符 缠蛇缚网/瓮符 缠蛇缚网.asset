@@ -18,11 +18,13 @@ MonoBehaviour:
   maxHealth: 100000
   maxTime: 45
   maxBonusPoints: 0
+  useDefaultItems: 1
   itemSequence:
   - type: 0
     num: 100
   - type: 6
     num: 1
+  bonusItemSequence: []
   hasFixedPos: 0
   hasInitPos: 1
   initPos: {x: 0, y: 2, z: 0}

@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: SekibankiNS1
   m_EditorClassIdentifier: 
   isSpellCard: 0
-  spellCardName: 
+  spellName: 
+  cardName: 
   maxHealth: 80000
   maxTime: 30
   maxBonusPoints: 0
+  useDefaultItems: 1
   itemSequence:
   - type: 5
     num: 0
+  bonusItemSequence: []
   hasFixedPos: 0
   hasInitPos: 1
   initPos: {x: 0, y: 2, z: 0}

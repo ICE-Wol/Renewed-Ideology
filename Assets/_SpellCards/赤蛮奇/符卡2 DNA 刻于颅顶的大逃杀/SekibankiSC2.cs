@@ -24,23 +24,27 @@ public class SekibankiSC2 : BulletGenerator
     [Header("自机相关圆圈射击")]
     public DoubleSpeedApproach pointBullet;
 
+    bool isRed = true;
     public override IEnumerator<float> ShootSingleWave() {
         var initDir = Random.Range(-30, 30);
-
+        var maxWave = 15;
         Timing.RunCoroutine(ShootClockwise(initDir, degInterval), "Shoot");
 
-        yield return Calc.WaitForFrames(180);
+        yield return Calc.WaitForFrames(90);
+        for (int i = 0; i < maxWave; i++) {
+            Timing.RunCoroutine(Shoot4(isRed), "Shoot");
+            isRed = !isRed;
+            yield return Calc.WaitForFrames((int)(waveFrameInterval / 1.5 / maxWave));
+        }
     }
+    
 
     public override IEnumerator<float> AutoShoot() {
         var isClockWise = true;
         while (true) {
-            //Timing.RunCoroutine(ShootSingleWave(), "Shoot");
-
-            //Timing.RunCoroutine(Shoot2(isClockWise), "Shoot");
-            //isClockWise = !isClockWise;
-            Timing.RunCoroutine(Shoot3(true), "Shoot");
-            Timing.RunCoroutine(Shoot3(false), "Shoot");
+            Timing.RunCoroutine(ShootSingleWave(), "Shoot");
+            //Timing.RunCoroutine(Shoot3(true), "Shoot");
+            //Timing.RunCoroutine(Shoot3(false), "Shoot");
             yield return Calc.WaitForFrames(waveFrameInterval);
         }
     }
@@ -77,7 +81,7 @@ public class SekibankiSC2 : BulletGenerator
         DoubleSpeedApproach[] tails = new DoubleSpeedApproach[20];
         while (timer <= 360) {
             if (head == null) yield break;
-            timer++;
+            timer+=2;
 
             if (isClockWise) {
                 var nxtPos = Calc.GetCubicBezierPoint(transform.position,
@@ -104,7 +108,7 @@ public class SekibankiSC2 : BulletGenerator
             head.transform.position = _prePos;
 
 
-            if (timer % 20 >= 5 && timer % 2 == 0) {
+            if (timer % 40 >= 10/* && timer % 2 == 0*/) {
                 DoubleSpeedApproach b =
                     (DoubleSpeedApproach)Calc.GenerateBullet(isClockWise ? tailBullet1 : tailBullet2,
                         head.transform.position, head.direction + (isClockWise ? 90f : -90f));
@@ -219,5 +223,40 @@ public class SekibankiSC2 : BulletGenerator
 
             yield return Calc.WaitForFrames(circleWaveInterval);
         }
+    }
+
+
+    public PolarCoordinateMovement glowJade;
+    public PolarCoordinateMovement bigJade;
+    IEnumerator<float> Shoot4(bool isRed) {
+        var initDir = -90f;
+        var radius = 0.5f;
+        var gapRange = 40f;
+        
+        for (int i = 0; i < 36; i++) {
+            var dir = (isRed ? 10 : 0) + initDir + 10 * i;
+            if (dir.GetDirBetweenPosAndNeg180() < -90f + gapRange &&
+                dir.GetDirBetweenPosAndNeg180() > -90f - gapRange) continue;
+            var bullet = (PolarCoordinateMovement)Calc.GenerateBullet(i % 2 == 0 ? glowJade : bigJade,
+                transform.position + radius * dir.Deg2Dir3(), dir);
+            bullet.center = transform.position;
+            bullet.angle = dir;
+            bullet.bulletState.SetColor(isRed ? Color.red : Color.blue);
+            Timing.RunCoroutine(PolarMovement(bullet, i - 18,dir));
+        }
+        
+
+        yield break;
+        
+    }
+
+    IEnumerator<float> PolarMovement(PolarCoordinateMovement bullet, int num,float dir) {
+        var timer = 0;
+        while (timer <= 300) {
+            bullet.angle = dir + 2 * num * (1 / 5f + Mathf.Sin(3 * timer * Mathf.Deg2Rad) / 3f);
+            timer++;
+            yield return Timing.WaitForOneFrame;
+        }
+
     }
 }

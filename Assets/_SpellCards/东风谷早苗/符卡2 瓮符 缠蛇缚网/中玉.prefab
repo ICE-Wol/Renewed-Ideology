@@ -73,18 +73,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 6360758670946672622}
   highlight: {fileID: 0}
+  isSelfMovement: 1
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 6360758670946672622}
   bulletDetector: {fileID: 8304031347693300863}
   bulletConfig: {fileID: 3447303903962857540}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 1
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &8304031347693300863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9efd133b6b4251aff841786db55d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 4
   direction: 0
   endSpeed: 2

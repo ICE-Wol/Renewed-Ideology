@@ -97,7 +97,7 @@ public class SanaeSC2 : BulletGenerator
 
     public override IEnumerator<float> ShootSingleWave() {
         var mainDir = Calc.GetPlayerDirection(transform.position) + 90f;
-        print(mainDir);
+        //print(mainDir);
         Timing.RunCoroutine(ShootFan(18, 10, 15, 17), "Shoot");
         
         Timing.RunCoroutine(ShootStem(mainDir + 150,1.4f,20f,false,45), "Shoot");

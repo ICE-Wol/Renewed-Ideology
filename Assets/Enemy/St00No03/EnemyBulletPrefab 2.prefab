@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dc84b02a9b43eea0b27a066a683dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   midSpeed: 0

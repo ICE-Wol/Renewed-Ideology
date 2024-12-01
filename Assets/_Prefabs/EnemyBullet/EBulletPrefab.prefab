@@ -72,18 +72,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7772626026683119820}
   highlight: {fileID: 0}
+  isSelfMovement: 0
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 7772626026683119820}
   bulletDetector: {fileID: 7052361787504366794}
   bulletConfig: {fileID: 8339787036234628105}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 0
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &7052361787504366794
 MonoBehaviour:
   m_ObjectHideFlags: 0

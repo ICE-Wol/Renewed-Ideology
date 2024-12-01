@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using _Scripts;
 using _Scripts.Enemy;
 using _Scripts.Player;
 using _Scripts.Tools;
@@ -28,6 +30,10 @@ public class UIManager : MonoBehaviour {
     public TMP_Text grazeText;
     public float curGraze;
 
+    [Header("BonusPointRegion")] 
+    public TMP_Text bonusPointText;
+    public int curBonusPoint;
+
     private void UpdateTimeText() {
         curTime = damageable.curTime;
         var dec = (int)(curTime * 100) % 100;
@@ -46,8 +52,8 @@ public class UIManager : MonoBehaviour {
     private void UpdatePowerText() {
         power = player.Power;
         powerString = "<color=#EECBAD>" + (int)(power / 100) + "." +
-                      "<size=25>" + (power % 100 < 10 ? "0" : "") + (int)(power % 100) + "</size>" +
-                      "/4.<size=25>00</size></color>";
+                      "<size=40>" + (power % 100 < 10 ? "0" : "") + (int)(power % 100) + "</size>" +
+                      "/4.<size=40>00</size></color>";
         powerText.text = powerString;
     }
     
@@ -56,9 +62,17 @@ public class UIManager : MonoBehaviour {
         grazeText.text = "<color=#CFCFCF>" + (int)curGraze + "</color>";
     }
 
+    private void UpdateBonusPointText() {
+        curBonusPoint = GameManager.Manager.curBoss.bonusPoints;
+        bonusPointText.text = GameManager.Manager.curBoss.hasBonus
+            ? curBonusPoint.ToString("#,0", CultureInfo.InvariantCulture)
+            : "Failed";
+    }
+
     private void Update() {
         UpdateTimeText();
         UpdatePowerText();
         UpdateGrazeText();
+        UpdateBonusPointText();
     }
 }

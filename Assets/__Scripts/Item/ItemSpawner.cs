@@ -12,6 +12,11 @@ namespace _Scripts.Item {
     public struct ItemSpawnEntry {
         public ItemType type;
         public int num;
+
+        public ItemSpawnEntry(ItemType t, int n) {
+            type = t;
+            num = n;
+        }
     }
     public class ItemSpawner : MonoBehaviour {
         public ItemSpawnEntry[] itemSequence;

@@ -73,6 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e1c0f9e897f72419886261e2507f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   followTarget: {fileID: 9211758887278946967}
@@ -90,18 +92,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 4204468225200409482}
   highlight: {fileID: 0}
+  isSelfMovement: 0
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 4204468225200409482}
   bulletDetector: {fileID: 638558914817977999}
   bulletConfig: {fileID: 4496712793951539047}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 0
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &638558914817977999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e1c0f9e897f72419886261e2507f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   followTarget: {fileID: 8079903807801266105}
@@ -312,18 +317,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 6900157505523594848}
   highlight: {fileID: 0}
+  isSelfMovement: 0
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 6900157505523594848}
   bulletDetector: {fileID: 111217654882382992}
   bulletConfig: {fileID: 8807665152133777369}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 0
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &111217654882382992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,18 +470,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 4427996127531899534}
   highlight: {fileID: 0}
+  isSelfMovement: 1
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 4427996127531899534}
   bulletDetector: {fileID: 7689398842136178919}
   bulletConfig: {fileID: 2926058529354817680}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 1
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &7689398842136178919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dc84b02a9b43eea0b27a066a683dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   midSpeed: 0
@@ -637,6 +646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e1c0f9e897f72419886261e2507f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   followTarget: {fileID: 2838326249166390829}
@@ -654,18 +665,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 5453793038691449285}
   highlight: {fileID: 0}
+  isSelfMovement: 0
+  movement: {fileID: 0}
+  spriteRenderer: {fileID: 5453793038691449285}
   bulletDetector: {fileID: 9012710361746171492}
   bulletConfig: {fileID: 7927876692326527529}
   state: 0
   hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 0
-  movement: {fileID: 0}
+  grazeRadius: 0
   revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &9012710361746171492
 MonoBehaviour:
   m_ObjectHideFlags: 0

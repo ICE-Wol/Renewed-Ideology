@@ -116,6 +116,7 @@ namespace _Scripts.Player {
         private void Update() {
             if (Input.GetKeyDown(KeyCode.X)) {
                 if (bomb > 0) {
+                    GameManager.Manager.curBoss.hasBonus = false;
                     if (bombObject == null)
                         bombObject = Instantiate(bombPrefab, transform.position, Quaternion.identity);
                     bomb -= 1;
