@@ -207,8 +207,8 @@ namespace _Scripts.EnemyBullet {
                     spriteRenderer.color = spriteRenderer.color.SetAlpha(_fogAlpha);
 
                     if (_fogScale.Equal(fogScaleTarget, 0.1f)) {
-                        SetState(EBulletStates.Activated);
                         transform.localScale = Vector3.one;
+                        SetState(EBulletStates.Activated);
                     }
 
                     if(bulletConfig.moveWhenSpawning)
@@ -240,7 +240,8 @@ namespace _Scripts.EnemyBullet {
                         }
                     }
                     
-                    hitRadius = bulletConfig.collideRadius;
+                    //碰撞半径与localScale正相关
+                    hitRadius = bulletConfig.collideRadius * transform.localScale.x;
                     if (!hasNoCollisionCheck && bulletDetector.CheckPlayerCollision(hitRadius)) {
                         if(!bulletConfig.indestructible)
                             SetState(EBulletStates.Destroying);
@@ -262,9 +263,9 @@ namespace _Scripts.EnemyBullet {
         }
 
         private void OnDrawGizmos() {
-            if(!hasNoCollisionCheck) Gizmos.color = Color.green;
-            else Gizmos.color = Color.grey;
-            Gizmos.DrawSphere(transform.position, bulletConfig.collideRadius);
+            Gizmos.color = !hasNoCollisionCheck ? Color.green : Color.grey;
+            if (state == EBulletStates.Activated)
+                Gizmos.DrawSphere(transform.position, hitRadius);
         }
     }
 }
