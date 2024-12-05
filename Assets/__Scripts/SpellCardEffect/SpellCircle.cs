@@ -43,7 +43,7 @@ public class SpellCircle: MonoBehaviour {
 
     private float _randApproachX;
     private float _randApproachY;
-    public float idleMaxRadius = 5.68f;
+    public float idleMaxRadius = 8f;
     public void OnState() {
         switch (_curState) {
             case SpellCircleState.Collapse:

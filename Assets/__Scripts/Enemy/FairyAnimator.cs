@@ -7,14 +7,14 @@ using UnityEngine;
 public class FairyAnimator : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public Sprite[] animSequence;
-        
+    
     public Vector3 prePosition;
     public Vector3 direction;
 
     public int movePointer;
     public int idlePointer;
     
-    public int frameSpeed;
+    public int frameSpeed = 8;
     public int timer;
 
     private void Start() {

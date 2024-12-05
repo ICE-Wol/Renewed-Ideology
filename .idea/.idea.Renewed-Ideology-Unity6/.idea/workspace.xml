@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BonusBannerCtrl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BonusBannerCtrl.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BloodLineReverseShader.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BloodLineReverseShader.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/SanaeNS0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/非符0 原作道中非/SanaeNS0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/GameObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/GameObject.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/Tail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellAnnouncement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellAnnouncement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellCircle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +165,8 @@
       <workItem from="1733064873320" duration="545000" />
       <workItem from="1733213954535" duration="1528000" />
       <workItem from="1733317297675" duration="4738000" />
+      <workItem from="1733325380545" duration="2364000" />
+      <workItem from="1733409593172" duration="3872000" />
     </task>
     <servers />
   </component>
