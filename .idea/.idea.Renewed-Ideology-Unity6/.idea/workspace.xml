@@ -6,9 +6,93 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/EnemyBulletPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/EnemyBulletPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/Fairy0000.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/Fairy0000.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/PathDescend.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No00/PathDescend.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/EBPrefab 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/EBPrefab 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/EBPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/EBPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/FG0001.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/FG0001.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/Fairy0001.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/Fairy0001.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/FullMoonShoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No01/FullMoonShoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/EnemyBulletPrefab 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/EnemyBulletPrefab 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/EnemyBulletPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/EnemyBulletPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/Fairy0002.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/Fairy0002.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/Path0002.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/Path0002.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No02/WideSniper.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/EnemyBulletPrefab 2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/EnemyBulletPrefab 2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/FG0003.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/FG0003.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Fairy0003.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Fairy0003.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Path0003.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Path0003.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Path0003r.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Path0003r.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Slashes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No03/Slashes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/BulletGroup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/Fairy0004.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/Fairy0004.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/Path.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/Path.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/StarString.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/StarString.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/StarString.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No04/StarString.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/EnemyBulletPrefab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/Fairy0005.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/Fairy0005.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/Path.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/Path.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/StarRing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/StarRing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/StarRing.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No05/StarRing.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/EnemyBulletPrefab 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/EnemyBulletPrefab 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/Flower.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/Flower.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/Flower2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/Flower2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/FlowerSpawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St00No06/FlowerSpawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FairyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FairyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Square-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Square-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/游戏内常规英文字体.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/游戏内常规英文字体.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/游戏内面板数字字体 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/游戏内面板数字字体 SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/选难度选人背景.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/选难度选人背景.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellCircle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +119,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/NPC0/符卡4 鹰已击落/NPC0SC4.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/SanaeSC2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/PolarCoordinateMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/__Scripts/UI/StageTitleCtrl2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Unlit-Default.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph/Editor/Drawing/MaterialGraphEditWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -166,7 +251,8 @@
       <workItem from="1733213954535" duration="1528000" />
       <workItem from="1733317297675" duration="4738000" />
       <workItem from="1733325380545" duration="2364000" />
-      <workItem from="1733409593172" duration="3872000" />
+      <workItem from="1733409593172" duration="5616000" />
+      <workItem from="1733478218744" duration="4559000" />
     </task>
     <servers />
   </component>

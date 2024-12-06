@@ -13,6 +13,9 @@ public class FairyMovement : MonoBehaviour
 
     private void Update() {
         timer++;
-        transform.position = splineContainer.Spline.EvaluatePosition(positionCurve.Evaluate(timer / totframes));
+        transform.position = splineContainer.transform.TransformPoint(splineContainer.Spline.EvaluatePosition(positionCurve.Evaluate(timer / totframes)));
+        Debug.DrawLine(splineContainer.Spline.EvaluatePosition(positionCurve.Evaluate(timer / totframes)),
+            (Vector3)splineContainer.Spline.EvaluatePosition(positionCurve.Evaluate(timer / totframes)) + Vector3.right,
+            Color.red,1000f);
     }
 }
