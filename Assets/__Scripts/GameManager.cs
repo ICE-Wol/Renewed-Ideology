@@ -7,6 +7,7 @@ using _Scripts.Tools;
 using MEC;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using State = _Scripts.EnemyBullet.State;
 
 namespace _Scripts {
@@ -30,6 +31,22 @@ namespace _Scripts {
 
         public Vector2 bulletEraseCenter;
         public float bulletEraseRadius;
+
+        #region FairyAnimation
+        [Serializable]
+        public struct FairyAnimSeq
+        {
+            public FairyAnimator.FairyType type;
+            public Sprite[] animSequence;
+        }
+        
+        [SerializeField]
+        private FairyAnimSeq[] fairyAnimSequences;
+        public Sprite[] GetFairyAnimSequences(FairyAnimator.FairyType type) {
+            return fairyAnimSequences[(int) type].animSequence;
+        }
+        
+        #endregion
         
         private void Awake() {
             if (!Manager) {
@@ -46,7 +63,10 @@ namespace _Scripts {
             cheatAlertTest.text = (isCheatModeOn ? "CheatModeOn" : "CheatModeOff") + "\nHits: " + hits;
         }
 
+
+        public int timer = 0;
         private void Update() {
+            timer++;
             if (Input.GetKeyDown(KeyCode.C)) {
                 isCheatModeOn = !isCheatModeOn;
                 //cheatAlertTest.enabled = isCheatModeOn;
@@ -54,6 +74,7 @@ namespace _Scripts {
 
             if (isCheatModeOn) {
                 cheatAlertTest.text = (isCheatModeOn ? "CheatModeOn" : "CheatModeOff") + "\nHits: " + hits;
+                cheatAlertTest.text += "\nTimer: " + timer;
             }
 
             if (isCheatModeOn) {

@@ -37,7 +37,7 @@ public abstract class BulletGenerator : MonoBehaviour {
     [Header("仅限演示时，发射器位置")]
     public Vector3 demonstratePos;
     private void Start() {
-        Timing.RunCoroutine(AutoShoot(),"Shoot");
+        Timing.RunCoroutine(AutoShoot().CancelWith(gameObject),"Shoot");
     }
 
     

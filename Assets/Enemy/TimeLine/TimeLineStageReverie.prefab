@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5149854563650822431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7649172712485028389}
+  - component: {fileID: 7632661324770631986}
+  m_Layer: 0
+  m_Name: TimeLineStageReverie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7649172712485028389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149854563650822431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09670204, y: 1.3185395, z: 1.0129805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7632661324770631986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149854563650822431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a402e2ee475fb418b3d1cdd644ad81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeNodes:
+  - str: "\u5F00\u5E55\u5996\u7CBE"
+    timeInSecond: 0
+    enemy: {fileID: 8688322512234672988, guid: c052f9e7918855d498920a2463c671bf, type: 3}
+  - str: "\u6EE1\u6708\u4E8C\u6BB5\u4EA4\u53C9\u5F39\u5996\u7CBE"
+    timeInSecond: 0
+    enemy: {fileID: 7870615155085971865, guid: dfa9611b52a79f44293ea667159c9333, type: 3}
+  - str: "\u4E09\u8DEF\u72D9,\u548C\u6EE1\u6708\u4E00\u8D77\u51FA"
+    timeInSecond: 0
+    enemy: {fileID: 7870615155085971865, guid: 0bd7ef6712da46d4ca9ff8508b5605c0, type: 3}
+  - str: "\u659C\u692D\u5706\u62C9\u5200\u5149"
+    timeInSecond: 0
+    enemy: {fileID: 7870615155085971865, guid: e411e4256fd86ef44b1fde8b95939914, type: 3}
+  - str: "\u4E2D\u7389\u8DDF\u4E09\u4E2A\u661F\u661F"
+    timeInSecond: 0
+    enemy: {fileID: 3738173995599892140, guid: a9e97d1e22839a242be06c9a5497b5d0, type: 3}
+  - str: "\u4E24\u5708\u661F\u661F"
+    timeInSecond: 0
+    enemy: {fileID: 3738173995599892140, guid: 456ab9aae1ff5764c9b80a62b80afc8f, type: 3}
+  - str: "\u751F\u6210\u82B1\u548C\u85E4\u8513"
+    timeInSecond: 0
+    enemy: {fileID: 3738173995599892140, guid: a9e97d1e22839a242be06c9a5497b5d0, type: 3}
+  - str: Boss
+    timeInSecond: 0
+    enemy: {fileID: 0}
+  StartTimerInSecond: 0
+  timer: 0
+  openingFairy: {fileID: 7832074901934660729, guid: c052f9e7918855d498920a2463c671bf, type: 3}
+  moonLightFairy: {fileID: 4282056640007543536, guid: dfa9611b52a79f44293ea667159c9333, type: 3}
+  ellipseFairy: {fileID: 8670518456755785723, guid: e411e4256fd86ef44b1fde8b95939914, type: 3}

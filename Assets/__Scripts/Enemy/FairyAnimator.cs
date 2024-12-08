@@ -1,10 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts;
 using _Scripts.Tools;
 using UnityEngine;
 
+[ExecuteAlways]
 public class FairyAnimator : MonoBehaviour {
+    public enum FairyType{
+        FairyBig,
+        FairyBigDark,
+        FairyMidRed,
+        FairyMidBlue,
+        FairyLeadRed,
+        FairyLeadBlue,
+        FairySmallRed,
+        FairySmallBlue,
+        FairySmallGreen,
+        FairySmallGold,
+    }
+    
+    public FairyType fairyType;
+    
     public SpriteRenderer spriteRenderer;
     public Sprite[] animSequence;
     
@@ -20,6 +37,9 @@ public class FairyAnimator : MonoBehaviour {
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         prePosition = transform.position;
+        animSequence = GameManager.Manager.GetFairyAnimSequences(fairyType);
+        spriteRenderer.sprite = animSequence[0];
+        
     }
 
     private void Update() {

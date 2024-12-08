@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.Item;
 using UnityEngine;
 
 
@@ -7,6 +8,7 @@ namespace _Scripts.Enemy {
     public class Damageable : MonoBehaviour {
         public static HashSet<Damageable> damageableSet = new();
         public FairyBreakEffectCtrl breakEffect;
+        public Color breakEffectColor;
         
         [Header("血量")]
         public float maxHealth;
@@ -60,9 +62,13 @@ namespace _Scripts.Enemy {
             //Debug.Log("DeadEvents");
             if (!isOnDeadInvoked) {
                 if (!isBoss) {
-                    if (breakEffect != null)
-                        Instantiate(breakEffect, transform.position, Quaternion.Euler(0, 0, 0));
+                    if (breakEffect != null) {
+                        var eff = Instantiate(breakEffect, transform.position, Quaternion.Euler(0, 0, 0));
+                        eff.color = breakEffectColor;
+                    }
+
                     damageableSet.Remove(this);
+                    GetComponent<ItemSpawner>().CreateItem();
                     Destroy(gameObject);
                 }
                 else {

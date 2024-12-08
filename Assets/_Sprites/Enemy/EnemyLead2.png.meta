@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: 1e01fb08d4ecd9349a2a4c9fb7f9eedd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 435767218279252778
+    second: EnemyLead2_0
+  - first:
+      213: 954020864951910998
+    second: EnemyLead2_1
+  - first:
+      213: 1079404210206149910
+    second: EnemyLead2_2
+  - first:
+      213: -1472454335637779376
+    second: EnemyLead2_3
+  - first:
+      213: 3697531935347141616
+    second: EnemyLead2_4
+  - first:
+      213: 7869654933059881650
+    second: EnemyLead2_5
+  - first:
+      213: 7685074600528110284
+    second: EnemyLead2_6
+  - first:
+      213: -8235585405807159807
+    second: EnemyLead2_7
+  - first:
+      213: -857063114856549933
+    second: EnemyLead2_8
+  - first:
+      213: 3222727901149506884
+    second: EnemyLead2_9
+  - first:
+      213: -1143561629707793251
+    second: EnemyLead2_10
+  - first:
+      213: -4160804942173512473
+    second: EnemyLead2_11
+  - first:
+      213: -1861100091532264410
+    second: EnemyLead2_12
+  - first:
+      213: 7806853894070895736
+    second: EnemyLead2_13
+  - first:
+      213: 5611644450398806019
+    second: EnemyLead2_14
+  - first:
+      213: 4987980151363329192
+    second: EnemyLead2_15
+  - first:
+      213: -5131822347264930446
+    second: EnemyLead2_16
+  - first:
+      213: -4729680821251333655
+    second: EnemyLead2_17
+  - first:
+      213: -2753247837551138012
+    second: EnemyLead2_18
+  - first:
+      213: -6594158926510080730
+    second: EnemyLead2_19
+  - first:
+      213: 6305160645802887047
+    second: EnemyLead2_20
+  - first:
+      213: 8555934788693907071
+    second: EnemyLead2_21
+  - first:
+      213: -5775729858395489660
+    second: EnemyLead2_22
+  - first:
+      213: 9117329881928359542
+    second: EnemyLead2_23
+  - first:
+      213: -5547575683383118141
+    second: EnemyLead2_24
+  - first:
+      213: -6396616625757098571
+    second: EnemyLead2_25
+  - first:
+      213: -170566200704870887
+    second: EnemyLead2_26
+  - first:
+      213: 7732906979168254681
+    second: EnemyLead2_27
+  - first:
+      213: -9133521876219878422
+    second: EnemyLead2_28
+  - first:
+      213: 8502507824426363788
+    second: EnemyLead2_29
+  - first:
+      213: 4751633781970978639
+    second: EnemyLead2_30
+  - first:
+      213: -945765134575013584
+    second: EnemyLead2_31
+  - first:
+      213: -7431490076007223165
+    second: EnemyLead2_32
+  - first:
+      213: 8148167166743175228
+    second: EnemyLead2_33
+  - first:
+      213: 9070548769569785867
+    second: EnemyLead2_34
+  - first:
+      213: 1481568154186980946
+    second: EnemyLead2_35
+  - first:
+      213: 1165874538250301899
+    second: EnemyLead2_36
+  - first:
+      213: 8933790288904616666
+    second: EnemyLead2_37
+  - first:
+      213: -6390620767046630284
+    second: EnemyLead2_38
+  - first:
+      213: -5654689957310867525
+    second: EnemyLead2_39
+  - first:
+      213: -8486095234049086763
+    second: EnemyLead2_40
+  - first:
+      213: 6960895278376544754
+    second: EnemyLead2_41
+  - first:
+      213: -5073283588324120265
+    second: EnemyLead2_42
+  - first:
+      213: 4081077151228461050
+    second: EnemyLead2_43
+  - first:
+      213: 1744640369965753898
+    second: EnemyLead2_44
+  - first:
+      213: -1175286029347101702
+    second: EnemyLead2_45
+  - first:
+      213: 6477179083403525451
+    second: EnemyLead2_46
+  - first:
+      213: 3576993856656654822
+    second: EnemyLead2_47
+  - first:
+      213: -977009500792863337
+    second: EnemyLead2_48
+  - first:
+      213: 1135539858609174306
+    second: EnemyLead2_49
+  - first:
+      213: 5619803724191197050
+    second: EnemyLead2_50
+  - first:
+      213: -9066596448143688021
+    second: EnemyLead2_51
+  - first:
+      213: 6105168201267252880
+    second: EnemyLead2_52
+  - first:
+      213: -6092790769947268537
+    second: EnemyLead2_53
+  - first:
+      213: -3495286928130570476
+    second: EnemyLead2_54
+  - first:
+      213: -7590476884243249482
+    second: EnemyLead2_55
+  - first:
+      213: 5246483033786450686
+    second: EnemyLead2_56
+  - first:
+      213: -2661602411863435160
+    second: EnemyLead2_57
+  - first:
+      213: -5641751289860098380
+    second: EnemyLead2_58
+  - first:
+      213: 2097682169675934791
+    second: EnemyLead2_59
+  - first:
+      213: 7048516474184321399
+    second: EnemyLead2_60
+  - first:
+      213: 87500059562414056
+    second: EnemyLead2_61
+  - first:
+      213: 3874088043173104070
+    second: EnemyLead2_62
+  - first:
+      213: -2021651572722198211
+    second: EnemyLead2_63
+  - first:
+      213: -732898926580206746
+    second: EnemyLead2_64
+  - first:
+      213: -8611906055563577470
+    second: EnemyLead2_65
+  - first:
+      213: 4126812351412380887
+    second: EnemyLead2_66
+  - first:
+      213: -6955591609770408891
+    second: EnemyLead2_67
+  - first:
+      213: -1791732853499256591
+    second: EnemyLead2_68
+  - first:
+      213: 7143463836501445419
+    second: EnemyLead2_69
+  - first:
+      213: -7012894696910144362
+    second: EnemyLead2_70
+  - first:
+      213: 4206938739648508617
+    second: EnemyLead2_71
+  - first:
+      213: -1570685907045167935
+    second: EnemyLead2_72
+  - first:
+      213: -2091142205626175869
+    second: EnemyLead2_73
+  - first:
+      213: -4357891065400871658
+    second: EnemyLead2_74
+  - first:
+      213: 8098296551371464338
+    second: EnemyLead2_75
+  - first:
+      213: 778590440019380721
+    second: EnemyLead2_76
+  - first:
+      213: -1886068667789051418
+    second: EnemyLead2_77
+  - first:
+      213: 2166762503972305071
+    second: EnemyLead2_78
+  - first:
+      213: 7297846526492710293
+    second: EnemyLead2_79
+  - first:
+      213: -8697676134087856345
+    second: EnemyLead2_80
+  - first:
+      213: -5453207932699938782
+    second: EnemyLead2_81
+  - first:
+      213: 1921574795692467739
+    second: EnemyLead2_82
+  - first:
+      213: -8886015089376164324
+    second: EnemyLead2_83
+  - first:
+      213: 8464664034840008226
+    second: EnemyLead2_84
+  - first:
+      213: 5841425481913750483
+    second: EnemyLead2_85
+  - first:
+      213: 4908051807397130578
+    second: EnemyLead2_86
+  - first:
+      213: -7260167384487747491
+    second: EnemyLead2_87
+  - first:
+      213: 7479535666469655230
+    second: EnemyLead2_88
+  - first:
+      213: -4842769530506456714
+    second: EnemyLead2_89
+  - first:
+      213: 4846874243333591539
+    second: EnemyLead2_90
+  - first:
+      213: -8616997268759792351
+    second: EnemyLead2_91
+  - first:
+      213: 8078439711354339207
+    second: EnemyLead2_92
+  - first:
+      213: -6336943338652516967
+    second: EnemyLead2_93
+  - first:
+      213: -3722596401142547581
+    second: EnemyLead2_94
+  - first:
+      213: 2356842480215815984
+    second: EnemyLead2_95
+  - first:
+      213: 5200654495781227081
+    second: EnemyLead2_96
+  - first:
+      213: 4684399316215593377
+    second: EnemyLead2_97
+  - first:
+      213: 7756054972499560549
+    second: EnemyLead2_98
+  - first:
+      213: 8576874406573389038
+    second: EnemyLead2_99
+  - first:
+      213: -1941718003162438817
+    second: EnemyLead2_100
+  - first:
+      213: -8075809763710324521
+    second: EnemyLead2_101
+  - first:
+      213: 6871045707459585453
+    second: EnemyLead2_102
+  - first:
+      213: -4438340596752871274
+    second: EnemyLead2_103
+  - first:
+      213: -8728961711774733170
+    second: EnemyLead2_104
+  - first:
+      213: 6592085419844487516
+    second: EnemyLead2_105
+  - first:
+      213: 5002778283117296470
+    second: EnemyLead2_106
+  - first:
+      213: -8269978808551769977
+    second: EnemyLead2_107
+  - first:
+      213: 2773178519409215931
+    second: EnemyLead2_108
+  - first:
+      213: -4899246224341269776
+    second: EnemyLead2_109
+  - first:
+      213: 426217258628960548
+    second: EnemyLead2_110
+  - first:
+      213: 8440238473763120042
+    second: EnemyLead2_111
+  - first:
+      213: 2193638997734624258
+    second: EnemyLead2_112
+  - first:
+      213: -2727169680099454717
+    second: EnemyLead2_113
+  - first:
+      213: 3283659268468966110
+    second: EnemyLead2_114
+  - first:
+      213: 6582851863809324267
+    second: EnemyLead2_115
+  - first:
+      213: 3080473806397046552
+    second: EnemyLead2_116
+  - first:
+      213: 3679246368507587971
+    second: EnemyLead2_117
+  - first:
+      213: 6715561573156084158
+    second: EnemyLead2_118
+  - first:
+      213: -7471963996145759732
+    second: EnemyLead2_119
+  - first:
+      213: -3685237236877439149
+    second: EnemyLead2_120
+  - first:
+      213: 391417031923898342
+    second: EnemyLead2_121
+  - first:
+      213: -8139274597887489929
+    second: EnemyLead2_122
+  - first:
+      213: 3358500812803499416
+    second: EnemyLead2_123
+  - first:
+      213: -4258038145638898138
+    second: EnemyLead2_124
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EnemyLead2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a238b4ae9f72c0600800000000000000
+      internalID: 435767218279252778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65205cb0cec5d3d00800000000000000
+      internalID: 954020864951910998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d06660960dafe00800000000000000
+      internalID: 1079404210206149910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c8358459ac09be0800000000000000
+      internalID: -1472454335637779376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fb670074b5405330800000000000000
+      internalID: 3697531935347141616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_5
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba4fe56771a63d60800000000000000
+      internalID: 7869654933059881650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2ead4c1aed6aa60800000000000000
+      internalID: 7685074600528110284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106197915b255bd80800000000000000
+      internalID: -8235585405807159807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1b2e053a91b14f0800000000000000
+      internalID: -857063114856549933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44da1cb83fd69bc20800000000000000
+      internalID: 3222727901149506884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c0082b1c04120f0800000000000000
+      internalID: -1143561629707793251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyLead2_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecde0233f9d146c0800000000000000
+      internalID: -4160804942173512473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 83d9b562c511e674cabf80c31ada97fa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EnemyLead2_0: 435767218279252778
+      EnemyLead2_1: 954020864951910998
+      EnemyLead2_10: -1143561629707793251
+      EnemyLead2_11: -4160804942173512473
+      EnemyLead2_2: 1079404210206149910
+      EnemyLead2_3: -1472454335637779376
+      EnemyLead2_4: 3697531935347141616
+      EnemyLead2_5: 7869654933059881650
+      EnemyLead2_6: 7685074600528110284
+      EnemyLead2_7: -8235585405807159807
+      EnemyLead2_8: -857063114856549933
+      EnemyLead2_9: 3222727901149506884
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

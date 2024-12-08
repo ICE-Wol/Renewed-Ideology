@@ -103,7 +103,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -116,7 +116,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -136,13 +136,14 @@ TextureImporter:
       name: EnemyMiddle2_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 97
-        width: 46
-        height: 43
+        x: 0
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -157,13 +158,14 @@ TextureImporter:
       name: EnemyMiddle2_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 100
-        width: 43
-        height: 41
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -178,13 +180,14 @@ TextureImporter:
       name: EnemyMiddle2_2
       rect:
         serializedVersion: 2
-        x: 99
-        y: 98
-        width: 43
-        height: 43
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -199,13 +202,14 @@ TextureImporter:
       name: EnemyMiddle2_3
       rect:
         serializedVersion: 2
-        x: 146
-        y: 97
-        width: 45
-        height: 42
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -220,13 +224,14 @@ TextureImporter:
       name: EnemyMiddle2_4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 49
-        width: 46
-        height: 43
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -241,13 +246,14 @@ TextureImporter:
       name: EnemyMiddle2_5
       rect:
         serializedVersion: 2
-        x: 49
-        y: 50
-        width: 39
-        height: 42
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -262,13 +268,14 @@ TextureImporter:
       name: EnemyMiddle2_6
       rect:
         serializedVersion: 2
-        x: 98
-        y: 51
-        width: 42
-        height: 43
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -283,13 +290,14 @@ TextureImporter:
       name: EnemyMiddle2_7
       rect:
         serializedVersion: 2
-        x: 148
-        y: 51
-        width: 40
-        height: 44
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -304,13 +312,14 @@ TextureImporter:
       name: EnemyMiddle2_8
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 39
-        height: 44
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -325,13 +334,14 @@ TextureImporter:
       name: EnemyMiddle2_9
       rect:
         serializedVersion: 2
-        x: 53
-        y: 4
-        width: 39
-        height: 44
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -346,13 +356,14 @@ TextureImporter:
       name: EnemyMiddle2_10
       rect:
         serializedVersion: 2
-        x: 101
-        y: 4
-        width: 37
-        height: 43
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -367,13 +378,14 @@ TextureImporter:
       name: EnemyMiddle2_11
       rect:
         serializedVersion: 2
-        x: 149
-        y: 2
-        width: 38
-        height: 45
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -385,15 +397,18 @@ TextureImporter:
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 79a5e028e5522944abafd64775c5747f
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
       EnemyMiddle2_0: -3649954601292049731
       EnemyMiddle2_1: -6148753509460036414
