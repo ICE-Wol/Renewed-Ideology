@@ -42,7 +42,6 @@ namespace _Scripts {
         private float _curScale = 0f;
         private float _curRotX = -90f;
         private float _curRotY = -90f;
-        private float _curFillPercentage = 0;
 
         private void Update() {
             _curScale.ApproachRef(1f, 16f);

@@ -146,7 +146,7 @@ MonoBehaviour:
   selfRotSpdInDegree: 0
   isGlowing: 0
   faceMoveDirection: 1
-  moveWhenSpawning: 0
+  moveWhenSpawning: 1
   isOutOfBoundFree: 0
   indestructible: 0
   isLaserNode: 0

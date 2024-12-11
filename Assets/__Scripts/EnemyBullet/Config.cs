@@ -63,7 +63,6 @@ namespace _Scripts.EnemyBullet {
     public class Config : MonoBehaviour {
         public EnemyBulletBasics basic;
         
-        
         public BulletType type;
         public BulletSize size;
         public Color color;
@@ -91,6 +90,8 @@ namespace _Scripts.EnemyBullet {
             spriteRenderer.sprite = basic.GetBulletSprite(type);
             spriteRenderer.color = Color.white;
             collideRadius = basic.bulletBasics[(int)type].checkRadius;
+            
+            
             
             //basic.bulletBasics[(int)type].sprite = spriteRenderer.sprite;
             //basic.bulletBasics[(int)type].size = size;

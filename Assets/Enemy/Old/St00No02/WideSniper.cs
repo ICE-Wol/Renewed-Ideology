@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Player;
 using _Scripts.Tools;
-using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
 using _Scripts;
 using MEC; 
 

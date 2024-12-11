@@ -77,13 +77,11 @@ namespace _Scripts.Enemy {
             prePosition = transform.position;
         }
 
-        private int test;
-
         private void Start() {
             spriteRenderer = GetComponent<SpriteRenderer>();
             timer = 0;
             frameSpeed = 8;
-            test = 0;
+            
         }
 
         // Update is called once per frame

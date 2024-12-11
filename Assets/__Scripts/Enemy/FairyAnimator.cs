@@ -5,8 +5,8 @@ using _Scripts;
 using _Scripts.Tools;
 using UnityEngine;
 
-[ExecuteAlways]
-public class FairyAnimator : MonoBehaviour {
+public class FairyAnimator : MonoBehaviour,ISetAlpha
+{
     public enum FairyType{
         FairyBig,
         FairyBigDark,
@@ -23,6 +23,7 @@ public class FairyAnimator : MonoBehaviour {
     public FairyType fairyType;
     
     public SpriteRenderer spriteRenderer;
+    private FairyAnimation _fairyAnimConfig;
     public Sprite[] animSequence;
     
     public Vector3 prePosition;
@@ -33,18 +34,29 @@ public class FairyAnimator : MonoBehaviour {
     
     public int frameSpeed = 8;
     public int timer;
-
+    
     private void Start() {
+        _fairyAnimConfig = Resources.Load<FairyAnimation>("FairyAnimation");
         spriteRenderer = GetComponent<SpriteRenderer>();
         prePosition = transform.position;
-        animSequence = GameManager.Manager.GetFairyAnimSequences(fairyType);
+        animSequence = _fairyAnimConfig.GetFairyAnimSequences(fairyType);
         spriteRenderer.sprite = animSequence[0];
         
+    }
+
+    private void OnValidate() {
+        _fairyAnimConfig = Resources.Load<FairyAnimation>("FairyAnimation");
+        animSequence = _fairyAnimConfig.GetFairyAnimSequences(fairyType);
+        spriteRenderer.sprite = animSequence[0];
     }
 
     private void Update() {
         PlayAnim();
         timer++;
+    }
+    
+    public void SetAlpha(float a) {
+        spriteRenderer.color = spriteRenderer.color.SetAlpha(a);
     }
 
     protected void PlayAnim() {
@@ -75,4 +87,6 @@ public class FairyAnimator : MonoBehaviour {
         }
         prePosition = transform.position;
     }
+
+    
 }

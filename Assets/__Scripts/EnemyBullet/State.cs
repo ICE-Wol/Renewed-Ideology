@@ -32,9 +32,6 @@ namespace _Scripts.EnemyBullet {
         public static HashSet<State> bulletSet = new(); 
         public event Action OnBulletDestroy;
         //储存方法列表，在销毁时调用回调（Action是委托类型）中的一系列方法
-        
-        
-
         public bool hasNoCollisionCheck;
         public float hitRadius;
         public bool isGrazed;

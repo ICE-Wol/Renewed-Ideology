@@ -14,8 +14,7 @@ public class LaserSpawner : BulletGenerator
     
     public int ways = 10;
     public float genRadius = 3f;
-
-    private float timer = 0;
+    
 
     public IEnumerator<float> Shoot(float initDir) {
         lasers = new CurveLaserHead[10];

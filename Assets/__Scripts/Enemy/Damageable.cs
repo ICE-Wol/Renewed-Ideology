@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Scripts.EnemyBullet;
 using _Scripts.Item;
+using _Scripts.Player;
 using UnityEngine;
 
 
@@ -28,10 +30,10 @@ namespace _Scripts.Enemy {
         
         [Header("碰撞半径")]
         public float hitRadius;
-        private float _curScale;
 
         [Header("死亡事件")]
         public bool isOnDeadInvoked;
+        public Detect bulletDetector;
 
         
         
@@ -53,9 +55,10 @@ namespace _Scripts.Enemy {
         private void Start() {
             curHealth = maxHealth;
             curTime = maxTime;
-            _curScale = 1f;
             SetInvincibleTime(initInvincibleTime);
             damageableSet.Add(this);
+
+            bulletDetector = gameObject.AddComponent<Detect>();
         }
 
         public void DeadEvents() {
@@ -93,6 +96,12 @@ namespace _Scripts.Enemy {
             
             if (curHealth <= 0) {
                 DeadEvents();
+            }
+            
+            if (hitRadius > 0 && bulletDetector.CheckPlayerCollision(hitRadius)) {
+                if (!PlayerCtrl.Player.CheckInvincibility()) {
+                    PlayerCtrl.Player.GetHit();
+                }
             }
         }
         

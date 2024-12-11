@@ -55,7 +55,6 @@ public class Spell000200 : BulletGenerator
     }
     
     public override IEnumerator<float> AutoShoot() {
-        int cc = 0;
         while (true) {
             Timing.RunCoroutine(ShootSingleWave(/*cc++*/));
             var d = Timing.RunCoroutine(GameManager.WaitForFrames(waveFrameInterval));

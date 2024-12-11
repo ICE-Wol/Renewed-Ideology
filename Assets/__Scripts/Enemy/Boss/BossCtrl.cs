@@ -142,6 +142,10 @@ public class BossCtrl : MonoBehaviour {
         scNumText.text = CountSpellCard().ToString();
         ChangeState(BossState.Interval);
     }
+
+    private void Start() {
+        GameManager.Manager.curBoss = this;
+    }
     
     private void ChangeState(BossState state) {
         switch (state) {

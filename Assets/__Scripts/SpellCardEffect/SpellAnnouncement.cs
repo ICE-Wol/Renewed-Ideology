@@ -30,8 +30,7 @@ namespace _Scripts {
         public bool isAnnounceFinished;
         public int midTimerFlag;
         public int endTimerFlag;
-
-        private float _alpha;
+        
         private float _appearFactor;
         private float _maxAppearFactor = 2.0f;
         private int _timer;
@@ -62,9 +61,7 @@ namespace _Scripts {
                 var vec = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
                 spellBgAppear.material.SetVector("Offset" + i, vec);
             }
-
             
-            _alpha = 0;
             _appearFactor = _maxAppearFactor;
 
             

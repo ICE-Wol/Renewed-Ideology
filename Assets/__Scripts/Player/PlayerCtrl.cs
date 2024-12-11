@@ -149,7 +149,6 @@ namespace _Scripts.Player {
             SetInvincibleEffect();
             Movement();
             PlayAnim();
-            if (Input.GetKey(KeyCode.Z));
         }
 
         private void OnDrawGizmos() {

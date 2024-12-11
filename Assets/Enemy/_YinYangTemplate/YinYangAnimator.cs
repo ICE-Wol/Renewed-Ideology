@@ -4,7 +4,12 @@ using System.Collections.Generic;
 using _Scripts.Tools;
 using UnityEngine;
 
-public class YinYangAnimator : MonoBehaviour
+
+public interface ISetAlpha
+{
+    void SetAlpha(float a);
+}
+public class YinYangAnimator : MonoBehaviour,ISetAlpha
 {
     public SpriteRenderer spriteRenderer;
     public SpriteRenderer subCircleRendererPrefab;
@@ -13,6 +18,7 @@ public class YinYangAnimator : MonoBehaviour
     public SpriteRenderer[,] subCircleRenderers;
 
     public Color color;
+    public float alpha;
 
     public float rotSpd;
     
@@ -34,6 +40,20 @@ public class YinYangAnimator : MonoBehaviour
                 else {
                     subCircleRenderers[i, j].material.SetFloat("_Hue", H);
                     subCircleRenderers[i, j].material.SetFloat("_Saturation", S);
+                }
+            }
+        }
+    }
+    
+    public void SetAlpha(float a) {
+        alpha = a;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (j % 2 == 0) {
+                    subCircleRenderers[i, j].color = subCircleRenderers[i, j].color.SetAlpha(0.3f * alpha);
+                }
+                else {
+                    subCircleRenderers[i, j].material.SetFloat("_Alpha", alpha);
                 }
             }
         }

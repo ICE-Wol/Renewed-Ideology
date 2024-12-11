@@ -1,17 +1,12 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using _Scripts.Enemy;
 using _Scripts.EnemyBullet;
-using _Scripts.Tools;
 using MEC;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using State = _Scripts.EnemyBullet.State;
 
 namespace _Scripts {
-   
     public class GameManager : MonoBehaviour {
         public bool isCheatModeOn;
         public bool isHitEffectOn;
@@ -28,25 +23,10 @@ namespace _Scripts {
         public Transform bulletSortingGroup;
         public Transform itemSortingGroup;
         public Transform bulletBreakPrefabGroup;
+        public UIManager uiManager;
 
         public Vector2 bulletEraseCenter;
         public float bulletEraseRadius;
-
-        #region FairyAnimation
-        [Serializable]
-        public struct FairyAnimSeq
-        {
-            public FairyAnimator.FairyType type;
-            public Sprite[] animSequence;
-        }
-        
-        [SerializeField]
-        private FairyAnimSeq[] fairyAnimSequences;
-        public Sprite[] GetFairyAnimSequences(FairyAnimator.FairyType type) {
-            return fairyAnimSequences[(int) type].animSequence;
-        }
-        
-        #endregion
         
         private void Awake() {
             if (!Manager) {
@@ -66,6 +46,8 @@ namespace _Scripts {
 
         public int timer = 0;
         private void Update() {
+            uiManager.damageable = curBoss.damageable;
+            
             timer++;
             if (Input.GetKeyDown(KeyCode.C)) {
                 isCheatModeOn = !isCheatModeOn;

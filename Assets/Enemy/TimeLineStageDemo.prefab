@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1004034113250901271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022874880909087760}
+  - component: {fileID: 8710696956862713781}
+  m_Layer: 0
+  m_Name: TimeLineStageDemo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022874880909087760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004034113250901271}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4, y: 5.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8710696956862713781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004034113250901271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d490532e6271d4083a010e998050dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 4000
+  st0F0Prefab: {fileID: 6904694772998658518, guid: 8321388a123ad0f4a82434643ab0dc4a, type: 3}
+  st0F1Prefab: {fileID: 6904694772998658518, guid: 9240758728d323f48aa896d7a96f2ee4, type: 3}
+  stageTitle: {fileID: 0}
+  st0F2Prefab: {fileID: 6904694772998658518, guid: bc1d35b580a26b64d9134f0a2fe6da06, type: 3}
+  st0F3Prefab: {fileID: 6904694772998658518, guid: c0470a352a566ff4eb941500cdaa97bb, type: 3}
+  st0F4Prefab: {fileID: 6904694772998658518, guid: c7a8a583b4dd48848bed92fb1ec2c2d3, type: 3}
+  st0F5Prefab:
+  - {fileID: 6904694772998658518, guid: ed1619b2c9592bb4d9d1be8aad4cf0e7, type: 3}
+  - {fileID: 6904694772998658518, guid: 34838f70397155e4b818c1281261b7d5, type: 3}
+  - {fileID: 6904694772998658518, guid: 318cb1c3c9277644a8ad57acd6b87abb, type: 3}
+  - {fileID: 6904694772998658518, guid: 16ef4c6a95ae3234ea1130e1af08d1e4, type: 3}
+  - {fileID: 6904694772998658518, guid: da7df75c06c2e90478eda02c6213efc6, type: 3}
+  st0F5Interval: 7800000064000000500000003c00000028000000
+  st0F6Prefab: {fileID: 6904694772998658518, guid: debfdb0bf573a3b4bb38bb5df206beaa, type: 3}
+  st0F7Prefab: {fileID: 6904694772998658518, guid: 950fc012fb48e8b44b11c66185fa4ce8, type: 3}
+  st0F9Prefab: {fileID: 1318343230614223117, guid: d2bc3940b8f10e4448631fa67a76c828, type: 3}
+  st0F8Prefab: {fileID: 6904694772998658518, guid: 28656dda0ea9b1146a2b964183fd88b9, type: 3}
+  st0F10Prefab: {fileID: 1318343230614223117, guid: 985dd7ebedcb63a49b2e4696531f6146, type: 3}

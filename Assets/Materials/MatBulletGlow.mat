@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MatBulletGlow
-  m_Shader: {fileID: -6465566751694194690, guid: 2b2e6ed0700bda4418b0edac0543732d, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7fe61aedac8df664a9d2bef92bb41020, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

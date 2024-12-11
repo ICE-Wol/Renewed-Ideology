@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Scripts.EnemyBullet.MoveMethod {
     public class DoubleSpeedApproach : BulletMovement {
-        
+        [Header("重大警告：Speed仅用于设置初始速度，运行时不修改，也不参与运算")]
         public float endSpeed;
         public int startFrame;
         public float approachRate;
@@ -32,6 +32,11 @@ namespace _Scripts.EnemyBullet.MoveMethod {
         
         public void SetSpeed(float speed) {
             _curSpeed = speed;
+            endSpeed = speed;
+        }
+
+        public float GetSpeed() {
+            return _curSpeed;
         }
 
         public Action onTriggerEvent;

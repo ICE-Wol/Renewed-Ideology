@@ -36,7 +36,6 @@ public class SekibankiSC2 : BulletGenerator
     
 
     public override IEnumerator<float> AutoShoot() {
-        var isClockWise = true;
         while (true) {
             Timing.RunCoroutine(ShootSingleWave(), "Shoot");
             //Timing.RunCoroutine(Shoot3(true), "Shoot");
@@ -140,7 +139,6 @@ public class SekibankiSC2 : BulletGenerator
     IEnumerator<float> Shoot3(bool isClockWise) {
         var radius = 0f;
         var circleWaveInterval = 10;
-        var rotateInterval = 20;
         var circleNum = 72;
         var bulletNumInCicle = 24;
         
