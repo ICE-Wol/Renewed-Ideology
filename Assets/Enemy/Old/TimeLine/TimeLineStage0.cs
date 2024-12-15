@@ -36,6 +36,9 @@ public class TimeLineStage0 : MonoBehaviour
     public FairyMovement st0F8Prefab;
     public FairyMovement st0F10Prefab;
 
+    [Header("5000 道中boss")] 
+    public GameObject st0MidBoss;
+
     IEnumerator<float> GenerateFairy(FairyMovement fairyPrefab, Vector3 offset, int count, int interval)
     {
         for (int i = 0; i < count; i++)
@@ -119,6 +122,10 @@ public class TimeLineStage0 : MonoBehaviour
         if (timer == 4500) {
             Timing.RunCoroutine(GenerateStemFairy(false, 3, 60));
             Timing.RunCoroutine(GenerateGhost(false, 5, 100));
+        }
+        
+        if (timer == 5000) {
+            st0MidBoss.SetActive(true);
         }
         
         timer++;

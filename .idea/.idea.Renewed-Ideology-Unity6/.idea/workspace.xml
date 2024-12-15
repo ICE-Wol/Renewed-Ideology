@@ -6,47 +6,41 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf8f11b-3b56-4f92-be9d-47dea417e4f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Renewed-Ideology-Unity6/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/FairyMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/FairyMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Old/St00No02/WideSniper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Old/St00No02/WideSniper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St0F5/Rice.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St0F5/Rice.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St0F5/St0F5.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/St0F5/St0F5.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St0F5/St0F5.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/St0F5/St0F5.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/TimeLine.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/TimeLine/TimeLineStage0.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/TimeLine/TimeLineStage0.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/TimeLine/TimeLineStageReverie.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/TimeLine/TimeLineStageReverie.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/_GhostTemplate/GhostAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/_GhostTemplate/GhostAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/_YinYangTemplate/YinYangAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/_YinYangTemplate/YinYangAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Old/TimeLine/TimeLineStage0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Old/TimeLine/TimeLineStage0.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/Koenigsberger UNZ1L SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Koenigsberger UNZ1L SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/title英文.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/title英文.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/游戏内面板数字字体 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/游戏内面板数字字体 SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatBulletGlow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatBulletGlow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatBlur.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatBlur.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatDistanceFog.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatLaserGlow2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatSpriteGlowShader.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatSpriteGlowShader.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatThreePartLine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatThreePartLine.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/MatWarnLineGlow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/MatWarnLineGlow.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/LaserSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/LaserSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/NPCTestAbandoned/0_NS0/Spell000000.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/NPCTestAbandoned/0_NS0/Spell000000.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/NPCTestAbandoned/2_NS1/Spell000200.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/NPCTestAbandoned/2_NS1/Spell000200.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/BulletColorGlowShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/BulletColorGlowShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/BossSanae.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/BossSanae.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/CirnoNS0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/CirnoNS0.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/CirnoNS0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/CirnoNS0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/Ellipse.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/琪露诺/非符0 分裂蓝椭弹/Ellipse.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/SekibankiSC2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_SpellCards/赤蛮奇/符卡2 DNA 刻于颅顶的大逃杀/SekibankiSC2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Effect/Enemy/CircularHealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Effect/Enemy/CircularHealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Boss/BossAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Boss/BossAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/st01d.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/st01d.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02b.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02b.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02c.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02c.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02c2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Background/DDCStage01/world02c2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/Effect/Shade.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/Effect/Shade.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_0.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_0_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_0_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow3_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow4_half.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/Arrow4_half.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Sprites/GUI/ArrowBlur.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Sprites/GUI/ArrowBlur.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Boss/BossCtrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Boss/BossCtrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/Damageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Enemy/FairyAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/DoubleSpeedApproach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/DoubleSpeedApproach.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Menu/PauseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Menu/PauseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Player/PlayerCtrl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Player/PlayerCtrl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellAnnouncement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/SpellCardEffect/SpellAnnouncement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Player/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Player/PlayerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/UI/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +68,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/NPC0/符卡4 鹰已击落/NPC0SC4.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_SpellCards/东风谷早苗/符卡2 瓮符 缠蛇缚网/SanaeSC2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/EnemyBullet/MoveMethod/PolarCoordinateMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/__Scripts/Menu/PauseMenuNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/UI/StageTitleCtrl2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Unlit-Default.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph/Editor/Drawing/MaterialGraphEditWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal/ShaderLibrary/ShaderVariablesFunctions.hlsl" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -103,7 +97,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/TouhouDev/Build\Renewed-Ideology.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/TouhouDev/Build/Renewed-Ideology.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\11920\Desktop\TouhouDev\Build" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -226,12 +220,24 @@
       <workItem from="1733897210311" duration="2983000" />
       <workItem from="1733908116958" duration="2565000" />
       <workItem from="1733920744869" duration="960000" />
+      <workItem from="1733926939311" duration="3037000" />
+      <workItem from="1733931058937" duration="1403000" />
+      <workItem from="1733963334750" duration="177000" />
+      <workItem from="1733998231858" duration="1597000" />
+      <workItem from="1734144745840" duration="504000" />
+      <workItem from="1734145338210" duration="20338000" />
+      <workItem from="1734190556816" duration="2000" />
+      <workItem from="1734191131264" duration="2046000" />
+      <workItem from="1734229265287" duration="7056000" />
+      <workItem from="1734237024625" duration="11043000" />
+      <workItem from="1734300546025" duration="807000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -239,6 +245,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

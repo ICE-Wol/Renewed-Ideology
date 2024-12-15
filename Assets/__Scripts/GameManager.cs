@@ -46,7 +46,8 @@ namespace _Scripts {
 
         public int timer = 0;
         private void Update() {
-            uiManager.damageable = curBoss.damageable;
+            if (curBoss != null)
+                uiManager.damageable = curBoss.damageable;
             
             timer++;
             if (Input.GetKeyDown(KeyCode.C)) {
@@ -86,7 +87,7 @@ namespace _Scripts {
                 bulletEraseRadius += 0.1f;
             }
 
-            if (bulletEraseRadius >= 10f)
+            if (bulletEraseRadius >= 20f)
                 bulletEraseRadius = 0;
         }
         

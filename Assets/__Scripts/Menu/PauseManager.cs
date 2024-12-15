@@ -4,8 +4,13 @@ using _Scripts.EnemyBullet;
 using _Scripts.Tools;
 using MEC;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class PauseManager : MonoBehaviour {
+public class PauseManager : MonoBehaviour
+{
+    public Transform canvas;
+    public PauseMenuCtrl pauseMenuPrefab;
+    public PauseMenuCtrl pauseMenuInstance;
     public GameObject[] pauseList;
 
     public bool isPaused = false;
@@ -16,13 +21,20 @@ public class PauseManager : MonoBehaviour {
     public Sprite spr;
 
     public Material matBlur;
-    public float curBlurMount = 0;
+    public float curBlurAmount = 0;
     public float tarBlurAmount = 0;
+
+    public float curBlurColor = 0;
+    public float tarBlurColor = 0;
+    
     private static readonly int Appear = Shader.PropertyToID("_Appear");
 
     public void Update() {
-        curBlurMount.ApproachRef(tarBlurAmount, 8f);
-        matBlur.SetFloat(Appear, curBlurMount);
+        curBlurAmount.ApproachRef(tarBlurAmount, 8f);
+        if(!curBlurAmount.Equal(tarBlurAmount,0.1f))
+            matBlur.SetFloat(Appear, curBlurAmount);
+        curBlurColor.ApproachRef(tarBlurColor, 8f);
+        spriteRenderer.color = Color.Lerp(Color.white, Color.gray, curBlurColor);
         
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) {
 
@@ -37,17 +49,18 @@ public class PauseManager : MonoBehaviour {
 
     private IEnumerator CaptureScreenshot() {
         yield return new WaitForEndOfFrame();
-
+        
         Texture2D screenShot = ScreenCapture.CaptureScreenshotAsTexture();
         tex = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         tex.SetPixels(screenShot.GetPixels());
         tex.Apply();
         spr = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100);
         spriteRenderer.sprite = spr;
+        tarBlurColor = 1f;
         Destroy(screenShot);
         tarBlurAmount = 1f;
 
-        print(Timing.PauseCoroutines());
+        Timing.PauseCoroutines();
         
         foreach (var obj in pauseList) {
             obj.SetActive(false);
@@ -73,16 +86,20 @@ public class PauseManager : MonoBehaviour {
             curveLaserHead.gameObject.SetActive(false);
         }
         isPaused = !isPaused;
+        
+        pauseMenuInstance = Instantiate(pauseMenuPrefab,canvas);
     }
 
     private IEnumerator ResetPause() {
         yield return new WaitForEndOfFrame();
+        pauseMenuInstance.DestroyMenu();
+        tarBlurColor = 0f;
         tarBlurAmount = 0f;
-        yield return new WaitUntil(() => curBlurMount <= 0.1f); 
+        yield return new WaitUntil(() => curBlurAmount <= 0.01f); 
         Destroy(tex);
         Destroy(spr);
         
-        print(Timing.ResumeCoroutines());
+        Timing.ResumeCoroutines();
         
         foreach (var obj in pauseList) {
             obj.SetActive(true);
@@ -108,7 +125,8 @@ public class PauseManager : MonoBehaviour {
             if(curveLaserHead == null) continue;
             curveLaserHead.gameObject.SetActive(true);
         }
-        isPaused = !isPaused;
+        isPaused = !isPaused; 
+        
     }
 
 

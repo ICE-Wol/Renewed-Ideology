@@ -143,7 +143,7 @@ public class BossCtrl : MonoBehaviour {
         ChangeState(BossState.Interval);
     }
 
-    private void Start() {
+    private void OnEnable() {
         GameManager.Manager.curBoss = this;
     }
     

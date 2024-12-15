@@ -70,9 +70,9 @@ public class UIManager : MonoBehaviour {
     }
 
     private void Update() {
-        UpdateTimeText();
+        if(damageable != null) UpdateTimeText();
         UpdatePowerText();
         UpdateGrazeText();
-        UpdateBonusPointText();
+        if(damageable != null) UpdateBonusPointText();
     }
 }

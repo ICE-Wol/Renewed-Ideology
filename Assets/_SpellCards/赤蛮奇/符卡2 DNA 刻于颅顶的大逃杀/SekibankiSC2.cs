@@ -178,6 +178,7 @@ public class SekibankiSC2 : BulletGenerator
     }
 
 
+    [Header("极坐标射击")]
     public PolarCoordinateMovement glowJade;
     public PolarCoordinateMovement bigJade;
     IEnumerator<float> Shoot4(bool isRed) {

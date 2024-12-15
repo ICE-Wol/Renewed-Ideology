@@ -51,3 +51,4 @@ MonoBehaviour:
   waveCount: 0
   demonstratePos: {x: 0, y: 0, z: 0}
   ellipse: {fileID: 1551623592287122463, guid: 0ff96317cc1589444acf73a2c60abcbc, type: 3}
+  ice: {fileID: 1551623592287122463, guid: 42fa3c48d85affc4eae45b9ccf4188be, type: 3}
