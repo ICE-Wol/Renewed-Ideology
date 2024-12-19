@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MatCloudTop3
-  m_Shader: {fileID: -6465566751694194690, guid: 4c0cc7b6fe05227478df72c477e34943, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 59011af42a9dc5d469b7e0b96087e205, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -54,14 +54,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0.7
     - _Density: 0
     - _FinalDivision: 6
     - _FinalMul: 0.6
     - _Power: 3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _FogColor: {r: 0.93396217, g: 0.99709725, b: 1, a: 1}
+    - _FogColor: {r: 0.93396217, g: 0.9970972, b: 1, a: 0.5254902}
     - _OffestMultiplier: {r: 0, g: 0, b: 0, a: 0}
     - _Offset: {r: -0.1, g: -0.2, b: 0, a: 0}
     - _OffsetMultiplier: {r: 0, g: -0.12, b: 0, a: 0}

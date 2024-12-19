@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
   m_Name: SanaeNS0
   m_EditorClassIdentifier: 
-  isSpellCard: 1
+  isSpellCard: 0
   spellName: 
   cardName: 
-  maxHealth: 8000
+  maxHealth: 80000
   maxTime: 30
   maxBonusPoints: 1000000
   useDefaultItems: 1

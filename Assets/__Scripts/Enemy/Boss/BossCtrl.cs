@@ -184,9 +184,6 @@ public class BossCtrl : MonoBehaviour {
                     Timing.RunCoroutine(TimeRecharge().CancelWith(gameObject));
                 }//let boss die
                 else {
-                    //var effect = Instantiate(defeatedEffect, new Vector3(0, 0, -5), Quaternion.identity);
-                    //effect.basePos = transform.position;
-                    //Timing.RunCoroutine(Rest(30));
                     ChangeState(BossState.Dead);
                 } 
                 break;
@@ -214,7 +211,8 @@ public class BossCtrl : MonoBehaviour {
                 scNumText.text = scNum.ToString();
                 break;
             case BossState.Dead:
-                GameManager.Manager.StartEraseBullets(transform.position);
+                //必定经过interval来到dead，所以不需要再次调用erase
+                //GameManager.Manager.StartEraseBullets(PlayerCtrl.Player.transform.position);//transform.position);
                 GameManager.Manager.reverseColorCtrl.StartReverseColorEffectAtCenter(transform.position);
                 
                 Damageable.damageableSet.Remove(damageable);
@@ -226,13 +224,17 @@ public class BossCtrl : MonoBehaviour {
                 Timing.RunCoroutine(HealthToZero());
                 Timing.RunCoroutine(TimeToZero());
                 
-                Destroy(gameObject);
-                
+                DestroyImmediate(gameObject);
                 
                 break;
             default: break;
         }
-
+        //在change state里调用change state
+        //会导致全局状态被递归后的状态覆盖
+        //为避免屎山崩塌，故在此打补丁
+        //事实上不是这里的问题，而是消弹圈是全局的问题
+        //把boss的间隔调大一点就好了
+        if (bossState == BossState.Dead) return;
         bossState = state;
     }
     private void Update() {

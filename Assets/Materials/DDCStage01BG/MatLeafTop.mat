@@ -56,10 +56,11 @@ Material:
     m_Floats:
     - _Alpha: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.27095437, g: 0.49468958, b: 0.6289307, a: 1}
     - _OffestMultiplier: {r: 0, g: 0, b: 0, a: 0}
     - _Offset: {r: -0.05, g: -0.12, b: 0, a: 0}
     - _OffsetMultiplier: {r: 0, g: -0.12, b: 0, a: 0}
+    - _Power: {r: 3, g: 3, b: 0, a: 0}
     - _Scale: {r: 2.5, g: 2.5, b: 0, a: 0}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []

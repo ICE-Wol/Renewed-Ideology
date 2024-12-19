@@ -75,7 +75,7 @@ namespace _Scripts.Enemy {
                     Destroy(gameObject);
                 }
                 else {
-                    GameManager.Manager.StartEraseBullets(transform.position);
+                    //GameManager.Manager.StartEraseBullets(transform.position);
                 }
                 //OnDead?.Invoke();
 

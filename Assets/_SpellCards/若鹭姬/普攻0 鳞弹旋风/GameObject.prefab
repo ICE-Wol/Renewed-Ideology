@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7330154984497327371
+--- !u!1 &5691694385973477856
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1044962525997002861}
-  - component: {fileID: 5964233166272158017}
+  - component: {fileID: 519569584633846381}
+  - component: {fileID: 8775332479085574013}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1044962525997002861
+  m_IsActive: 1
+--- !u!4 &519569584633846381
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7330154984497327371}
+  m_GameObject: {fileID: 5691694385973477856}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.4, y: 5.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5964233166272158017
+--- !u!114 &8775332479085574013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7330154984497327371}
+  m_GameObject: {fileID: 5691694385973477856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5a33a41f850c2458cf467c3fb1c642, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c109c1687a704b44bd52a4bb033641f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEnchanting: 0
-  waveFrameInterval: 450
+  waveFrameInterval: 360
   layerFrameInterval: 0
   layerCountInWave: 0
   waveCount: 0
   demonstratePos: {x: 0, y: 2, z: 0}
-  headBullet: {fileID: 8163629052439834654, guid: 0821a671761e508409fd22e791e99031, type: 3}
-  tailBullet1: {fileID: 8163629052439834654, guid: b61d5e3b88d75d94fa0ba64b67d4ffaf, type: 3}
-  tailBullet2: {fileID: 8163629052439834654, guid: c41edeac6e7c74842a73fc3838509324, type: 3}
-  mainWays: 5
-  degInterval: 15
-  glowJade: {fileID: 9201528721831904934, guid: 682e3d17c57ba9d46b85355ca565c4f4, type: 3}
-  bigJade: {fileID: -441178590984117819, guid: 8a0490abcfe4c284cb6775a539796309, type: 3}
+  scaleBullet: {fileID: 8163629052439834654, guid: d55fb6db60ddec14cbced9e004b78409, type: 3}
+  riceBullet: {fileID: 8163629052439834654, guid: f26bc86d8655bfe4aa99793918544610, type: 3}
+  decDec: 0.1

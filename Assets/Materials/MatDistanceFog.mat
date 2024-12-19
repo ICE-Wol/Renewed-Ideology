@@ -66,7 +66,7 @@ Material:
     - _Density: 1.5
     - _MaxDistance: 5
     m_Colors:
-    - _DistanceRange: {r: 1, g: 8.760552, b: 0, a: 0}
-    - _FogColor: {r: 0.78930813, g: 1, b: 0.98595387, a: 1}
+    - _DistanceRange: {r: 1, g: 8.567097, b: 0, a: 0}
+    - _FogColor: {r: 0.15634269, g: 0.15890308, b: 0.3207547, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

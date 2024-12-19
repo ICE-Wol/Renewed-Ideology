@@ -56,7 +56,7 @@ Material:
     m_Floats:
     - _Alpha: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.36311847, g: 0.389225, b: 0.754717, a: 1}
     - _OffestMultiplier: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetMultiplier: {r: 0, g: -0.1, b: 0, a: 0}
     - _Tiling: {r: 5, g: 5, b: 0, a: 0}

@@ -38,6 +38,9 @@ public class TimeLineStage0 : MonoBehaviour
 
     [Header("5000 道中boss")] 
     public GameObject st0MidBoss;
+    
+    [Header("关底boss")] 
+    public GameObject st0Boss;
 
     IEnumerator<float> GenerateFairy(FairyMovement fairyPrefab, Vector3 offset, int count, int interval)
     {
@@ -83,6 +86,11 @@ public class TimeLineStage0 : MonoBehaviour
             yield return Calc.WaitForFrames(interval);
         }
     }
+
+    IEnumerator<float> GenStageBoss(int waitFrame) {
+        yield return Calc.WaitForFrames(waitFrame);
+        st0Boss.SetActive(true);
+    }
     
     private void Update() {
         if(timer == 180) {
@@ -126,6 +134,10 @@ public class TimeLineStage0 : MonoBehaviour
         
         if (timer == 5000) {
             st0MidBoss.SetActive(true);
+        }
+
+        if (st0MidBoss == null) {
+            Timing.RunCoroutine(GenStageBoss(100));
         }
         
         timer++;

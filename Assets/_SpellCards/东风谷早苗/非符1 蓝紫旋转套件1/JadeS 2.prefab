@@ -53,13 +53,14 @@ MonoBehaviour:
   size: 0
   color: {r: 0.31592888, g: 0.5845425, b: 0.61635214, a: 1}
   scale: {x: 0, y: 0, z: 0}
-  collideRadius: 0
+  collideRadius: 0.05
   selfRotSpdInDegree: 0
   isGlowing: 0
   faceMoveDirection: 1
   moveWhenSpawning: 1
   isOutOfBoundFree: 0
   indestructible: 0
+  isLaserNode: 0
 --- !u!114 &8871892408147253809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,15 +73,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2e3623001cf3c4ab1595074b94c478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlight: {fileID: 0}
+  isSelfMovement: 1
+  movement: {fileID: 7913582257384001057}
   spriteRenderer: {fileID: 6961346004032419194}
   bulletDetector: {fileID: 1833537170610602714}
   bulletConfig: {fileID: 4872874411932678281}
   state: 0
+  hasNoCollisionCheck: 0
   hitRadius: 0.1
-  grazeRadius: 0
   isGrazed: 0
-  isSelfMovement: 1
-  movement: {fileID: 7913582257384001057}
+  grazeRadius: 0
+  revZeroDir: 0
+  initialRotation: 0
 --- !u!114 &7913582257384001057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,11 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9efd133b6b4251aff841786db55d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletConfig: {fileID: 0}
+  bulletState: {fileID: 0}
   speed: 0
   direction: 0
   endSpeed: 1
   startFrame: 240
   approachRate: 64
+  destroyOnFinish: 0
+  destroyOnTime: 0
   trigger: 0
 --- !u!114 &1833537170610602714
 MonoBehaviour:

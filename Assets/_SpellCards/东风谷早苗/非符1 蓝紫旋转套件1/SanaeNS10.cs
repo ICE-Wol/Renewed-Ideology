@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SanaeNS2 : BulletGenerator
+public class SanaeNS10 : BulletGenerator
 {
     public DoubleSpeedApproach jadeOddPrefab;
     public DoubleSpeedApproach jadeEvenPrefab;
