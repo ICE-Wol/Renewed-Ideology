@@ -78,7 +78,7 @@ namespace _Scripts {
         #region EraseBullet
         public void StartEraseBullets(Vector2 pos) {
             bulletEraseCenter = pos;
-            print(bulletEraseCenter);
+            //print(bulletEraseCenter);
             bulletEraseRadius = 0.1f;
         }
         

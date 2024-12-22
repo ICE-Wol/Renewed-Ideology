@@ -27,6 +27,8 @@ public class PauseManager : MonoBehaviour
     public float curBlurColor = 0;
     public float tarBlurColor = 0;
     
+    public bool isLock = false;
+    
     private static readonly int Appear = Shader.PropertyToID("_Appear");
 
     public void Update() {
@@ -36,7 +38,7 @@ public class PauseManager : MonoBehaviour
         curBlurColor.ApproachRef(tarBlurColor, 8f);
         spriteRenderer.color = Color.Lerp(Color.white, Color.gray, curBlurColor);
         
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) {
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && !isLock) {
 
             if (isPaused == false) {
                 StartCoroutine(CaptureScreenshot());
@@ -48,6 +50,7 @@ public class PauseManager : MonoBehaviour
     }
 
     private IEnumerator CaptureScreenshot() {
+        isLock = true;
         yield return new WaitForEndOfFrame();
         
         Texture2D screenShot = ScreenCapture.CaptureScreenshotAsTexture();
@@ -88,9 +91,11 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         
         pauseMenuInstance = Instantiate(pauseMenuPrefab,canvas);
+        isLock = false;
     }
 
     private IEnumerator ResetPause() {
+        isLock = true;
         yield return new WaitForEndOfFrame();
         pauseMenuInstance.DestroyMenu();
         tarBlurColor = 0f;
@@ -126,7 +131,7 @@ public class PauseManager : MonoBehaviour
             curveLaserHead.gameObject.SetActive(true);
         }
         isPaused = !isPaused; 
-        
+        isLock = false;
     }
 
 

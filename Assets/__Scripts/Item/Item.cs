@@ -134,6 +134,7 @@ namespace _Scripts.Item {
             transform.position = transform.position.ApproachValue(targetPosition, 
                 8f * Vector3.one, 0.1f);
             if (transform.position.Equal(targetPosition, 0.1f)) {
+                AudioManager.Manager.PlaySound(AudioNames.SeItem);
                 TriggerEffect();
                 Destroy(gameObject);
             }

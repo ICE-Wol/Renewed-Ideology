@@ -151,9 +151,10 @@ namespace _Scripts.EnemyBullet {
                         = bulletConfig.basic.GetBulletMaterial(bulletConfig.isGlowing);
                     SetColor(bulletConfig.color);
                     
+                    //无法设置初始值，因为在激活时会被重置
                     if (highlight != null) {
-                        highlight.curAlpha = 1f;
-                        highlight.tarAlpha = 1f;
+                         highlight.curAlpha = 1f;
+                         highlight.tarAlpha = 1f;
                     }
                     break;
                 case EBulletStates.Destroying:
@@ -233,6 +234,7 @@ namespace _Scripts.EnemyBullet {
                     if (!isGrazed) {
                         isGrazed = bulletDetector.CheckPlayerGraze(grazeRadius);
                         if (isGrazed) {
+                            AudioManager.Manager.PlaySound(AudioNames.SeGraze);
                             var g = PlayerCtrl.Player.state.graze++;
                         }
                     }

@@ -193,6 +193,7 @@ public class BossCtrl : MonoBehaviour {
                 scAnn.StartAnnouncing();
                 spellCircle.gameObject.SetActive(true);
                 spellCircle.ResetCircle();
+                AudioManager.Manager.PlaySound(AudioNames.SeBossExplode);
                 break;
            
             case BossState.SpellCard:
@@ -209,11 +210,14 @@ public class BossCtrl : MonoBehaviour {
                 spellCircle.SetState(SpellCircle.SpellCircleState.Shrink);
                 scNum--;
                 scNumText.text = scNum.ToString();
+                AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
                 break;
             case BossState.Dead:
                 //必定经过interval来到dead，所以不需要再次调用erase
                 //GameManager.Manager.StartEraseBullets(PlayerCtrl.Player.transform.position);//transform.position);
                 GameManager.Manager.reverseColorCtrl.StartReverseColorEffectAtCenter(transform.position);
+                
+                AudioManager.Manager.PlaySound(AudioNames.SeBossExplode);
                 
                 Damageable.damageableSet.Remove(damageable);
                 
@@ -306,6 +310,7 @@ public class BossCtrl : MonoBehaviour {
             case BossState.NonSpellCard:
                 animator.IsEnchanting = enchantMovementRef.isEnchanting;
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
                     bonusBannerCtrl.ActivateBonusState(false,hasBonus,0);
                     DeactivateBulletGenerator();
                     Timing.KillCoroutines("Shoot");
@@ -313,6 +318,9 @@ public class BossCtrl : MonoBehaviour {
 
                     if (spellCardInfos[curScNumber].useDefaultItems) {
                         if(hasBonus) item.itemSequence = new[] { new ItemSpawnEntry(ItemType.BombFrag, 1) };
+                        else {
+                            item.itemSequence = new ItemSpawnEntry[] { };
+                        }
                     }
                     else {
                         if(hasBonus) item.itemSequence = spellCardInfos[curScNumber].bonusItemSequence

@@ -278,7 +278,7 @@ MonoBehaviour:
   bulletState: {fileID: 0}
   speed: 5
   direction: 0
-  endSpeed: 2
+  endSpeed: 1.5
   startFrame: 0
   approachRate: 16
   destroyOnFinish: 0

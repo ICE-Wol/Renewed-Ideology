@@ -50,6 +50,9 @@ namespace _Scripts.Item {
             //print(cnt);
             if (!setItemDropEnable) return;
             CheckSpecialItem();
+            if (hasSpecialItem) {
+                AudioManager.Manager.PlaySound(Random.value > 0.5f ? AudioNames.SeBonus0 : AudioNames.SeBonus1);
+            }
             var length = itemSequence.Length;
             if (length == 1 && itemSequence[0].num == 1) {
                 if (hasSpecialItem) {

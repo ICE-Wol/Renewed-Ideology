@@ -27,8 +27,9 @@ public class CirnoNS0 : BulletGenerator
                 b.speed /= 2;
             }
             Timing.RunCoroutine(BulletChange(b as DoubleSpeedApproach, 0).CancelWith(b.gameObject), "Shoot");
-            
+
         }
+        AudioManager.Manager.PlaySound("SeShootTan");
         
         
         isEnchanting = false;
@@ -38,17 +39,21 @@ public class CirnoNS0 : BulletGenerator
     public IEnumerator<float> BulletChange(DoubleSpeedApproach bullet, int gen){
         yield return Timing.WaitForOneFrame;
         while(true){
-            if(gen >= 3){
-                var max = (bullet.bulletConfig.color == Color.blue) ? 5 : 10;
-                for(int i = 0;i < max;i++){
-                    var b = Calc.GenerateBullet(ice, bullet.transform.position, Mathf.Lerp(bullet.direction - 120f, bullet.direction + 120f, (float)i / (max-1)));
-                    b.bulletState.SetColor(bullet.bulletConfig.color);
-                }
-                bullet.bulletState.SetState(EBulletStates.Destroying);
-                yield break;
-            }
+            
             if(bullet.IsSpeedChangeFinished(0.1f)){
                 //print(bullet.GetSpeed() + " " + bullet.endSpeed);
+                if (gen + 1 >= 3) {
+                    var max = (bullet.bulletConfig.color == Color.blue) ? 5 : 10;
+                    for (int i = 0; i < max; i++) {
+                        var b = Calc.GenerateBullet(ice, bullet.transform.position,
+                            Mathf.Lerp(bullet.direction - 120f, bullet.direction + 120f, (float)i / (max - 1)));
+                        b.bulletState.SetColor(bullet.bulletConfig.color);
+                    }
+
+                    bullet.bulletState.SetState(EBulletStates.Destroying);
+                    AudioManager.Manager.PlaySound("SeShootLaser2");
+                    yield break;
+                }
                 var b1 = Calc.GenerateBullet(ellipse, bullet.transform.position, bullet.direction + 30f);
                 var b2 = Calc.GenerateBullet(ellipse, bullet.transform.position, bullet.direction - 30f);
                 b1.speed = bullet.speed;
@@ -58,6 +63,7 @@ public class CirnoNS0 : BulletGenerator
                 Timing.RunCoroutine(BulletChange(b1 as DoubleSpeedApproach, gen + 1).CancelWith(b1.gameObject), "Shoot");
                 Timing.RunCoroutine(BulletChange(b2 as DoubleSpeedApproach, gen + 1).CancelWith(b2.gameObject), "Shoot");
                 bullet.bulletState.SetState(EBulletStates.Destroying);
+                AudioManager.Manager.PlaySound("SeShootTan");
                 yield break;
             }
             yield return Timing.WaitForOneFrame;

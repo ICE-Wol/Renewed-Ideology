@@ -1164,60 +1164,6 @@ MonoBehaviour:
   slowEffects:
   - {fileID: 906640094}
   - {fileID: 846934524}
---- !u!1 &353320857
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353320859}
-  - component: {fileID: 353320858}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &353320858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353320857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c80b3dfbfb62847bbd50f5a92e34d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isEnchanting: 0
-  waveFrameInterval: 360
-  layerFrameInterval: 0
-  layerCountInWave: 0
-  waveCount: 0
-  demonstratePos: {x: 0, y: 2, z: 0}
-  scaleBullet: {fileID: 8163629052439834654, guid: 3f1a1b247b3da414982511e77652c8da, type: 3}
-  riceBullet: {fileID: 8163629052439834654, guid: 9bf25b15ba2a4cf409eb63ed58ecd9ff, type: 3}
-  jadeBullet: {fileID: 8163629052439834654, guid: ab1e6a36485dd8645b5e882202acf028, type: 3}
-  decDec: 0.1
---- !u!4 &353320859
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353320857}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 5.88, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381614828
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,6 +3298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CirnoNS0
       objectReference: {fileID: 0}
+    - target: {fileID: 6580018073991205099, guid: 645c022457d6ef2419206a4100ab3de5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6902818101207806848, guid: 645c022457d6ef2419206a4100ab3de5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0464032
@@ -3841,6 +3791,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1052832529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6267355995913843635}
+    m_Modifications:
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691694385973477856, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_Name
+      value: CirnoSC0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5691694385973477856, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+--- !u!1 &1052832530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5691694385973477856, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+  m_PrefabInstance: {fileID: 1052832529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1052832531 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 519569584633846381, guid: 91b6c0c1cd79ee544935252bd8a289e1, type: 3}
+  m_PrefabInstance: {fileID: 1052832529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1054090153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1004034113250901271, guid: d98eb790132bb74459273f8874c411a9, type: 3}
@@ -5807,6 +5828,7 @@ MonoBehaviour:
   tarBlurAmount: 0
   curBlurColor: 0
   tarBlurColor: 0
+  isLock: 0
 --- !u!4 &1478522529
 Transform:
   m_ObjectHideFlags: 0
@@ -6819,6 +6841,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1165856842844903542, guid: c409c91b42fa92c4fb33b5d4f254e55f, type: 3}
   m_PrefabInstance: {fileID: 1997786498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1795421645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1795421646}
+  m_Layer: 0
+  m_Name: ===================
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1795421646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795421645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.088133, y: -2.600682, z: 1.1693023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812410057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,6 +7250,287 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855931242}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1860854700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860854702}
+  - component: {fileID: 1860854701}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1860854701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860854700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e793dbd9a1364c9982c1691d9e0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SeShootBoon0
+    enumName: 0
+    clip: {fileID: 8300000, guid: cd7335d246396be4aa670a9af3e7ed59, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootBoon1
+    enumName: 1
+    clip: {fileID: 8300000, guid: b5ca6c90918f92a428a6314c555eb62f, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootKira0
+    enumName: 2
+    clip: {fileID: 8300000, guid: 2b224b41509ea304f8b48b4b6e2433a4, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootKira1
+    enumName: 3
+    clip: {fileID: 8300000, guid: 8be2f50625fef0e4bb3d394c4e78ee0c, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser0
+    enumName: 4
+    clip: {fileID: 8300000, guid: c199c807085bd424da7a642a178e489e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser1
+    enumName: 5
+    clip: {fileID: 8300000, guid: eecd63c7ab14150429c974d7ed397d7d, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser2
+    enumName: 6
+    clip: {fileID: 8300000, guid: 52acaa2b4b21d104c87e594286f0289c, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootSlash
+    enumName: 7
+    clip: {fileID: 8300000, guid: 072ea00062b09cf4784645be1c726266, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootTan
+    enumName: 8
+    clip: {fileID: 8300000, guid: 1d07548d80530ba4d88418f565ad8e61, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootWater
+    enumName: 9
+    clip: {fileID: 8300000, guid: 07751f9af94bb8c479d03d8062a25189, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeCharge
+    enumName: 10
+    clip: {fileID: 8300000, guid: 77dc3c98e3809f24cb4efd206bafd205, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeDamage0
+    enumName: 11
+    clip: {fileID: 8300000, guid: 144455f457ac7444f919a53b14b3efcf, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeDamage1
+    enumName: 12
+    clip: {fileID: 8300000, guid: 55b6fb0eab532d7458569a099472ebf5, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeEnemyExplode0
+    enumName: 13
+    clip: {fileID: 8300000, guid: 9ce64e012a4aaef418cef25a6e0b5666, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeEnemyExplode1
+    enumName: 14
+    clip: {fileID: 8300000, guid: 05d54c406e0d5994ebc9d3b0261531bf, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBossExplode
+    enumName: 15
+    clip: {fileID: 8300000, guid: ab6c82e9b37014d44acadf0b819d3acc, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeFault
+    enumName: 16
+    clip: {fileID: 8300000, guid: af524f2e22a3f14409d9a4fce94b915a, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeGraze
+    enumName: 17
+    clip: {fileID: 8300000, guid: 1162ec7dce951494c818a2b8a41e3895, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeItem
+    enumName: 0
+    clip: {fileID: 8300000, guid: 5ddc31699adadfc469473634cd38dfcf, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMissileLaunch
+    enumName: 18
+    clip: {fileID: 8300000, guid: bc09a01d38cc0854dba8a5ee1afdc66e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMissileExplode
+    enumName: 19
+    clip: {fileID: 8300000, guid: a80cc66a4877b474a88f31714ae88731, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMarisaBomb
+    enumName: 20
+    clip: {fileID: 8300000, guid: 300b30b639da22f478a17f78840b2749, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SePlayerDead
+    enumName: 21
+    clip: {fileID: 8300000, guid: b8dfe777fc4e0024aaea1201fc40296a, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SePlayerShoot
+    enumName: 22
+    clip: {fileID: 8300000, guid: 8ea7d8ff1897cb342b30c52ed4e16705, type: 3}
+    volume: 0.05
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeTimeout0
+    enumName: 23
+    clip: {fileID: 8300000, guid: 84799c1c29c502a45a1bb355b623158e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeTimeout1
+    enumName: 24
+    clip: {fileID: 8300000, guid: 61c451f0979faaa4a99fb4838afc8635, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBonus0
+    enumName: 25
+    clip: {fileID: 8300000, guid: eb444f11f6e0727478e4ebd952a2c337, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBonus1
+    enumName: 26
+    clip: {fileID: 8300000, guid: e3baf027acb728c418deed63e08a50b2, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: MusStageDemoMid
+    enumName: 27
+    clip: {fileID: 8300000, guid: 52f33494ceda20a429c111ca1ea44c22, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 0
+    loop: 1
+    source: {fileID: 0}
+  musicGroup: {fileID: 5875850762877436732, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  ShootGroup: {fileID: 1642339068550758743, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  otherGroup: {fileID: -3223276717483159418, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  playBGM: 1
+--- !u!4 &1860854702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860854700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.088133, y: -2.600682, z: 1.1693023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870216483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8859,7 +9193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710696956862713781, guid: d98eb790132bb74459273f8874c411a9, type: 3}
       propertyPath: timer
-      value: 0
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 8710696956862713781, guid: d98eb790132bb74459273f8874c411a9, type: 3}
       propertyPath: st0Boss
@@ -8867,7 +9201,7 @@ PrefabInstance:
       objectReference: {fileID: 1205612015}
     - target: {fileID: 8710696956862713781, guid: d98eb790132bb74459273f8874c411a9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8710696956862713781, guid: d98eb790132bb74459273f8874c411a9, type: 3}
       propertyPath: st0MidBoss
@@ -8912,11 +9246,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curScNumber: -1
-  maxScNumber: 1
+  maxScNumber: 2
   attackPatternSet:
   - {fileID: 632298847}
+  - {fileID: 1052832530}
   spellCardInfos:
   - {fileID: 11400000, guid: 9864df33020cfe144b4ba2b9778c31f6, type: 2}
+  - {fileID: 11400000, guid: ef8e1fc136b78114b93292a4f0e59b90, type: 2}
   enchantMovementRef: {fileID: 0}
   scNameText: {fileID: 570248619}
   scNumText: {fileID: 1997786499}
@@ -8969,6 +9305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 632298849}
+  - {fileID: 1052832531}
   m_Father: {fileID: 5478269633782223165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7019340418909508647
@@ -9347,6 +9684,8 @@ SceneRoots:
   - {fileID: 1629737875}
   - {fileID: 1251086798}
   - {fileID: 588405724}
+  - {fileID: 1860854702}
+  - {fileID: 1795421646}
   - {fileID: 1130784606}
   - {fileID: 383230470}
   - {fileID: 1281930784}
@@ -9368,4 +9707,3 @@ SceneRoots:
   - {fileID: 409388632}
   - {fileID: 950515850}
   - {fileID: 381614830}
-  - {fileID: 353320859}

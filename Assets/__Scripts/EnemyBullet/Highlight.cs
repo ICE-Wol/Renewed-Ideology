@@ -56,7 +56,7 @@ public class Highlight : MonoBehaviour
         curAlpha.ApproachRef(tarAlpha, 32f);
         
         highlightSprite.color = highlightSprite.color.SetAlpha(curAlpha);
-        //if(tarBulletState.GetState() != EBulletStates.Spawning)
-            //bottomSprite.color = bottomSprite.color.SetAlpha(1f - curAlpha);
+        if(tarBulletState.GetState() != EBulletStates.Spawning)
+            bottomSprite.color = bottomSprite.color.SetAlpha(1f - curAlpha);
     }
 }

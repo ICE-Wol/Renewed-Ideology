@@ -9,6 +9,7 @@ public class WakasagihimeNS0 : BulletGenerator
 {
     public DoubleSpeedApproach scaleBullet;
     public DoubleSpeedApproach riceBullet;
+    public DoubleSpeedApproach jadeBullet;
 
     //奇偶换向换色
     public IEnumerator<float> Shoot(float startAngle,float offset,bool isClockwise) {
@@ -28,6 +29,18 @@ public class WakasagihimeNS0 : BulletGenerator
             bullet.bulletState.SetColor(color);
             Timing.RunCoroutine(
                 GenSubBullet(bullet as DoubleSpeedApproach, i, offset, color).CancelWith(bullet.gameObject), "Shoot");
+
+            // if (i % 3 == 0) {
+            //     dir = -(startAngle + (isClockwise ? 1 : -1) * angleInterval * i);
+            //     bullet = Calc.GenerateBullet(jadeBullet, transform.position + innerRadius * dir.Deg2Dir3(), dir);
+            //     bullet.speed =
+            //         (Mathf.Sin(((isClockwise ? 1 : -1) * angleInterval * i + startAngle / 4f) * Mathf.Deg2Rad) + 1f) *
+            //         2f;
+            //     if (isClockwise) color = Color.Lerp(Color.cyan, Color.blue, i / bulletNum);
+            //     else color = Color.Lerp(Color.blue, Color.cyan, i / bulletNum);
+            //     bullet.bulletState.SetColor(Color.Lerp(color, Color.white, i/bulletNum));
+            // }
+
             yield return Calc.WaitForFrames(frameInterval);
         }
     }

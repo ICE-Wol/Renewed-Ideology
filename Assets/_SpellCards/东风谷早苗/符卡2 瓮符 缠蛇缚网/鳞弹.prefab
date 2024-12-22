@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletConfig: {fileID: 0}
   bulletState: {fileID: 0}
+  highlight: {fileID: 0}
   speed: 0
   direction: 0
   midSpeed: 1.5

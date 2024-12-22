@@ -87,7 +87,9 @@ public class TimeLineStage0 : MonoBehaviour
         }
     }
 
+    private bool hasFinalBossActivated = false;
     IEnumerator<float> GenStageBoss(int waitFrame) {
+        hasFinalBossActivated = true;
         yield return Calc.WaitForFrames(waitFrame);
         st0Boss.SetActive(true);
     }
@@ -136,7 +138,7 @@ public class TimeLineStage0 : MonoBehaviour
             st0MidBoss.SetActive(true);
         }
 
-        if (st0MidBoss == null) {
+        if (st0MidBoss == null && !hasFinalBossActivated) {
             Timing.RunCoroutine(GenStageBoss(100));
         }
         
