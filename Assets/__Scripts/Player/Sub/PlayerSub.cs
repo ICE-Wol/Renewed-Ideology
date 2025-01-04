@@ -20,11 +20,8 @@ namespace _Scripts {
         void Start() {
             _timer = 0;
             
-            Color.RGBToHSV(color, out float H, out float S, out float V);
-            spriteRenderer.material.SetFloat("_Hue", H);
-            spriteRenderer.material.SetFloat("_Saturation", S);
-            shade.material.SetFloat("_Hue", H);
-            shade.material.SetFloat("_Saturation", S);
+            spriteRenderer.material.SetColor("_Color",color);
+            shade.material.SetColor("_Color",color);
         }
 
         public void Fire() {

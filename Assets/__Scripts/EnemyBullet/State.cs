@@ -47,8 +47,7 @@ namespace _Scripts.EnemyBullet {
         public float initialRotation;
         private int _timer;
         
-        private static readonly int PropHueID = Shader.PropertyToID("_Hue");
-        private static readonly int PropSatID = Shader.PropertyToID("_Saturation");
+        private static readonly int PropColorID = Shader.PropertyToID("_Color");
         private void Awake() {
             spriteRenderer = GetComponent<SpriteRenderer>();
             bulletDetector = GetComponent<Detect>();
@@ -79,10 +78,8 @@ namespace _Scripts.EnemyBullet {
         /// 这个设置函数不会覆盖配置中的颜色为高光色
         /// </summary>
         private void SetColorAsHighLight() {
-            float H = 0, S = 0, V = 0;
-            Color.RGBToHSV(highlight.HighlightColor, out H, out S, out V);
-            spriteRenderer.material.SetFloat(PropHueID, H);
-            spriteRenderer.material.SetFloat(PropSatID, S);
+            spriteRenderer.material.SetColor(PropColorID, highlight.HighlightColor);
+
         }
 
         /// <summary>
@@ -90,10 +87,7 @@ namespace _Scripts.EnemyBullet {
         /// </summary>
         /// <param name="color"></param>
         public void SetColor(Color color) {
-            float H = 0, S = 0, V = 0;
-            Color.RGBToHSV(color, out H, out S, out V);
-            spriteRenderer.material.SetFloat(PropHueID, H);
-            spriteRenderer.material.SetFloat(PropSatID, S);
+            spriteRenderer.material.SetColor(PropColorID, color);
             bulletConfig.color = color;
         }
         

@@ -12,8 +12,7 @@ public class BulletBreakCtrl : MonoBehaviour {
     public float initScale;
     public float initAlpha;
     public float shrinkSpeed;
-    private static readonly int Hue = Shader.PropertyToID("_Hue");
-    private static readonly int Sat = Shader.PropertyToID("_Saturation");
+    private static readonly int Color = Shader.PropertyToID("_Color");
 
     //
     // private void OnEnable() {
@@ -21,10 +20,7 @@ public class BulletBreakCtrl : MonoBehaviour {
     // }
 
     public void SetColor(Color c) {
-        float h = 0, s = 0, v = 0;
-        Color.RGBToHSV(c,out h,out s,out v);
-        spriteRenderer.material.SetFloat(Hue,h);
-        spriteRenderer.material.SetFloat(Sat,s);
+        spriteRenderer.material.SetColor(Color,c);
     }
     
     public void SetScale(BulletSize size) {

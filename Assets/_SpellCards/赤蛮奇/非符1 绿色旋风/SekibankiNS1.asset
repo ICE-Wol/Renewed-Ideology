@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
   m_Name: SekibankiNS1
   m_EditorClassIdentifier: 
+  bulletGenerator: {fileID: 8968467508068560187, guid: bf8606df88817444db9bbf012ac2bd84, type: 3}
   isSpellCard: 0
   spellName: 
   cardName: 

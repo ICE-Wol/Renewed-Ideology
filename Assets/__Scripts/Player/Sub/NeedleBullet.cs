@@ -22,9 +22,10 @@ public class NeedleBullet : MonoBehaviour {
     private float _curRot;
 
     public void SetColor(Color color, float alpha) {
-        Color.RGBToHSV(color, out var h, out var s, out var v);
-        spriteRenderer.material.SetFloat("_Hue",h);
-        spriteRenderer.material.SetFloat("_Saturation",s);
+        // Color.RGBToHSV(color, out var h, out var s, out var v);
+        // spriteRenderer.material.SetFloat("_Hue",h);
+        // spriteRenderer.material.SetFloat("_Saturation",s);
+        spriteRenderer.material.SetColor("_Color",color);
         spriteRenderer.material.SetFloat("_Alpha",alpha);
     }
     
@@ -40,7 +41,7 @@ public class NeedleBullet : MonoBehaviour {
         
         rotation = Random.Range(-15f, 15f);
         
-        //SetColor(color,0.5f);
+        SetColor(color,0.5f);
         
     }
 

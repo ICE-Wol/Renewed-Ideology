@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MatBulletGlow
-  m_Shader: {fileID: -6465566751694194690, guid: 7fe61aedac8df664a9d2bef92bb41020, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 987344521fbb5ff4ebb4a7450ce7f767, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -48,7 +48,8 @@ Material:
     - _Alpha: 1
     - _Hue: 1
     - _Saturation: 1
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 0, g: 1, b: 0.12549016, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6503200375696999848

@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3765055249526041287
 Transform:
   m_ObjectHideFlags: 0
@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad53a7699b1965448f318fdbb3c2232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inAttack: 0
+  isEnchanting: 0
   waveFrameInterval: 800
   layerFrameInterval: 0
   layerCountInWave: 0
   waveCount: 0
+  demonstratePos: {x: 0, y: 0, z: 0}
   ringJadePrefab: {fileID: 3267543694796654017, guid: 36bf339f45060e143bb49a12063b616e, type: 3}
   pointPrefab: {fileID: 3267543694796654017, guid: 3a200c3a504265c479341e83dd97d74f, type: 3}
   ricePrefab: {fileID: 3267543694796654017, guid: 3d800084f1d3ecb4eba194ba5d1f9f10, type: 3}

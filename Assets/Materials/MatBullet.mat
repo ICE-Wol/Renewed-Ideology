@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MatBullet
-  m_Shader: {fileID: -6465566751694194690, guid: 06110a8fecac15740a75c788fa972ada, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 342f5a8c911a9234d99174b3029cef9a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,6 +36,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c89ea1667ab2df2408b1e2975559c91a, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -62,10 +66,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - PixelSnap: 0
     - _Alpha: 1
+    - _EnableExternalAlpha: 0
     - _Hue: 0
     - _Saturation: 1
+    - _Value: 1
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0.001329422, a: 0}
+    - _Color: {r: 1, g: 0, b: 0, a: 0}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

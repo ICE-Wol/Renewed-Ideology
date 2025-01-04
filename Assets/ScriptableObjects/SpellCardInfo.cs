@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Item;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpellCardInfo", menuName = "SpellCardInfo", order = 0)]
-public class SCInfo : ScriptableObject {
+[Serializable]
+public class SpellCardInfo : ScriptableObject {
+    public BulletGenerator bulletGenerator;
     public bool isSpellCard;
     public string spellName;
     public string cardName;

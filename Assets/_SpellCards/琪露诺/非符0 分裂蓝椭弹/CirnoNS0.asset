@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
   m_Name: CirnoNS0
   m_EditorClassIdentifier: 
+  bulletGenerator: {fileID: -7699240705260265735, guid: 645c022457d6ef2419206a4100ab3de5, type: 3}
   isSpellCard: 0
   spellName: 
   cardName: 

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ee26ef041107342898d9b07211ff1f, type: 3}
+  m_Name: BossList
+  m_EditorClassIdentifier: 
+  bossInfos:
+  - bossName: "\u4E1C\u98CE\u8C37\u65E9\u82D7"
+    spellCardSets:
+    - difficulty: 7
+      stageIndex: 0
+      bossOrder: 1
+      spellCardInfos:
+      - {fileID: 11400000, guid: 87d81030cc25a7b4f9d81bba1ae81195, type: 2}
+      - {fileID: 11400000, guid: d3656097a820fe040aede257ee79c725, type: 2}
+      - {fileID: 11400000, guid: 982cf41a07918904a8ef3fbc9e408bf0, type: 2}
+      - {fileID: 11400000, guid: eb930e361bae4004d89e227d342618e8, type: 2}
+      - {fileID: 11400000, guid: 39ebaa30b1435954ea2e62fd57d1a9e2, type: 2}
+      - {fileID: 11400000, guid: 1897c27207d7e554a83e1e4deadb6503, type: 2}
+  - bossName: "\u742A\u9732\u8BFA"
+    spellCardSets:
+    - difficulty: 7
+      stageIndex: 0
+      bossOrder: 0
+      spellCardInfos:
+      - {fileID: 11400000, guid: 9864df33020cfe144b4ba2b9778c31f6, type: 2}
+      - {fileID: 11400000, guid: ef8e1fc136b78114b93292a4f0e59b90, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
   m_Name: "\u74EE\u7B26 \u7F20\u86C7\u7F1A\u7F51"
   m_EditorClassIdentifier: 
+  bulletGenerator: {fileID: 7352371480748890851, guid: 1e84ebfe37ea06b4bb78958fd322c9a3, type: 3}
   isSpellCard: 1
   spellName: "\u74EE\u7B26"
   cardName: "\u7F20\u86C7\u7F1A\u7F51"

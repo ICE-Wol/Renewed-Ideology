@@ -5,10 +5,8 @@ using _Scripts.EnemyBullet;
 using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Tools;
 using MEC;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CirnoSC0 : BulletGenerator
 {
@@ -26,20 +24,20 @@ public class CirnoSC0 : BulletGenerator
         Timing.RunCoroutine(AutoShoot().CancelWith(gameObject),"Shoot");
     }
 
-    void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        // 在物体位置显示动态数字
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 72; j++) {
-                if (BulletSet[i, j] != null)
-                    Handles.Label(BulletSet[i, j].transform.position + Vector3.forward * 0.1f,OrderValue[i, j].ToString(),new GUIStyle
-                    {
-                        fontSize = 20,
-                        normal = {textColor = Color.red}
-                    });
-            }
-        }
-    }
+    // void OnDrawGizmos() {
+    //     Gizmos.color = Color.red;
+    //     // 在物体位置显示动态数字
+    //     for (int i = 0; i < 6; i++) {
+    //         for (int j = 0; j < 72; j++) {
+    //             if (BulletSet[i, j] != null)
+    //                 Handles.Label(BulletSet[i, j].transform.position + Vector3.forward * 0.1f,OrderValue[i, j].ToString(),new GUIStyle
+    //                 {
+    //                     fontSize = 20,
+    //                     normal = {textColor = Color.red}
+    //                 });
+    //         }
+    //     }
+    // }
     
     
     public int bulletNum = 72;

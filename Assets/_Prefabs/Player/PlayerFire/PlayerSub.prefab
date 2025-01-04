@@ -136,7 +136,7 @@ MonoBehaviour:
   bullet: {fileID: 3472657609046805600, guid: 8d5440e4d6028954291ff6e92a8a9b1d, type: 3}
   spriteRenderer: {fileID: 7051149769845027131}
   shade: {fileID: 3958990772039505093}
-  color: {r: 0.25006905, g: 0.45385242, b: 0.72955966, a: 1}
+  color: {r: 0.58555824, g: 0.7976317, b: 0.8742138, a: 1}
   tarScale: 1.4
   curScale: 0
   isDestroyed: 0

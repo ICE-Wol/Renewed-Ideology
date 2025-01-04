@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Highlight : MonoBehaviour
 {
-    private static readonly int Hue = Shader.PropertyToID("_Hue");
-    private static readonly int Saturation = Shader.PropertyToID("_Saturation");
+    private static readonly int Color = Shader.PropertyToID("_Color");
     public Config tarBulletConfig;
     public State tarBulletState;
     public SpriteRenderer highlightSprite;
@@ -23,9 +22,7 @@ public class Highlight : MonoBehaviour
         set
         {
             _color = value;
-            Color.RGBToHSV(value, out var H, out var S, out var V);
-            highlightSprite.material.SetFloat(Hue, H);
-            highlightSprite.material.SetFloat(Saturation, S);
+            highlightSprite.material.SetColor(Color, _color);
         }
     }
     

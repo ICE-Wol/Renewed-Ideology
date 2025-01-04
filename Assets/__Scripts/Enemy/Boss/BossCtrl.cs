@@ -27,8 +27,9 @@ public enum BossState{
 public class BossCtrl : MonoBehaviour {
     public int curScNumber = -1;
     public int maxScNumber = 3;
-    public GameObject[] attackPatternSet;
-    public SCInfo[] spellCardInfos;
+    //public GameObject[] attackPatternSet;
+    public BulletGenerator curAttackPattern;
+    public SpellCardInfo[] spellCardInfos;
     public BulletGenerator enchantMovementRef;
     public TMP_Text scNameText;
     public TMP_Text scNumText;
@@ -60,12 +61,24 @@ public class BossCtrl : MonoBehaviour {
     public int bonusPoints;
     public int bonusPointsReducePerFrame = 10;
     
+    /*
+     * 所有的数据都应该聚集在一处
+     * 因此符卡练习的数据应该从这里读取而非单独列一遍
+     *
+     * 此外，老版本将子弹生成器的预制体提前放在了场景中
+     * 实际上不用这么做
+     * 放在so里动态生成就好了
+     */
     public void ActivateBulletGenerator() {
-        attackPatternSet[curScNumber].SetActive(true);
+        //attackPatternSet[curScNumber].SetActive(true);
+        curAttackPattern = Instantiate(spellCardInfos[curScNumber].bulletGenerator,transform);
+        enchantMovementRef = curAttackPattern;
+        movement.stayFrames = enchantMovementRef.waveFrameInterval;
     }
     public void DeactivateBulletGenerator() {
-        attackPatternSet[curScNumber].SetActive(false);
-       }
+        //attackPatternSet[curScNumber].SetActive(false);
+        Destroy(curAttackPattern.gameObject);
+    }
 
     public IEnumerator<float> HealthRecharge() {
         var maxHealth = damageable.maxHealth;
@@ -169,10 +182,7 @@ public class BossCtrl : MonoBehaviour {
 
                     scNameText.text = spellCardInfos[curScNumber].spellName + "「" +
                                       spellCardInfos[curScNumber].cardName + "」";
-                        //spellCardInfos[curScNumber].spellCardName;
-                    
-                    enchantMovementRef = attackPatternSet[curScNumber].GetComponent<BulletGenerator>();
-                    movement.stayFrames = enchantMovementRef.waveFrameInterval;
+                        
                     if(spellCardInfos[curScNumber].hasInitPos) {
                         movement.hasInitPos = true;
                         movement.initPos = spellCardInfos[curScNumber].initPos;
@@ -308,7 +318,7 @@ public class BossCtrl : MonoBehaviour {
                 
                 break;
             case BossState.NonSpellCard:
-                animator.IsEnchanting = enchantMovementRef.isEnchanting;
+                if(enchantMovementRef != null) animator.IsEnchanting = enchantMovementRef.isEnchanting;
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
                     AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
                     bonusBannerCtrl.ActivateBonusState(false,hasBonus,0);

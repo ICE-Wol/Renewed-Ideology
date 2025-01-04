@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db24d7698eb326c41b9ad613532693cf, type: 3}
   m_Name: SanaeNS1
   m_EditorClassIdentifier: 
+  bulletGenerator: {fileID: 6589008783498001689, guid: 1868314362d29034c8883d68567221da, type: 3}
   isSpellCard: 0
   spellName: 
   cardName: 

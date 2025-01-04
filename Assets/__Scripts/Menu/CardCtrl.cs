@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 public class CardCtrl : MonoBehaviour {
+    public SpriteRenderer spriteRenderer;
     public int cardCount;
     
     public float tarRot;
@@ -14,6 +15,12 @@ public class CardCtrl : MonoBehaviour {
     public float tarScale;
     public float curScale;
     
+    public float tarAlpha;
+    public float curAlpha;
+    
+    private void Awake() {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     private void Update() {
 
         tarRot = 90f / 5 * cardCount;
@@ -32,6 +39,11 @@ public class CardCtrl : MonoBehaviour {
         else if (cardCount < 0) tarScale = 1 - Mathf.Abs(cardCount) * 0.1f;
         else if (cardCount > 0) tarScale = 1 - Mathf.Abs(cardCount) * 0.1f;
         curScale.ApproachRef(tarScale, 16f);
+        
+        if(Mathf.Abs(cardCount) > 3) tarAlpha = 0f;
+        else tarAlpha = 1f;
+        curAlpha.ApproachRef(tarAlpha, 16f);
+        spriteRenderer.color = spriteRenderer.color.SetAlpha(curAlpha);
 
         transform.localScale = curScale * Vector3.one;
 

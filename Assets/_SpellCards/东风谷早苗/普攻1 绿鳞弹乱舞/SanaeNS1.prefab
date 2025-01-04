@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786e01375e936dc469376c5d4602fc6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inAttack: 0
-  waveFrameInterval: 0
+  isEnchanting: 0
+  waveFrameInterval: 360
   layerFrameInterval: 0
   layerCountInWave: 0
   waveCount: 0
+  demonstratePos: {x: 0, y: 0, z: 0}
   ScalePrefab: {fileID: 1551623592287122463, guid: 7138b082b8a78d04382bdbb66869aaad, type: 3}
-  timer: 0
+  isClockwise: 0
