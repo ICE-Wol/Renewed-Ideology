@@ -26,7 +26,7 @@ public class NPC0NS0 : BulletGenerator
                 var bullet = Instantiate(ricePrefab, center + radius * deg.Deg2Dir3(), Quaternion.identity);
                 bullet.speed = 4f;
                 bullet.direction = Vector2.SignedAngle(Vector2.right,
-                    PlayerCtrl.Player.transform.position - bullet.transform.position) + 360f / 6f * i + basicDir;
+                    PlayerCtrl.instance.transform.position - bullet.transform.position) + 360f / 6f * i + basicDir;
             }
 
             if(radius > 2f) break;

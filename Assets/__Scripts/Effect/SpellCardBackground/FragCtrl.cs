@@ -61,7 +61,7 @@ public class FragCtrl : MonoBehaviour {
         StartFloat();
         _alpha = 1f;
         trigger = false;
-        var vec = transform.position - _Scripts.Player.PlayerCtrl.Player.transform.position;
+        var vec = transform.position - _Scripts.Player.PlayerCtrl.instance.transform.position;
         _sqrDis = vec.sqrMagnitude;
         _dir = vec.normalized;
         if (spellBreakMethod == FragManager.SpellBreakEffect.Absorb) {
@@ -107,7 +107,7 @@ public class FragCtrl : MonoBehaviour {
                         
                         if(_scale.Equal(0.2f)) Destroy(gameObject);
                         
-                        playerPos = _Scripts.Player.PlayerCtrl.Player.transform.position;
+                        playerPos = _Scripts.Player.PlayerCtrl.instance.transform.position;
                         //transform.position = transform.position.ApproachValue(playerPos, 64f * Vector3.one);
                         var dir = (playerPos - transform.position).normalized;
                         transform.position += _speed * dir;

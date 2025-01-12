@@ -78,7 +78,7 @@ public class Generator000201 : MonoBehaviour {
             if (timer % intervals == 0) {
                 if (generated == 0)
                     playerDir = Vector2.SignedAngle(Vector2.right,
-                        (PlayerCtrl.Player.transform.position - transform.position));
+                        (PlayerCtrl.instance.transform.position - transform.position));
                 var dir = (hasCollided ? playerDir : targetDir) + (float)360 / 10 * randArray[initRandDir, generated];
                 var pos = transform.position + 0.35f * dir.Deg2Dir3();
                 for (int i = 0; i < 14 - randArray[initRandDir, generated]; i++) {

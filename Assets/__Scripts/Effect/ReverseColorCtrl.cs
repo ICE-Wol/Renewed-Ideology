@@ -51,9 +51,9 @@ public class ReverseColorCtrl : MonoBehaviour
         for (int i = 1; i < 5; i++) {
             Timing.RunCoroutine(StartExpandCircle(i, 0.1f),"ReverseColorEffect");
         }
-        yield return Timing.WaitForSeconds(0.3f);
+        yield return Timing.WaitForSeconds(0.2f);
         Timing.RunCoroutine(StartExpandCircle(5, 0.1f),"ReverseColorEffect");
-        yield return Timing.WaitForSeconds(5f);
+        yield return Timing.WaitForSeconds(1.5f);
         Timing.KillCoroutines("ReverseColorEffect");
         for (int i = 0; i < 6; i++) {
             mat.SetVector("_Circle" + i, (center + _posOffSetAndRadius[i]).SetZ(0f));           

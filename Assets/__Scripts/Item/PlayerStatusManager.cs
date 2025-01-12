@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 namespace _Scripts {
     public class PlayerStatusManager : MonoBehaviour {
-        public static PlayerStatusManager Manager;
+        public static PlayerStatusManager instance;
         private void Awake() {
-            if (Manager == null) {
-                Manager = this;
+            if (instance == null) {
+                instance = this;
             }
             else {
                 Destroy(gameObject);
@@ -54,23 +54,34 @@ namespace _Scripts {
             }
         }
 
+        public int numLife;
+        public int numBomb;
+        public int numLifeFrag;
+        public int numBombFrag;
+
         public void RefreshSlot() {
-            var numLife = Player.PlayerCtrl.Player.state.life;//GameManager.Player.playerData.Life;
-            var numBomb = Player.PlayerCtrl.Player.state.bomb;
-            var numLifeFrag = Player.PlayerCtrl.Player.state.LifeFrag;
-            var numBombFrag = Player.PlayerCtrl.Player.state.BombFrag;
-            for (int i = 0; i < 7; i++) {
-                for (int j = 0; j < 5; j++) {
-                    slotLife[i, j].sprite = i < numLife ? sprFrag[1] : sprFrag[0];
-                    if (i == numLife && j < numLifeFrag) slotLife[i, j].sprite = sprFrag[1]; 
-                    slotBomb[i, j].sprite = i < numBomb ? sprFrag[2] : sprFrag[0];
-                    if (i == numBomb && j < numBombFrag) slotBomb[i, j].sprite = sprFrag[2]; 
+            if (numLife != Player.PlayerCtrl.instance.state.life || //GameManager.Player.playerData.Life;
+                numBomb != Player.PlayerCtrl.instance.state.bomb ||
+                numLifeFrag != Player.PlayerCtrl.instance.state.LifeFrag ||
+                numBombFrag != Player.PlayerCtrl.instance.state.BombFrag) {
+                numLife = Player.PlayerCtrl.instance.state.life;
+                numBomb = Player.PlayerCtrl.instance.state.bomb;
+                numLifeFrag = Player.PlayerCtrl.instance.state.LifeFrag;
+                numBombFrag = Player.PlayerCtrl.instance.state.BombFrag;
+                for (int i = 0; i < 7; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        slotLife[i, j].sprite = i < numLife ? sprFrag[1] : sprFrag[0];
+                        if (i == numLife && j < numLifeFrag) slotLife[i, j].sprite = sprFrag[1];
+                        slotBomb[i, j].sprite = i < numBomb ? sprFrag[2] : sprFrag[0];
+                        if (i == numBomb && j < numBombFrag) slotBomb[i, j].sprite = sprFrag[2];
+                    }
                 }
             }
 
         }
 
         private void Update() {
+            RefreshSlot();
             squareInner.transform.localRotation = Quaternion.Euler(0,0,_timer/4f);
             squareOuter.transform.localRotation = Quaternion.Euler(0,0,-_timer/6f);
             squareGlow.transform.localRotation = Quaternion.Euler(0,0,-_timer/3f);

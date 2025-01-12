@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Player {
     public class PlayerState : MonoBehaviour {
@@ -12,7 +13,7 @@ namespace _Scripts.Player {
         public GameObject bombObject;
         
         public int maxLifeFrag;
-        public int maxlife;
+        public int maxLife;
         public int maxBomb;
         private int _lifeFrag;
 
@@ -20,7 +21,7 @@ namespace _Scripts.Player {
             set {
                 if (value == maxLifeFrag) {
                     print("Extend!");
-                    if(life + 1 <= maxlife)
+                    if(life + 1 <= maxLife)
                         life += 1;
                     _lifeFrag = 0;
                     return;
@@ -28,8 +29,7 @@ namespace _Scripts.Player {
                 else {
                     _lifeFrag = value;
                 }
-                
-                PlayerStatusManager.Manager.RefreshSlot();
+                //PlayerStatusManager.instance.RefreshSlot();
             }
             get => _lifeFrag;
         }
@@ -48,7 +48,7 @@ namespace _Scripts.Player {
                 else {
                     _bombFrag = value;
                 }
-                PlayerStatusManager.Manager.RefreshSlot();
+                //PlayerStatusManager.instance.RefreshSlot();
             }
 
             get => _bombFrag;
@@ -65,6 +65,7 @@ namespace _Scripts.Player {
                     _power = maxPower;
                     point += 1;
                 }
+                if(_power < 100) _power = 100;
                 
                 if (_power / 100 != subCtrl.GetCurSubNum())
                     subCtrl.ChangeSubNum(_power / 100);
@@ -116,13 +117,13 @@ namespace _Scripts.Player {
         private void Update() {
             if (Input.GetKeyDown(KeyCode.X)) {
                 if (bomb > 0) {
-                    if(GameManager.Manager.curBoss != null)
-                        GameManager.Manager.curBoss.hasBonus = false;
+                    if(BossManager.instance.curBoss != null)
+                        BossManager.instance.curBoss.hasBonus = false;
                     if (bombObject == null)
                         bombObject = Instantiate(bombPrefab, transform.position, Quaternion.identity);
                     bomb -= 1;
-                    PlayerStatusManager.Manager.RefreshSlot();
-                    PlayerCtrl.Player.InvincibleTimer = 300;
+                    //PlayerStatusManager.instance.RefreshSlot();
+                    PlayerCtrl.instance.InvincibleTimer = 300;
                 }
             }
             

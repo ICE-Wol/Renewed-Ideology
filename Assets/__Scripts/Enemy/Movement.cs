@@ -22,7 +22,7 @@ namespace _Scripts.Enemy {
         public int timer;
 
         private Vector3 GetNextTarPos() {
-            Vector3 posPlayer = Player.PlayerCtrl.Player.transform.position;
+            Vector3 posPlayer = Player.PlayerCtrl.instance.transform.position;
             Vector3 curPos = transform.position;
             Vector3 movePos = Vector3.zero;
             

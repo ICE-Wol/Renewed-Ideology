@@ -229,7 +229,7 @@ namespace _Scripts.EnemyBullet {
                         isGrazed = bulletDetector.CheckPlayerGraze(grazeRadius);
                         if (isGrazed) {
                             AudioManager.Manager.PlaySound(AudioNames.SeGraze);
-                            var g = PlayerCtrl.Player.state.graze++;
+                            var g = PlayerCtrl.instance.state.graze++;
                         }
                     }
                     
@@ -238,8 +238,8 @@ namespace _Scripts.EnemyBullet {
                     if (!hasNoCollisionCheck && bulletDetector.CheckPlayerCollision(hitRadius)) {
                         if(!bulletConfig.indestructible)
                             SetState(EBulletStates.Destroying);
-                        if (!PlayerCtrl.Player.CheckInvincibility()) {
-                            PlayerCtrl.Player.GetHit();
+                        if (!PlayerCtrl.instance.CheckInvincibility()) {
+                            PlayerCtrl.instance.GetHit();
                         }
                     }
                     

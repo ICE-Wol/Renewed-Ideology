@@ -9,14 +9,20 @@ public class EnemyArrowCtrl : MonoBehaviour
     public float curScale = 0f;
     
     public bool isFunctioning = true;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public bool hasBoss = false;
     void Update() {
-        if (GameManager.Manager.curBoss == null || isFunctioning == false) {
+        if(!hasBoss && BossManager.instance.curBoss != null) {
+            hasBoss = true;
+            isFunctioning = true;
+        }
+        else if(hasBoss && BossManager.instance.curBoss == null) {
+            hasBoss = false;
+            isFunctioning = false;
+        }
+        
+        
+        if (BossManager.instance.curBoss == null || isFunctioning == false) {
             tarScale = 0f;
         }
         else {
@@ -24,7 +30,7 @@ public class EnemyArrowCtrl : MonoBehaviour
             arrow.anchoredPosition =
                 new Vector2(
                     //Mathf.Clamp(Camera.main.WorldToScreenPoint(GameManager.Manager.curBoss.transform.position).x, -430,
-                    Camera.main.WorldToScreenPoint(GameManager.Manager.curBoss.transform.position).x - 1920 / 2f,
+                    Camera.main.WorldToScreenPoint(BossManager.instance.curBoss.transform.position).x - 1920 / 2f,
                     arrow.anchoredPosition.y);
         }
 

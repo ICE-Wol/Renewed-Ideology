@@ -24,8 +24,8 @@ public class SanaeNS0 : BulletGenerator
     public List<DoubleSpeedApproach> bullets;
     
     public IEnumerator<float> StarShoot() {
-        GameManager.Manager.curBoss.movement.GoToNextPos(new Vector3(0, 1f,0));
-        GameManager.Manager.curBoss.movement.stayFrames = 540;
+        BossManager.instance.curBoss.movement.GoToNextPos(new Vector3(0, 1f,0));
+        BossManager.instance.curBoss.movement.stayFrames = 540;
         
         yield return Calc.WaitForFrames(60);
         

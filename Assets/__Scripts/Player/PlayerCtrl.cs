@@ -2,16 +2,17 @@ using System;
 using System.Collections.Generic;
 using _Scripts.Tools;
 using MEC;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace _Scripts.Player {
     public class PlayerCtrl : MonoBehaviour {
-        public static PlayerCtrl Player;
+        public static PlayerCtrl instance;
         public PlayerState state;
         private void Awake() {
-            if (Player == null) {
-                Player = this;
+            if (instance == null) {
+                instance = this;
             }
             else {
                 Destroy(this.gameObject);
@@ -80,6 +81,7 @@ namespace _Scripts.Player {
             if (_timer % frameSpeed == 0) {
                 //get the direction
                 int hor = (int)_direction.x;
+                if (_hitLock) hor = 0;
                 if (hor == 0) {
                     //Only when move pointer returned to zero can idle animation being played.
                     if (_movePointer == 0) {
@@ -111,29 +113,52 @@ namespace _Scripts.Player {
         
         public GameObject playerHitEffect;
         public void GetHit() {
-            if(GameManager.Manager.curBoss != null)
-                GameManager.Manager.curBoss.hasBonus = false;
+            if(BossManager.instance.curBoss != null)
+                BossManager.instance.curBoss.hasBonus = false;
             if(GameManager.Manager.isHitEffectOn) 
                 Instantiate(playerHitEffect, transform.position, Quaternion.identity);
             GameManager.Manager.hits++;
+            AudioManager.Manager.PlaySound(AudioNames.SePlayerDead);
             if (!GameManager.Manager.isCheatModeOn) {
-                //Instantiate(playerHitEffect, transform.position, Quaternion.identity);
+                Instantiate(playerHitEffect, transform.position, Quaternion.identity);
                 GameManager.Manager.reverseColorCtrl.StartReverseColorEffectAtCenter(transform.position);
+                GameManager.Manager.StartEraseBullets(transform.position);
                 InvincibleTimer = GetHitInvTime;
                 Timing.RunCoroutine(GetHitCoroutine());
+                state.life--;
+                state.Power -= 50;
+                if(state.life < 0) {
+                    GameOverCoroutine();
+                    return;
+                }
+                state.bomb = 3;
             }
         }
-        
+        public void GameOverCoroutine() {
+            //yield return Calc.WaitForFrames(30);
+            Timing.RunCoroutine(PauseManager.instance.TriggerEndPause(false));
+        }
+
+        private bool _hitLock = false;
         public IEnumerator<float> GetHitCoroutine() {
-            var dist = 5f;
+            _hitLock = true;
+            var dist = 6f;
             var maxDist = 3f;
             transform.position = dist * Vector2.down;
+            
+            //修改所有子机的位置，防止子机在玩家瞬移后向下飘
+            foreach (Transform obj in gameObject.GetComponent<PlayerSubCtrl>().playerSubSet.transform) {
+                obj.transform.position = dist * Vector2.down;
+            }
+            
+            yield return Calc.WaitForFrames(60);
             while (true) {
                 dist.ApproachRef(maxDist, 16f);
                 transform.position = dist * Vector2.down;
                 if (dist.Equal(maxDist,0.05f)) break;
                 yield return Timing.WaitForOneFrame;
             }
+            _hitLock = false;
         }
 
         public bool CheckInvincibility() => _invincibleTimer > 0;
@@ -149,7 +174,7 @@ namespace _Scripts.Player {
         void Update() {
             _timer++;
             SetInvincibleEffect();
-            Movement();
+            if (!_hitLock) Movement();
             PlayAnim();
         }
 

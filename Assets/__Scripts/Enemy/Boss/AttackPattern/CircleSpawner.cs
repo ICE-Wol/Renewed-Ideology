@@ -48,7 +48,7 @@ public class CircleSpawner : MonoBehaviour {
         if (posParent != null) center = posParent.position;
 
         // 获取玩家相对于发射中心的角度
-        var dirPlayer = Vector2.SignedAngle(Vector2.right, PlayerCtrl.Player.transform.position - center);
+        var dirPlayer = Vector2.SignedAngle(Vector2.right, PlayerCtrl.instance.transform.position - center);
         var halfRange = (degreeEnd - degreeStart) / 2;
         var midOffset = halfRange - dirPlayer;
         var newDegStart = degreeStart - midOffset;

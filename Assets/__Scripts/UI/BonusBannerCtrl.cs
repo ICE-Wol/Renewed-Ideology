@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class BonusBannerCtrl : MonoBehaviour
 {
+    //符合单例使用条件，该用就用
+    public static BonusBannerCtrl instance;
+    
+    private void Awake() {
+        if(instance != null) Destroy(gameObject);
+        else instance = this;
+    }
+    
     public Image bottom;
     public Image patternBlue;
     public Image patternGreen;

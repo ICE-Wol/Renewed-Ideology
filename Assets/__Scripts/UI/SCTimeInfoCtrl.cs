@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Tools;
 using TMPro;
 using Unity.VisualScripting;
@@ -5,6 +6,13 @@ using UnityEngine;
 
 public class SCTimeInfoCtrl : MonoBehaviour
 {
+    public static SCTimeInfoCtrl instance;
+
+    private void Awake() {
+        if(instance != null) Destroy(gameObject);
+        else instance = this;
+    }
+
     public TMP_Text infoText;
     public TMP_Text breakTime;
     public TMP_Text actualTime;

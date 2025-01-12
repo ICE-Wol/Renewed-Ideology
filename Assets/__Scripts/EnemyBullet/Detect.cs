@@ -5,15 +5,15 @@ namespace _Scripts.EnemyBullet {
     public class Detect: MonoBehaviour {
         
         public float GetPlayerSqrDis() =>
-            ((Vector2)(transform.position - PlayerCtrl.Player.transform.position)).sqrMagnitude;
+            ((Vector2)(transform.position - PlayerCtrl.instance.transform.position)).sqrMagnitude;
 
         public bool CheckPlayerCollision(float radius) {
-            var rad = PlayerCtrl.Player.state.hitRadius;
+            var rad = PlayerCtrl.instance.state.hitRadius;
             return GetPlayerSqrDis() < (rad + radius) * (rad + radius);
         }
         
         public bool CheckPlayerGraze(float radius) {
-            var rad = PlayerCtrl.Player.state.grazeRadius;
+            var rad = PlayerCtrl.instance.state.grazeRadius;
             return GetPlayerSqrDis() < (rad + radius) * (rad + radius);
         }
 

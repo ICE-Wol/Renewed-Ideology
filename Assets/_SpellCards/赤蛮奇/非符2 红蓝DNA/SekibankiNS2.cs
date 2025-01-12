@@ -43,7 +43,7 @@ public class SekibankiNS2 : BulletGenerator
 
     bool isRed = true;
     IEnumerator<float> Snip(int ways) {
-        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - transform.position);
+        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.instance.transform.position - transform.position);
         for (int i = 0; i < ways; i++) {
             var dir = initDir + 360f / ways * i;
             Calc.GenerateBullet(isRed ? snipBullet1 : snipBullet2, transform.position, dir);
@@ -66,7 +66,7 @@ public class SekibankiNS2 : BulletGenerator
     }
 
     IEnumerator<float> Snip2(int ways,float offsetDeg) {
-        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - transform.position);
+        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.instance.transform.position - transform.position);
         for (int i = 0; i < ways; i++) {
             var dir = initDir + 360f / ways * i;
             var b0 = Calc.GenerateBullet(isRed ? snipBullet1 : snipBullet2, transform.position, dir);

@@ -119,11 +119,11 @@ public class LaserPoint : MonoBehaviour
             var distance = DistancePointToLineSegment
             (transform.position,
                 nextPoint.transform.position,
-                PlayerCtrl.Player.transform.position);
-            var playerHitRadius = PlayerCtrl.Player.state.hitRadius;
+                PlayerCtrl.instance.transform.position);
+            var playerHitRadius = PlayerCtrl.instance.state.hitRadius;
             if (distance < playerHitRadius + hitRadius) {
-                if (!PlayerCtrl.Player.CheckInvincibility()) {
-                    PlayerCtrl.Player.GetHit();
+                if (!PlayerCtrl.instance.CheckInvincibility()) {
+                    PlayerCtrl.instance.GetHit();
                 }
             }
         }

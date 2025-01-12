@@ -3,7 +3,9 @@ using _Scripts.Tools;
 using UnityEngine;
 
 namespace _Scripts {
-    public class MagicSquareController : MonoBehaviour {
+    public class MagicSquareController : MonoBehaviour
+    {
+        public float scaleMultiplier;
         private float _curScale;
         private float _timer;
 
@@ -22,7 +24,7 @@ namespace _Scripts {
                 _timer += 1;
             }
             _curScale.ApproachRef(1.3f, 32f);
-            transform.localScale = _curScale * Vector3.one;
+            transform.localScale = scaleMultiplier * _curScale * Vector3.one;
             transform.rotation = Quaternion.Euler(
                 45f * Mathf.Abs(Mathf.Sin(0.15f * _timer * Mathf.Deg2Rad)),
                 -45f * Mathf.Sin(0.3f * _timer * Mathf.Deg2Rad),

@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: type
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4797299978807094510, guid: 3a05477d9a4b0fd44aa4dd255fbc1206, type: 3}
+      propertyPath: collideRadius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6553411213177530411, guid: 3a05477d9a4b0fd44aa4dd255fbc1206, type: 3}
       propertyPath: m_Size.x
       value: 0.64

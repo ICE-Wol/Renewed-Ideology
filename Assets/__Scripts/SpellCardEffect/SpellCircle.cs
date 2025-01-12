@@ -61,7 +61,7 @@ public class SpellCircle: MonoBehaviour {
                 SetRadius();
                 break;
             case SpellCircleState.Shrink:
-                var playerPos = PlayerCtrl.Player.transform.position;
+                var playerPos = PlayerCtrl.instance.transform.position;
                 var x = transform.position.x;
                 var y = transform.position.y;
                 x.ApproachRef(playerPos.x, _randApproachX);

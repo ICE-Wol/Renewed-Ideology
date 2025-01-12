@@ -8,12 +8,22 @@ using State = _Scripts.EnemyBullet.State;
 
 namespace _Scripts {
     public class GameManager : MonoBehaviour {
+        /*
+         * 只存储运行时数据
+         */
+        [Header("基本数据")]
+        public SpellPracticeManager.Difficulty difficulty;
+        public int stageIndex;
+        public TimeLine curTimeLine;
+        
+        [Header("作弊信息")]
+        
         public bool isCheatModeOn;
         public bool isHitEffectOn;
         public int hits;
         public static GameManager Manager;
 
-        public BossCtrl curBoss;
+        //public BossCtrl curBoss;
         
         public Material[] glowMaterials;
         public Item.Item[] items;
@@ -46,9 +56,6 @@ namespace _Scripts {
 
         public int timer = 0;
         private void Update() {
-            if (curBoss != null)
-                uiManager.damageable = curBoss.damageable;
-            
             timer++;
             if (Input.GetKeyDown(KeyCode.C)) {
                 isCheatModeOn = !isCheatModeOn;

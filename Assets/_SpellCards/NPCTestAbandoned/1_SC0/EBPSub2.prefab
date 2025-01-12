@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: isGlowing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1809078302622127368, guid: a93f126521afc624e837f384e3bb9a94, type: 3}
+      propertyPath: collideRadius
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3189004902355529090, guid: a93f126521afc624e837f384e3bb9a94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

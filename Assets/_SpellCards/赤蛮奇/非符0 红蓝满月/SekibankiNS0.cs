@@ -45,7 +45,7 @@ public class SekibankiNS0 : BulletGenerator
     /// <param name="t">时间戳，按外层循环变量i取值，用于整理子弹z值</param>
     /// <returns></returns>
     IEnumerator<float> Snip(int sideWays,float degInterval,float startSpeed,float endSpeed,float speedInterval,bool isSnip1,int t) {
-        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - transform.position);
+        var initDir = Vector2.SignedAngle(Vector2.right,PlayerCtrl.instance.transform.position - transform.position);
         var bullet = Instantiate(isSnip1 ? snip1Bullet : snip2Bullet, transform.position, Quaternion.Euler(0, 0, initDir));
         bullet.direction = initDir;
         bullet.speed = startSpeed;

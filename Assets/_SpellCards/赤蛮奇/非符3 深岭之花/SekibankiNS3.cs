@@ -68,7 +68,7 @@ public class SekibankiNS3 : BulletGenerator
 
     IEnumerator<float> Snip(int ways, int order, bool isMagenta)
     {
-        var initDir = Vector2.SignedAngle(Vector2.right, PlayerCtrl.Player.transform.position - transform.position);
+        var initDir = Vector2.SignedAngle(Vector2.right, PlayerCtrl.instance.transform.position - transform.position);
         DoubleSpeedApproach[,] bullets = new DoubleSpeedApproach[ways, 2];
         var color = Color.HSVToRGB((isMagenta ? 300 : 250) / 360f, (4 - order) / 3f, 1f);
 

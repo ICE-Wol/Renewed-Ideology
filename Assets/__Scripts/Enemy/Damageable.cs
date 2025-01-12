@@ -99,8 +99,8 @@ namespace _Scripts.Enemy {
             }
             
             if (hitRadius > 0 && bulletDetector.CheckPlayerCollision(hitRadius)) {
-                if (!PlayerCtrl.Player.CheckInvincibility()) {
-                    PlayerCtrl.Player.GetHit();
+                if (!PlayerCtrl.instance.CheckInvincibility()) {
+                    PlayerCtrl.instance.GetHit();
                 }
             }
         }

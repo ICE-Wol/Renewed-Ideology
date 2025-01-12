@@ -46,7 +46,7 @@ public class WaterSealBomb : MonoBehaviour
         endPos = new Vector3[waterOrbCount];
 
         for (int i = 0; i < waterOrbCount; i++) {
-            waterOrbs[i] = Instantiate(waterOrb, PlayerCtrl.Player.transform.position, Quaternion.identity);
+            waterOrbs[i] = Instantiate(waterOrb, PlayerCtrl.instance.transform.position, Quaternion.identity);
             waterOrbs[i].transform.localScale = 0f * Vector3.one;
             radius[i] = 0f;
             degree[i] = 360f / waterOrbCount * i;
@@ -109,7 +109,7 @@ public class WaterSealBomb : MonoBehaviour
             
             if(bombState != BombState.Hitting)
                 waterOrbs[i].transform.position =
-                    PlayerCtrl.Player.transform.position + radius[i] * (degree[i].Deg2Dir3());
+                    PlayerCtrl.instance.transform.position + radius[i] * (degree[i].Deg2Dir3());
             
             switch (bombState) {
                 case BombState.Expanding:

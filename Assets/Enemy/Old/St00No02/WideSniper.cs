@@ -18,7 +18,7 @@ public class WideSniper : BulletGenerator {
     public override IEnumerator<float> ShootSingleWave() {
         for (int c = 0; c < layerCountInWave; c++) {
             float centerDegree = Vector2.SignedAngle(Vector2.right,
-                PlayerCtrl.Player.transform.position - transform.position);
+                PlayerCtrl.instance.transform.position - transform.position);
             ;
             DoubleSpeedApproach b;
             for (int i = 0; i < bulletNum; i++) {

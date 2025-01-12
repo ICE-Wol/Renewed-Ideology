@@ -26,38 +26,29 @@ public enum BossState{
 
 public class BossCtrl : MonoBehaviour {
     public int curScNumber = -1;
-    public int maxScNumber = 3;
-    //public GameObject[] attackPatternSet;
+    public int maxScNumber;
+    
     public BulletGenerator curAttackPattern;
-    public SpellCardInfo[] spellCardInfos;
+    public List<SpellCardInfo> spellCardInfos;
     public BulletGenerator enchantMovementRef;
-    public TMP_Text scNameText;
-    public TMP_Text scNumText;
-    [Tooltip("版面下方血条中央展示的剩余符卡数量")]
+    
+    [Tooltip("版面下方血条中央展示的剩余符卡数量 已废弃")]
     public int scNum;
-
-    public ReverseColorEffect defeatedEffect;
+    
     public Damageable damageable;
     public Movement movement;
     public ItemSpawner item;
     public BossAnimator animator;
-
-    public SpellAnnouncement scAnn;
-    //public SpellCircle spellCircleTemplate;
+    
     public SpellCircle spellCircle;
     public BossState bossState;
-    
-    public EnemyArrowCtrl bossArrowCtrl;
     
     [Header("符卡计时器")]
     public int frameTimer;
     public float actualTimer;
     public bool isTimerActivated;
 
-    public SCTimeInfoCtrl scTimeInfoCtrl;
-
     [Header("收取指示变量")] public bool hasBonus;
-    public BonusBannerCtrl bonusBannerCtrl;
     public int bonusPoints;
     public int bonusPointsReducePerFrame = 10;
     
@@ -143,21 +134,20 @@ public class BossCtrl : MonoBehaviour {
     }
 
     public void EndTimer() {
-        scTimeInfoCtrl.breakTime.text = (frameTimer / 60f).ToString("F2") + 's';
-        scTimeInfoCtrl.actualTime.text = actualTimer.ToString("F2") + 's';
-        scTimeInfoCtrl.AppearAll();
+        SCTimeInfoCtrl.instance.breakTime.text = (frameTimer / 60f).ToString("F2") + 's';
+        SCTimeInfoCtrl.instance.actualTime.text = actualTimer.ToString("F2") + 's';
+        SCTimeInfoCtrl.instance.AppearAll();
         frameTimer = 0;
         actualTimer = 0;
         isTimerActivated = false;
     }
     
-    private void Awake() {
-        scNumText.text = CountSpellCard().ToString();
+    private void Start() {
         ChangeState(BossState.Interval);
     }
 
     private void OnEnable() {
-        GameManager.Manager.curBoss = this;
+        BossManager.instance.curBoss = this;
     }
     
     private void ChangeState(BossState state) {
@@ -171,16 +161,17 @@ public class BossCtrl : MonoBehaviour {
                 foreach (var sub in list) Destroy(sub);
                 list.Clear();
                 
-                scAnn.ResetAnnounce();
+                SpellAnnouncement.instance.ResetAnnounce();
                 
                 // if boss has remaining sc or ncs
                 if (curScNumber + 1 < maxScNumber) {
                     curScNumber++;
                     
+                    //print("curScNumber: " + curScNumber + " spellCardInfosCount " + spellCardInfos.Count);
                     damageable.maxTime = spellCardInfos[curScNumber].maxTime;
                     damageable.maxHealth = spellCardInfos[curScNumber].maxHealth;
 
-                    scNameText.text = spellCardInfos[curScNumber].spellName + "「" +
+                    SpellAnnouncement.instance.scNameText.text = spellCardInfos[curScNumber].spellName + "「" +
                                       spellCardInfos[curScNumber].cardName + "」";
                         
                     if(spellCardInfos[curScNumber].hasInitPos) {
@@ -200,7 +191,7 @@ public class BossCtrl : MonoBehaviour {
             case BossState.SpellCardAnnounce:
                 StartTimer();
                 bonusPoints = spellCardInfos[curScNumber].maxBonusPoints;
-                scAnn.StartAnnouncing();
+                SpellAnnouncement.instance.StartAnnouncing();
                 spellCircle.gameObject.SetActive(true);
                 spellCircle.ResetCircle();
                 AudioManager.Manager.PlaySound(AudioNames.SeBossExplode);
@@ -214,12 +205,13 @@ public class BossCtrl : MonoBehaviour {
                 break;
             case BossState.SpellCardBreak:
                 EndTimer();
-                bonusBannerCtrl.ActivateBonusState(true,hasBonus,bonusPoints);
+                BonusBannerCtrl.instance.ActivateBonusState(true,hasBonus,bonusPoints);
                 if (hasBonus)
-                    PlayerCtrl.Player.state.score += bonusPoints;
+                    PlayerCtrl.instance.state.score += bonusPoints;
                 spellCircle.SetState(SpellCircle.SpellCircleState.Shrink);
                 scNum--;
-                scNumText.text = scNum.ToString();
+                //todo 改为调用左侧星星数量改变函数
+                //scNumText.text = scNum.ToString();
                 AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
                 break;
             case BossState.Dead:
@@ -232,8 +224,6 @@ public class BossCtrl : MonoBehaviour {
                 Damageable.damageableSet.Remove(damageable);
                 
                 DistortCtrl.Set(0f,0,Vector3.zero);
-                
-                bossArrowCtrl.isFunctioning = false;
                 
                 Timing.RunCoroutine(HealthToZero());
                 Timing.RunCoroutine(TimeToZero());
@@ -276,7 +266,7 @@ public class BossCtrl : MonoBehaviour {
                 
                 break;
             case BossState.SpellCardAnnounce:
-                if (scAnn.isAnnounceFinished) {
+                if (SpellAnnouncement.instance.isAnnounceFinished) {
                     ChangeState(BossState.SpellCard);
                     ActivateBulletGenerator();
                 }
@@ -295,7 +285,7 @@ public class BossCtrl : MonoBehaviour {
                 break;
             case BossState.SpellCardBreak:
                 animator.IsEnchanting = false;
-                scAnn.SpellBreak();
+                SpellAnnouncement.instance.SpellBreak();
                 if (spellCardInfos[curScNumber].useDefaultItems) {
                     if (hasBonus)
                         item.itemSequence = new[]
@@ -311,8 +301,8 @@ public class BossCtrl : MonoBehaviour {
                     else
                         item.itemSequence = spellCardInfos[curScNumber].itemSequence;
                 }
-
-                item.CreateItem();
+                if(!PracticeManager.instance.spellPracticeStartInfo.isSpellPracticeMode)
+                    item.CreateItem();
                 Timing.KillCoroutines("Shoot");
                 ChangeState(BossState.Interval);
                 
@@ -321,7 +311,7 @@ public class BossCtrl : MonoBehaviour {
                 if(enchantMovementRef != null) animator.IsEnchanting = enchantMovementRef.isEnchanting;
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
                     AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
-                    bonusBannerCtrl.ActivateBonusState(false,hasBonus,0);
+                    BonusBannerCtrl.instance.ActivateBonusState(false,hasBonus,0);
                     DeactivateBulletGenerator();
                     Timing.KillCoroutines("Shoot");
                     item.setItemDropEnable = !(damageable.curHealth > 0.001f);
@@ -338,7 +328,8 @@ public class BossCtrl : MonoBehaviour {
                         else item.itemSequence = spellCardInfos[curScNumber].itemSequence;
                     }
 
-                    item.CreateItem();
+                    if(!PracticeManager.instance.spellPracticeStartInfo.isSpellPracticeMode)
+                        item.CreateItem();
                     ChangeState(BossState.Interval);
                 }
 

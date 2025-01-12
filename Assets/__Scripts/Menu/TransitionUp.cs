@@ -65,6 +65,6 @@ public class TransitionUp : MonoBehaviour {
                 }
             }
         }
-        if(isAllFinished) SceneManager.LoadScene("GameScene");
+        if(isAllFinished) SceneManager.LoadSceneAsync("GameScene");
     }
 }

@@ -1,5 +1,7 @@
 using System;
 using _Scripts.Tools;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
@@ -8,9 +10,21 @@ using Random = UnityEngine.Random;
 
 namespace _Scripts {
     public class SpellAnnouncement : MonoBehaviour {
+        public static SpellAnnouncement instance;
+
+        private void Awake() {
+            if (instance == null) {
+                instance = this;
+            }
+            else {
+                Destroy(gameObject);
+            }
+        }
+
         public Image bossPortraitImage;
         public RectTransform bossPortraitObject;
         public RectTransform spellNameObject;
+        public TMP_Text scNameText;
         public SpellBannerCtrl spellBannerCtrl;
         public Renderer spellBgFull;
         public Renderer spellBgAppear;

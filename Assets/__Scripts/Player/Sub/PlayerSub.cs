@@ -69,7 +69,7 @@ namespace _Scripts {
             transform.localScale = curScale * Vector3.one;
             shade.transform.localScale = curScale * Vector3.one;
 
-            if (PlayerCtrl.Player.state.IsPowerFull) {
+            if (PlayerCtrl.instance.state.IsPowerFull) {
                 var alpha = shade.color.a;
                 alpha.ApproachRef(0.2f, 8f);
                 shade.color = shade.color.SetAlpha(alpha);

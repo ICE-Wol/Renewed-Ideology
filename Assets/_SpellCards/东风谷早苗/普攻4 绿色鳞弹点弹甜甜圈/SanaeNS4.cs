@@ -18,7 +18,7 @@ public class SanaeNS4 : BulletGenerator
         
         
         //求出玩家距离和方向，方便后续绕发射器旋转目标点
-        var playerPoint = PlayerCtrl.Player.transform.position;
+        var playerPoint = PlayerCtrl.instance.transform.position;
         var playerDist = Vector2.Distance(transform.position, playerPoint);
         if(playerDist < 4f) playerDist = 4f;
         var playerDir = Calc.GetPlayerDirection(transform.position);

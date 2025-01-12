@@ -28,8 +28,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5983964201444365655}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -49,128 +48,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf55d3f71a3a77849ad1c268e68a6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuBackground: {fileID: 1965854591831864326}
   menuHead:
-    menu: {fileID: 0}
+    tmpComp: {fileID: 0}
     node: {fileID: 0}
+    hasConfirmMenu: 0
+    function: 0
     chiContent: "\u6682\u65F6\u4F11\u606F"
     engContent: Take A Break
-    parent: {fileID: 0}
-    children: []
   menuNodes:
-  - menu: {fileID: 0}
+  - tmpComp: {fileID: 0}
     node: {fileID: 0}
+    hasConfirmMenu: 0
+    function: 0
     chiContent: "\u7EE7\u7EED\u6E38\u620F"
     engContent: Return To Game
-    parent: {fileID: 0}
-    children: []
-  - menu: {fileID: 0}
+  - tmpComp: {fileID: 0}
     node: {fileID: 0}
+    hasConfirmMenu: 0
+    function: 1
     chiContent: "\u67E5\u770B\u5361\u724C"
     engContent: Check Your Cards
-    parent: {fileID: 0}
-    children: []
-  - menu: {fileID: 0}
+  - tmpComp: {fileID: 0}
     node: {fileID: 0}
+    hasConfirmMenu: 1
+    function: 2
     chiContent: "\u91CD\u65B0\u5F00\u59CB"
     engContent: Start Over
-    parent: {fileID: 0}
-    children: []
-  - menu: {fileID: 0}
+  - tmpComp: {fileID: 0}
     node: {fileID: 0}
+    hasConfirmMenu: 1
+    function: 3
     chiContent: "\u7ED3\u675F\u6E38\u620F"
     engContent: Return To Title
-    parent: {fileID: 0}
-    children: []
-  subMenuPrefab: {fileID: 6563322455990411990, guid: bebdf6a9dc708c34faae131a95afb1a5, type: 3}
-  subMenu: {fileID: 0}
-  menuBgColor1: {r: 1, g: 0.32571542, b: 0, a: 1}
-  menuBgColor2: {r: 0, g: 0.68066406, b: 1, a: 1}
-  bgBegXPos: -150
-  bgEndXPos: 375
-  bgLerpRate: 0
-  bgLerpTarRate: 0
-  tarColorLerp: []
-  curColorLerp: []
   menuNodeChiPrefab: {fileID: 6907883623116932243, guid: f8c1e55fe21b45949aa040a087a5f3e8, type: 3}
   menuNodeEngPrefab: {fileID: 6907883623116932243, guid: 69524a7273289f340b3b46869fca83a5, type: 3}
   lineSpacing: 75
   initLocalX: 0
   curPointer: 0
-  isLocked: 0
-  timer: 0
---- !u!1 &8757485026948805903
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5983964201444365655}
-  - component: {fileID: 2357900029634008320}
-  - component: {fileID: 1965854591831864326}
-  m_Layer: 0
-  m_Name: FlowerStem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5983964201444365655
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757485026948805903}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8465329492495422800}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -50}
-  m_SizeDelta: {x: 217.5, y: 632.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2357900029634008320
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757485026948805903}
-  m_CullTransparentMesh: 1
---- !u!114 &1965854591831864326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8757485026948805903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 436d2bf3d9fd734449b58d04cf629834, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1

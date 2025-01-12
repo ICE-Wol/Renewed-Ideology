@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: isGlowing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7890446955520780492, guid: fda639f86dad6c14584cd45d0474c759, type: 3}
+      propertyPath: collideRadius
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8608107043847407279, guid: fda639f86dad6c14584cd45d0474c759, type: 3}
       propertyPath: movement
       value: 

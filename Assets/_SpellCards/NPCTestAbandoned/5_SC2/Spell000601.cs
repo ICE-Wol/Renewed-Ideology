@@ -19,7 +19,7 @@ public class Spell000601 : BulletGenerator
         for (int i = 0; i < layerCountInWave; i++) {
             var b = Instantiate(bulletTemplate,transform.position, Quaternion.identity);
             
-            var dir = -Vector2.SignedAngle((PlayerCtrl.Player.transform.position - transform.position), Vector2.right);
+            var dir = -Vector2.SignedAngle((PlayerCtrl.instance.transform.position - transform.position), Vector2.right);
             b.direction = (isClockwise ? -1 : 1) * (float)i / layerCountInWave * 360f + dir;
 
             if (isFinalWave % 3 != 2) {

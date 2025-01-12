@@ -24,7 +24,7 @@ namespace _Scripts.Tools {
         }
         
         public static float GetPlayerDirection(Vector3 selfPos){
-            return Vector2.SignedAngle(Vector2.right,PlayerCtrl.Player.transform.position - selfPos);
+            return Vector2.SignedAngle(Vector2.right,PlayerCtrl.instance.transform.position - selfPos);
         }
         
         public static float GetDirection(Vector3 start, Vector3 end) {
@@ -202,6 +202,22 @@ namespace _Scripts.Tools {
                 current = target;
             }
 
+            return current;
+        }
+        
+        public static Color ApproachValue(this Color current, Color target, float rate) {
+            current.r = ApproachValue(current.r, target.r, rate);
+            current.g = ApproachValue(current.g, target.g, rate);
+            current.b = ApproachValue(current.b, target.b, rate);
+            current.a = ApproachValue(current.a, target.a, rate);
+            return current;
+        }
+        
+        public static Color ApproachValue(this Color current, Color target, Vector4 rate) {
+            current.r = ApproachValue(current.r, target.r, rate.x);
+            current.g = ApproachValue(current.g, target.g, rate.y);
+            current.b = ApproachValue(current.b, target.b, rate.z);
+            current.a = ApproachValue(current.a, target.a, rate.w);
             return current;
         }
         

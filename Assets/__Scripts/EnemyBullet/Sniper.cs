@@ -20,7 +20,7 @@ public class Sniper : BulletGenerator
             var b = Instantiate(bulletTemplate);
             b.transform.position = transform.position + Calc.GetRandomVectorCircle(0,360,1f);
             b.direction =
-                -Vector2.SignedAngle((PlayerCtrl.Player.transform.position - transform.position), Vector2.right);
+                -Vector2.SignedAngle((PlayerCtrl.instance.transform.position - transform.position), Vector2.right);
             b.direction += Random.Range(-30, 30);
             var d = Timing.RunCoroutine(GameManager.WaitForFrames(layerFrameInterval));
             yield return Timing.WaitUntilDone(d);

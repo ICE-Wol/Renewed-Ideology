@@ -11,8 +11,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
+    public static UIManager instance;
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+        else {
+            Destroy(this.gameObject);
+        }
+    }
+    
     [Header("ReferenceRegion")]
-    public Damageable damageable;
     public PlayerState player;
     
     [Header("TimeRegion")]
@@ -35,6 +44,7 @@ public class UIManager : MonoBehaviour {
     public int curBonusPoint;
 
     private void UpdateTimeText() {
+        var damageable = BossManager.instance.curBoss.damageable;
         curTime = damageable.curTime;
         var dec = (int)(curTime * 100) % 100;
 
@@ -58,18 +68,19 @@ public class UIManager : MonoBehaviour {
     }
     
     private void UpdateGrazeText() {
-        curGraze = PlayerCtrl.Player.state.graze;
+        curGraze = PlayerCtrl.instance.state.graze;
         grazeText.text = "<color=#CFCFCF>" + (int)curGraze + "</color>";
     }
 
     private void UpdateBonusPointText() {
-        curBonusPoint = GameManager.Manager.curBoss.bonusPoints;
-        bonusPointText.text = GameManager.Manager.curBoss.hasBonus
+        curBonusPoint = BossManager.instance.curBoss.bonusPoints;
+        bonusPointText.text = BossManager.instance.curBoss.hasBonus
             ? curBonusPoint.ToString("#,0", CultureInfo.InvariantCulture)
             : "Failed";
     }
 
     private void Update() {
+        var damageable = BossManager.instance.curBoss.damageable;
         if(damageable != null) UpdateTimeText();
         UpdatePowerText();
         UpdateGrazeText();

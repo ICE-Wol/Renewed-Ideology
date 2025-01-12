@@ -34,7 +34,7 @@ public class StarCtrl2 : MonoBehaviour
 
     public int timer;
     private void Start() {
-        tarPos = PlayerCtrl.Player.transform.position;
+        tarPos = PlayerCtrl.instance.transform.position;
         //tarPos = new Vector3(0, 0, 0);
         innerBulletAngle = 240f;
         pointLaserManager.SetState(LaserState.Inactive);
@@ -111,7 +111,7 @@ public class StarCtrl2 : MonoBehaviour
                             pointLaserManager.SetState(LaserState.Active);
                             if (timer % 64 == 0) {
                                 var b3 = Instantiate(iceBulletPrefab, new Vector3(x, y, 0), Quaternion.identity);
-                                b3.direction = Vector2.SignedAngle(Vector2.right, PlayerCtrl.Player.transform.position - new Vector3(x, y, 0));
+                                b3.direction = Vector2.SignedAngle(Vector2.right, PlayerCtrl.instance.transform.position - new Vector3(x, y, 0));
                             }
                         }
                     }

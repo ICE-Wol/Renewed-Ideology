@@ -51,8 +51,8 @@ public class PlayerStateDisplay : MonoBehaviour {
     }
 
     public void Update() {
-        if (preBombNum != PlayerCtrl.Player.state.bomb) {
-            var curBombNum = PlayerCtrl.Player.state.bomb;
+        if (preBombNum != PlayerCtrl.instance.state.bomb) {
+            var curBombNum = PlayerCtrl.instance.state.bomb;
             string s = "";
             for (int i = 0; i < curBombNum; i++) {
                 s += "● ";
@@ -66,8 +66,8 @@ public class PlayerStateDisplay : MonoBehaviour {
             preBombNum = curBombNum;
         }
         
-        if (preLifeNum != PlayerCtrl.Player.state.life) {
-            var curLifeNum = PlayerCtrl.Player.state.life;
+        if (preLifeNum != PlayerCtrl.instance.state.life) {
+            var curLifeNum = PlayerCtrl.instance.state.life;
             string s = "";
             for (int i = 0; i < curLifeNum; i++) {
                 s += "● ";
@@ -81,8 +81,8 @@ public class PlayerStateDisplay : MonoBehaviour {
             preLifeNum = curLifeNum;
         }
         
-        if (preBombFrag != PlayerCtrl.Player.state.BombFrag) {
-            var curBombNum = PlayerCtrl.Player.state.BombFrag;
+        if (preBombFrag != PlayerCtrl.instance.state.BombFrag) {
+            var curBombNum = PlayerCtrl.instance.state.BombFrag;
             string s = "";
             for (int i = 0; i < curBombNum; i++) {
                 s += "●";
@@ -96,8 +96,8 @@ public class PlayerStateDisplay : MonoBehaviour {
             preBombFrag = curBombNum;
         }
         
-        if (preLifeFrag != PlayerCtrl.Player.state.LifeFrag) {
-            var curLifeNum = PlayerCtrl.Player.state.LifeFrag;
+        if (preLifeFrag != PlayerCtrl.instance.state.LifeFrag) {
+            var curLifeNum = PlayerCtrl.instance.state.LifeFrag;
             string s = "";
             for (int i = 0; i < curLifeNum; i++) {
                 s += "●";
@@ -112,9 +112,9 @@ public class PlayerStateDisplay : MonoBehaviour {
         }
 
         //Debug.Log(prePower + " | " + Ctrl.Player.state.Power);
-        if (prePower != PlayerCtrl.Player.state.Power) {
+        if (prePower != PlayerCtrl.instance.state.Power) {
             string s;
-            var curPower = PlayerCtrl.Player.state.Power;
+            var curPower = PlayerCtrl.instance.state.Power;
             s = "<align=\"right\"><size=6>" + curPower / 100 + 
                 "</size>" + "." + ((curPower % 100 < 10) ? "0" : "")
                 + curPower % 100 

@@ -89,6 +89,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7890446955520780492, guid: fda639f86dad6c14584cd45d0474c759, type: 3}
+      propertyPath: collideRadius
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7890446955520780492, guid: fda639f86dad6c14584cd45d0474c759, type: 3}
       propertyPath: indestructible
       value: 1
       objectReference: {fileID: 0}

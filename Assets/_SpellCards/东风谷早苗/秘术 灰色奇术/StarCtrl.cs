@@ -120,7 +120,7 @@ public class StarCtrl : MonoBehaviour
         var starList = new List<DoubleSpeedApproach>();
         for (int i = 0; i < pNum; i++) {
             var basicPos = pointLaserManager.laserPoints[i].transform.position;
-            var basicDir = Vector2.SignedAngle(Vector2.right, basicPos - PlayerCtrl.Player.transform.position);
+            var basicDir = Vector2.SignedAngle(Vector2.right, basicPos - PlayerCtrl.instance.transform.position);
             for (int r = 1; r <= 4; r++) {
                 for (int j = 0; j < 20; j++) {
                     var dir = 360f / 20f * j;

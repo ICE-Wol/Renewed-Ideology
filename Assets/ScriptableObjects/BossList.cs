@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BossList", menuName = "BossList", order = 0)]
@@ -12,9 +13,9 @@ public class BossList : ScriptableObject
      * 位置（道中/关底）（不同面数）
      */
     [Serializable]
-    public struct BossInfo
-    {
+    public struct BossInfo {
         public string bossName;
+        public BossCtrl bossPrefab;
         public SpellCardSet[] spellCardSets;
 
         [Serializable]
@@ -23,9 +24,10 @@ public class BossList : ScriptableObject
             public SpellPracticeManager.Difficulty difficulty;
             public int stageIndex;
             public int bossOrder;
-            public SpellCardInfo[] spellCardInfos;
+            public List<SpellCardInfo> spellCardInfos;
         }
     }
     
-    public BossInfo[] bossInfos;
+    public List<BossInfo> bossInfos;
+
 }

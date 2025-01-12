@@ -102,7 +102,6 @@ public class MenuManager : MonoBehaviour {
             case MenuState.DifficultySelect:
                 var curDiff = diffSelect.curDiff;
                 if (Input.GetKeyDown(KeyCode.A)) {
-                    print("entered");
                     curDiff = curDiff.Prev();
                 }
                 if (Input.GetKeyDown(KeyCode.D)) {

@@ -1,4 +1,5 @@
-﻿using _Scripts.Tools;
+﻿using System.Collections.Generic;
+using _Scripts.Tools;
 using UnityEngine;
 
 namespace _Scripts.Item {
@@ -14,8 +15,9 @@ namespace _Scripts.Item {
         Life,
         Card,
     }
-    public class Item : MonoBehaviour {
-        //public static int cnt = 0;
+    public class Item : MonoBehaviour
+    {
+        public static HashSet<Item> items = new HashSet<Item>();
         
         public SpriteRenderer spriteRenderer;
         public Sprite[] itemSprites;
@@ -47,6 +49,8 @@ namespace _Scripts.Item {
                 rotation *= -1;
             }
             scale = 0;
+            
+            items.Add(this);
         }
 
         void Update() {
@@ -78,14 +82,14 @@ namespace _Scripts.Item {
         public bool CheckCollect() {
             var distance 
                 = Vector2.Distance(transform.position, 
-                    Player.PlayerCtrl.Player.transform.position);
-            var targetRadius = Player.PlayerCtrl.Player.state.itemRadius;
+                    Player.PlayerCtrl.instance.transform.position);
+            var targetRadius = Player.PlayerCtrl.instance.state.itemRadius;
             return (distance <= collectRadius + targetRadius) || 
-                   (Player.PlayerCtrl.Player.transform.position.y >= 2.5f);
+                   (Player.PlayerCtrl.instance.transform.position.y >= 2.5f);
         }
 
         public virtual void TriggerEffect() {
-            var state = Player.PlayerCtrl.Player.state;
+            var state = Player.PlayerCtrl.instance.state;
             switch (type) {
                 case ItemType.Power:
                     state.Power += 1;
@@ -108,19 +112,19 @@ namespace _Scripts.Item {
                     break;
                 case ItemType.BombFrag:
                     state.BombFrag += 1;
-                    PlayerStatusManager.Manager.RefreshSlot();
+                    //PlayerStatusManager.instance.RefreshSlot();
                     break;
                 case ItemType.LifeFrag:
                     state.LifeFrag += 1;
-                    PlayerStatusManager.Manager.RefreshSlot();
+                    //PlayerStatusManager.instance.RefreshSlot();
                     break;
                 case ItemType.Bomb:
                     state.bomb += 1;
-                    PlayerStatusManager.Manager.RefreshSlot();
+                    //PlayerStatusManager.instance.RefreshSlot();
                     break;
                 case ItemType.Life:
                     state.life += 1;
-                    PlayerStatusManager.Manager.RefreshSlot();
+                    //PlayerStatusManager.instance.RefreshSlot();
                     break;
             }
             //DestroyImmediate(gameObject);
@@ -130,13 +134,15 @@ namespace _Scripts.Item {
         /// when collected, move to player and trigger effect
         /// </summary>
         public void CollectBehaviour() {
-            var targetPosition = Player.PlayerCtrl.Player.transform.position;
+            var targetPosition = Player.PlayerCtrl.instance.transform.position;
             transform.position = transform.position.ApproachValue(targetPosition, 
                 8f * Vector3.one, 0.1f);
             if (transform.position.Equal(targetPosition, 0.1f)) {
                 AudioManager.Manager.PlaySound(AudioNames.SeItem);
                 TriggerEffect();
+                items.Remove(this);
                 Destroy(gameObject);
+                
             }
         }
     }

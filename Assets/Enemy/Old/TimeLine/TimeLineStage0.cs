@@ -37,10 +37,10 @@ public class TimeLineStage0 : MonoBehaviour
     public FairyMovement st0F10Prefab;
 
     [Header("5000 道中boss")] 
-    public GameObject st0MidBoss;
+    public BossCtrl st0MidBoss;
     
     [Header("关底boss")] 
-    public GameObject st0Boss;
+    public BossCtrl st0Boss;
 
     IEnumerator<float> GenerateFairy(FairyMovement fairyPrefab, Vector3 offset, int count, int interval)
     {
@@ -91,7 +91,8 @@ public class TimeLineStage0 : MonoBehaviour
     IEnumerator<float> GenStageBoss(int waitFrame) {
         hasFinalBossActivated = true;
         yield return Calc.WaitForFrames(waitFrame);
-        st0Boss.SetActive(true);
+        st0Boss = BossManager.instance.GenerateBossWithSpellCardSet("东风谷早苗",
+            SpellPracticeManager.Difficulty.Demo, 0, 1);
     }
     
     private void Update() {
@@ -135,7 +136,9 @@ public class TimeLineStage0 : MonoBehaviour
         }
         
         if (timer == 5000) {
-            st0MidBoss.SetActive(true);
+            st0MidBoss =
+                BossManager.instance.GenerateBossWithSpellCardSet("琪露诺",
+                    SpellPracticeManager.Difficulty.Demo, 0, 0);
         }
 
         if (st0MidBoss == null && !hasFinalBossActivated) {
