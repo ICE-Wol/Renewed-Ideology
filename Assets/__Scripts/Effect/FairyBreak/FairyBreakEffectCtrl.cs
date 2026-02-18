@@ -61,6 +61,12 @@ namespace _Scripts {
             _tarWaveScaleX = new float[2];
             _tarWaveScaleY = new float[2];
             Initialize();
+
+            AudioManager.Manager.PlaySound(AudioNames.SeEnemyExplode0);
+            //Random.value > 0.5f ? AudioNames.SeEnemyExplode0 : AudioNames.SeEnemyExplode1);
+            
+            
+
         }
 
         public void Initialize() {

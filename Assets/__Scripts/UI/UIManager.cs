@@ -61,15 +61,15 @@ public class UIManager : MonoBehaviour {
     
     private void UpdatePowerText() {
         power = player.Power;
-        powerString = "<color=#EECBAD>" + (int)(power / 100) + "." +
+        powerString = (int)(power / 100) + "." +
                       "<size=40>" + (power % 100 < 10 ? "0" : "") + (int)(power % 100) + "</size>" +
-                      "/4.<size=40>00</size></color>";
+                      "/4.<size=40>00</size>";
         powerText.text = powerString;
     }
     
     private void UpdateGrazeText() {
         curGraze = PlayerCtrl.instance.state.graze;
-        grazeText.text = "<color=#CFCFCF>" + (int)curGraze + "</color>";
+        grazeText.text = curGraze.ToString(CultureInfo.InvariantCulture);
     }
 
     private void UpdateBonusPointText() {
@@ -80,10 +80,13 @@ public class UIManager : MonoBehaviour {
     }
 
     private void Update() {
-        var damageable = BossManager.instance.curBoss.damageable;
-        if(damageable != null) UpdateTimeText();
+        if (BossManager.instance.curBoss != null) {
+            var damageable = BossManager.instance.curBoss.damageable;
+            if (damageable != null) UpdateTimeText();
+            if (damageable != null) UpdateBonusPointText();
+        }
+
         UpdatePowerText();
         UpdateGrazeText();
-        if(damageable != null) UpdateBonusPointText();
     }
 }

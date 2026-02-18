@@ -54,7 +54,11 @@ MonoBehaviour:
   isOddWave: 0
   isRandom: 0
   evenColor: {r: 0.5707547, g: 0.30153078, b: 0.506174, a: 1}
-  centerPos: {x: 0, y: 0, z: 0}
+  centerPos: {x: 0, y: 2, z: 0}
   starPos: []
+  oriPos: []
   bulletPos: []
   bullets: []
+  maxLerpTime: 60
+  lerpType: 6
+  timer: 0

@@ -1,0 +1,323 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7047385535184905520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7969614200703981322}
+  - component: {fileID: 1019717151939473929}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7969614200703981322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047385535184905520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.088133, y: -2.600682, z: 1.1693023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1019717151939473929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047385535184905520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51e793dbd9a1364c9982c1691d9e0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SeShootBoon0
+    enumName: 0
+    clip: {fileID: 8300000, guid: cd7335d246396be4aa670a9af3e7ed59, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootBoon1
+    enumName: 1
+    clip: {fileID: 8300000, guid: b5ca6c90918f92a428a6314c555eb62f, type: 3}
+    volume: 1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootKira0
+    enumName: 2
+    clip: {fileID: 8300000, guid: 2b224b41509ea304f8b48b4b6e2433a4, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootKira1
+    enumName: 3
+    clip: {fileID: 8300000, guid: 8be2f50625fef0e4bb3d394c4e78ee0c, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser0
+    enumName: 4
+    clip: {fileID: 8300000, guid: c199c807085bd424da7a642a178e489e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser1
+    enumName: 5
+    clip: {fileID: 8300000, guid: eecd63c7ab14150429c974d7ed397d7d, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootLaser2
+    enumName: 6
+    clip: {fileID: 8300000, guid: 52acaa2b4b21d104c87e594286f0289c, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootSlash
+    enumName: 7
+    clip: {fileID: 8300000, guid: 072ea00062b09cf4784645be1c726266, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootTan
+    enumName: 8
+    clip: {fileID: 8300000, guid: 1d07548d80530ba4d88418f565ad8e61, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SeShootWater
+    enumName: 9
+    clip: {fileID: 8300000, guid: 07751f9af94bb8c479d03d8062a25189, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeCharge
+    enumName: 10
+    clip: {fileID: 8300000, guid: 77dc3c98e3809f24cb4efd206bafd205, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeDamage0
+    enumName: 11
+    clip: {fileID: 8300000, guid: 144455f457ac7444f919a53b14b3efcf, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeDamage1
+    enumName: 12
+    clip: {fileID: 8300000, guid: 55b6fb0eab532d7458569a099472ebf5, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeEnemyExplode0
+    enumName: 13
+    clip: {fileID: 8300000, guid: 9ce64e012a4aaef418cef25a6e0b5666, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeEnemyExplode1
+    enumName: 14
+    clip: {fileID: 8300000, guid: 05d54c406e0d5994ebc9d3b0261531bf, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBossExplode
+    enumName: 15
+    clip: {fileID: 8300000, guid: ab6c82e9b37014d44acadf0b819d3acc, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeFault
+    enumName: 16
+    clip: {fileID: 8300000, guid: af524f2e22a3f14409d9a4fce94b915a, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeGraze
+    enumName: 17
+    clip: {fileID: 8300000, guid: 1162ec7dce951494c818a2b8a41e3895, type: 3}
+    volume: 0.03
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeItem
+    enumName: 0
+    clip: {fileID: 8300000, guid: 5ddc31699adadfc469473634cd38dfcf, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMissileLaunch
+    enumName: 18
+    clip: {fileID: 8300000, guid: bc09a01d38cc0854dba8a5ee1afdc66e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMissileExplode
+    enumName: 19
+    clip: {fileID: 8300000, guid: a80cc66a4877b474a88f31714ae88731, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMarisaBomb
+    enumName: 20
+    clip: {fileID: 8300000, guid: 300b30b639da22f478a17f78840b2749, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SePlayerDead
+    enumName: 21
+    clip: {fileID: 8300000, guid: b8dfe777fc4e0024aaea1201fc40296a, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SePlayerShoot
+    enumName: 22
+    clip: {fileID: 8300000, guid: 8ea7d8ff1897cb342b30c52ed4e16705, type: 3}
+    volume: 0.05
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeTimeout0
+    enumName: 23
+    clip: {fileID: 8300000, guid: 84799c1c29c502a45a1bb355b623158e, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeTimeout1
+    enumName: 24
+    clip: {fileID: 8300000, guid: 61c451f0979faaa4a99fb4838afc8635, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBonus0
+    enumName: 25
+    clip: {fileID: 8300000, guid: eb444f11f6e0727478e4ebd952a2c337, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeBonus1
+    enumName: 26
+    clip: {fileID: 8300000, guid: e3baf027acb728c418deed63e08a50b2, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SePause
+    enumName: 28
+    clip: {fileID: 8300000, guid: b86682d9f59f5574fa11591fe92af9a0, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeSelect
+    enumName: 29
+    clip: {fileID: 8300000, guid: 5bcc01f672f2b3340b75549a677e49b8, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeGoBack
+    enumName: 30
+    clip: {fileID: 8300000, guid: 87c6c6cb16e8f634eb0ec37bb8f6052d, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SeMoveUpAndDown
+    enumName: 31
+    clip: {fileID: 8300000, guid: cb60ee08055c45e42bfe79fe1e81ab7c, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioType: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: MusStageDemoMid
+    enumName: 32
+    clip: {fileID: 8300000, guid: 52f33494ceda20a429c111ca1ea44c22, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: MusTitle
+    enumName: 33
+    clip: {fileID: 8300000, guid: 3884113a20ee82f459eb42602c45628c, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioType: 0
+    loop: 1
+    source: {fileID: 0}
+  musicGroup: {fileID: 5875850762877436732, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  ShootGroup: {fileID: 1642339068550758743, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  otherGroup: {fileID: -3223276717483159418, guid: 3d0a304c2d1c2a6489202f3dfeaa6d15, type: 2}
+  playBGM: 0

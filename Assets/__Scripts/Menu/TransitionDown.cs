@@ -29,7 +29,6 @@ public class TransitionDown : MonoBehaviour {
     public IEnumerator<float> StartMaskingLine(int line) {
         if (line == 2) {
             Instantiate(loadingCtrl);
-            loadingCtrl.timer = 1;
         }
 
         if (line % 2 == 1) {

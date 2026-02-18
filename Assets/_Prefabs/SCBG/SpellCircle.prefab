@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c22de1af2ba38408b488080c364abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleMaxRadius: 8
   damageable: {fileID: 0}
   meshRenderer: {fileID: 4331212899143591979}
   meshFilter: {fileID: 2330642663891053479}
@@ -86,6 +87,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

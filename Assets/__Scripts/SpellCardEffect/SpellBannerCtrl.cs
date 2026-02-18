@@ -1,44 +1,35 @@
+using System;
 using _Scripts;
 using _Scripts.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpellBannerCtrl : MonoBehaviour {
-    public Transform[] rollBanners;
-    public Transform[] lineBanners;
-    public Image[] bannerImages;
-    public Vector3[] initPos;
+    private static readonly int OffsetMultiplier = Shader.PropertyToID("_OffsetMultiplier");
+    public SpriteRenderer[] lineBanners;
+    public SpellBannerCircle[] rollBanners;
 
     public float maxAlpha;
     private float _targetAlpha;
     private float _currentAlpha;
 
-    public void ResetBanners() {
-        rollBanners[0].localRotation = Quaternion.Euler(0f, 0f, 0f);
-        rollBanners[1].localRotation = Quaternion.Euler(0f, 0f, 0f);
-
-        
-        for (int i = 0; i < 9; i++) {
-            lineBanners[i].localPosition = initPos[i];
-        }
-        
-        foreach (var image in bannerImages) {
-            image.color = image.color.SetAlpha(0f);
+    private void Start() {
+        for(int i = 0;i < lineBanners.Length;i++) {
+            lineBanners[i].material.SetVector(OffsetMultiplier, new Vector2((i % 2 == 0) ? 1f : -1f, 0f));
+            
         }
     }
 
     private void Update() {
-        rollBanners[0].localRotation = Quaternion.Euler(0f, 0f, 100f * Time.time);
-        rollBanners[1].localRotation = Quaternion.Euler(0f, 0f, -100f * Time.time);
-
-        for (int i = 0; i < 9; i++) {
-            lineBanners[i].localPosition +=
-                ((i % 2 == 0) ? 1 : -1) * 150f * Time.deltaTime * Calc.Deg2Dir3(15f);
-        }
-
         _currentAlpha.ApproachRef(_targetAlpha, 12f);
-        foreach (var image in bannerImages) {
-            image.color = image.color.SetAlpha(_currentAlpha);
+        foreach (var sr in lineBanners) {
+            sr.color = sr.color.SetAlpha(_currentAlpha);
+        }
+    
+        foreach (var banner in rollBanners) {
+            foreach (var t in banner.spellBannerSet) {
+                t.color = t.color.SetAlpha(_currentAlpha);
+            }
         }
     }
 

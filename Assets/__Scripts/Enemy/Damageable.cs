@@ -36,6 +36,22 @@ namespace _Scripts.Enemy {
         public Detect bulletDetector;
 
         
+        public static Damageable GetNearestDamageable(Vector2 pos) {
+            //print(damageableSet.Count);
+            Damageable nearest = null;
+            float minDist = float.MaxValue;
+            if (damageableSet.Count == 0) return null;
+            foreach (var damageable in damageableSet) {
+                if(damageable == null) continue;
+                float dist = (damageable.transform.position - (Vector3)pos).sqrMagnitude;
+                if (dist < minDist) {
+                    minDist = dist;
+                    nearest = damageable;
+                }
+            }
+            return nearest;
+        }
+        
         
         //public event Action OnDead;
         

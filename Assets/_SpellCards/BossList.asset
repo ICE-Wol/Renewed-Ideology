@@ -15,6 +15,7 @@ MonoBehaviour:
   bossInfos:
   - bossName: "\u4E1C\u98CE\u8C37\u65E9\u82D7"
     bossPrefab: {fileID: 6209880156766511015, guid: cb133d73273848145aed3e2be5908662, type: 3}
+    bossPortrait: {fileID: 21300000, guid: e30788f0f2a173c47b5274df3ffd2cae, type: 3}
     spellCardSets:
     - difficulty: 7
       stageIndex: 0
@@ -28,6 +29,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 1897c27207d7e554a83e1e4deadb6503, type: 2}
   - bossName: "\u742A\u9732\u8BFA"
     bossPrefab: {fileID: 3863251705453196279, guid: 65321f6a319102d44bb0fa155dc7a7db, type: 3}
+    bossPortrait: {fileID: 21300000, guid: 85d4bed8d418bf54d82eefd4568484f2, type: 3}
     spellCardSets:
     - difficulty: 7
       stageIndex: 0

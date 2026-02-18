@@ -22,10 +22,7 @@ namespace _Scripts {
         public bool isHitEffectOn;
         public int hits;
         public static GameManager Manager;
-
-        //public BossCtrl curBoss;
         
-        public Material[] glowMaterials;
         public Item.Item[] items;
         public BulletBreakCtrl bulletBreakPrefab;
         public ReverseColorCtrl reverseColorCtrl;
@@ -33,10 +30,10 @@ namespace _Scripts {
         public Transform bulletSortingGroup;
         public Transform itemSortingGroup;
         public Transform bulletBreakPrefabGroup;
-        public UIManager uiManager;
 
-        public Vector2 bulletEraseCenter;
-        public float bulletEraseRadius;
+        public BulletEraser bulletEraserPrefab;
+        public ScriptableObjects.EnemyBulletBasics enemyBulletBasics;
+        
         
         private void Awake() {
             if (!Manager) {
@@ -45,7 +42,7 @@ namespace _Scripts {
             else {
                 Destroy(gameObject);
             }
-            Application.targetFrameRate = 60;
+            //Application.targetFrameRate = 60;
         }
 
         private void Start() {
@@ -59,7 +56,7 @@ namespace _Scripts {
             timer++;
             if (Input.GetKeyDown(KeyCode.C)) {
                 isCheatModeOn = !isCheatModeOn;
-                //cheatAlertTest.enabled = isCheatModeOn;
+                cheatAlertTest.enabled = isCheatModeOn;
             }
 
             if (isCheatModeOn) {
@@ -72,8 +69,6 @@ namespace _Scripts {
                     StartEraseBullets(new Vector2(0f,0f));
                 }
             }
-            
-            IncreaseEraseRadius();
         }
 
         public static IEnumerator<float> WaitForFrames(int frames) {
@@ -81,45 +76,9 @@ namespace _Scripts {
                 yield return Timing.WaitForOneFrame;
             }
         }
-        
-        #region EraseBullet
         public void StartEraseBullets(Vector2 pos) {
-            bulletEraseCenter = pos;
-            //print(bulletEraseCenter);
-            bulletEraseRadius = 0.1f;
+            Instantiate(bulletEraserPrefab, pos, Quaternion.identity);
         }
-        
-        private void IncreaseEraseRadius() {
-            if (bulletEraseRadius > 0f) {
-                EraseBulletsWithinRange();
-                bulletEraseRadius += 0.1f;
-            }
-
-            if (bulletEraseRadius >= 10f)
-                bulletEraseRadius = 0;
-        }
-        
-        public bool IsEraseFinished() {
-            return bulletEraseRadius == 0;
-        }
-        private void EraseBulletsWithinRange() {
-            var copySet = new HashSet<State>();
-            foreach (var b in State.bulletSet) {
-                copySet.Add(b);
-            }
-            foreach (var b in copySet) {
-                if (b == null) {
-                    State.bulletSet.Remove(b);
-                    continue;
-                }
-                if (b.GetState() == EBulletStates.Template) continue;
-                if (Vector2.Distance(b.transform.position, bulletEraseCenter) < bulletEraseRadius) {
-                    b.SetState(EBulletStates.Destroying);
-                    State.bulletSet.Remove(b);
-                }
-            }
-        }
-        #endregion
         public void CreateBulletDestroyParticle(Vector3 pos, Color c, BulletSize size, int sortingOrder) {
             //pos = pos.SetZ(-5);
             var particle = Instantiate(bulletBreakPrefab, pos, Quaternion.identity);

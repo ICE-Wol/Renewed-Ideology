@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -13,7 +14,6 @@ namespace _Scripts {
                 Destroy(gameObject);
             }
             _timer = 0;
-            InitSlot(2,3);
         }
         
         [Header("画面右上方转动魔法阵")]
@@ -78,6 +78,10 @@ namespace _Scripts {
                 }
             }
 
+        }
+
+        private void Start() {
+            InitSlot(Player.PlayerCtrl.instance.state.life, Player.PlayerCtrl.instance.state.bomb);
         }
 
         private void Update() {

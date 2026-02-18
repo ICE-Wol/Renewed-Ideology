@@ -1,0 +1,8 @@
+{
+    "dotrush.roslyn.projectOrSolutionFiles": [
+        "e:\\Unity\\Project\\Renewed-Ideology-Unity6\\Renewed-Ideology-Unity6.sln"
+    ],
+    "dotnet.defaultSolution": "Renewed-Ideology-Unity6.sln",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSaveMode": "modifications"
+}

@@ -34,7 +34,13 @@ public enum AudioNames
     SeTimeout1,  
     SeBonus0,  
     SeBonus1,  
-    MusStageDemoMid
+    SePause,
+    SeSelect,
+    SeGoBack,
+    SeMoveUpAndDown,
+    SeWaterBomb,
+    MusStageDemoMid,
+    MusTitle
 
 }
 
@@ -66,7 +72,7 @@ public class Sound
 
 public class AudioManager : MonoBehaviour
 {
-
+    public AudioManager manager;
     public static AudioManager Manager;
     public List<Sound> sounds;
     public AudioMixerGroup musicGroup;
@@ -110,8 +116,7 @@ public class AudioManager : MonoBehaviour
         if(playBGM) PlaySound("MusStageDemoMid");
     }
 
-    public void PlaySound(string name)
-    {
+    public void PlaySound(string name) {
         var sound = sounds.Find(s => s.name == name);
         if (sound == null) {
             Debug.LogWarning("Sound: " + name + " not found!");

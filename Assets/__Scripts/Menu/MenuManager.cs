@@ -1,5 +1,6 @@
 using MEC;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 
@@ -29,10 +30,11 @@ public class MenuManager : MonoBehaviour {
     public DiffSelectManager diffSelect;
     public PlayerSelectManager playerSelect;
     public MenuCtrl menuCtrl;
-    public TransitionUp transitionUp;
+    public TriangleTransitionManager transition;
 
     private void Start() {
         SetState(MenuState.PressAnyKey);
+        AudioManager.Manager.PlaySound(AudioNames.MusTitle);
     }
     
 
@@ -77,18 +79,27 @@ public class MenuManager : MonoBehaviour {
     private void ChangeMenu() {
         switch (menuState) {
             case MenuState.PressAnyKey:
-                if (Input.anyKeyDown)
+                if (Input.anyKeyDown) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeSelect);
                     SetState(MenuState.MainMenu);
+                }
+
                 break;
             case MenuState.MainMenu:
                 if (Input.GetKeyDown(KeyCode.Z)) {
                     switch (menuCtrl.curMenuPointer) {
                         case 0:
+                            AudioManager.Manager.PlaySound(AudioNames.SeSelect);
                             Debug.Log("Start Game");
                             SetState(MenuState.DifficultySelect);
 
                             break;
+                        case 1:
+                            AudioManager.Manager.PlaySound(AudioNames.SeSelect);
+                            SceneManager.LoadScene("SpellPracticeScene");
+                            break;
                         case 7:
+                            AudioManager.Manager.PlaySound(AudioNames.SeSelect);
                             Debug.Log("Exit Game");
                             Application.Quit();
                             break;
@@ -102,27 +113,35 @@ public class MenuManager : MonoBehaviour {
             case MenuState.DifficultySelect:
                 var curDiff = diffSelect.curDiff;
                 if (Input.GetKeyDown(KeyCode.A)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Prev();
                 }
                 if (Input.GetKeyDown(KeyCode.D)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Next();
                 }
                 if (Input.GetKeyDown(KeyCode.W)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Prev();
                 }
                 if (Input.GetKeyDown(KeyCode.S)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Next();
                 }
                 if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Prev();
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Next();
                 }
                 if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Prev();
                 }
                 if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
                     curDiff = curDiff.Next();
                 }
 
@@ -131,16 +150,19 @@ public class MenuManager : MonoBehaviour {
                 }
                 
                 if (Input.GetKeyDown(KeyCode.Z)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeSelect);
                     SetState(MenuState.PlayerSelect);
                     diffSelect.selected = true;
                     playerSelect.TitleAndBottomAppear(true);
                 }
                 if(Input.GetKeyDown(KeyCode.X)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeGoBack);
                     diffSelect.selected = false;
                     diffSelect.selecting = true;
                 }
 
                 if (diffSelect.selected == false && Input.GetKeyDown(KeyCode.X)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeGoBack);
                     SetState(MenuState.MainMenu);
                     menuDecoManager.MoveCirclePos(-8f);
                     diffSelect.SetAllDiffInvisible();
@@ -151,13 +173,16 @@ public class MenuManager : MonoBehaviour {
                 break;
             case MenuState.PlayerSelect:
                 if (Input.GetKeyDown(KeyCode.X)) {
+                    AudioManager.Manager.PlaySound(AudioNames.SeGoBack);
                     SetState(MenuState.DifficultySelect);
                     diffSelect.selected = false;
                     playerSelect.SetAllPlayersInvisible();
                     playerSelect.TitleAndBottomAppear(false);
                 }
                 if (Input.GetKeyDown(KeyCode.Z)) {
-                    transitionUp.gameObject.SetActive(true);
+                    AudioManager.Manager.PlaySound(AudioNames.SeSelect);
+                    transition.gameObject.SetActive(true);
+                    transition.sceneName = "GameScene";
                 }
                 break;
 

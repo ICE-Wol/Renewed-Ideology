@@ -1,0 +1,32 @@
+{
+  "name": "com.karatoga.protaframework",
+  "version": "1.0.0",
+  "displayName": "Prota Framework",
+  "description": "Unity gamejam framework for Karatoga personal use.",
+  "unity": "2022.2",
+  "dependencies": {
+    "com.unity.shadergraph": "12.1.7",
+    "com.unity.visualeffectgraph": "12.1.7",
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.ugui": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.modules.animation": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.umbra": "1.0.0",
+    "com.unity.collections": "2.1.4"
+  },
+  "keywords": [
+    "Framework",
+    "Prota"
+  ],
+  "author": {
+    "name": "Narellanda Karatoga",
+    "email": "karatoga@outlook.com",
+    "url": "about:blank"
+  }
+}

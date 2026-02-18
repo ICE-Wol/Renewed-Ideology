@@ -41,39 +41,39 @@ namespace _Scripts.Enemy {
         private int idleFrameCount;
         [SerializeField]
         private int moveFrameCount;
+
         protected void PlayAnim() {
             direction = (transform.position - prePosition).normalized;
             if (timer % frameSpeed == 0) {
-                if (isEnchanting) {
+                float horVector = direction.x;
+                bool hasHorizontalMovement = !horVector.Equal(0f);
+                //左右行走优先级高于施法
+                if (!hasHorizontalMovement && isEnchanting) {
                     if (enchantPointer == actionSequence.Length) enchantPointer = 0;
                     spriteRenderer.sprite = animEnemyEnchant[enchantPointer];
                     enchantPointer++;
                 }
-                else {
-                    float horVector = direction.x;
-                    bool hasHorizontalMovement = !horVector.Equal(0f);
-                    if (hasHorizontalMovement) {
-                        movePointer += (int)Mathf.Sign(horVector);
-                        spriteRenderer.sprite = GetSpriteMovePointer(movePointer);
-                        bool movePointerReachEdges = (Math.Abs(movePointer) == moveFrameCount);
-                        if (movePointerReachEdges) movePointer = Math.Sign(movePointer) * moveFrameCount;
 
+                if (hasHorizontalMovement) {
+                    movePointer += (int)Mathf.Sign(horVector);
+                    spriteRenderer.sprite = GetSpriteMovePointer(movePointer);
+                    bool movePointerReachEdges = (Math.Abs(movePointer) == moveFrameCount);
+                    if (movePointerReachEdges) movePointer = Math.Sign(movePointer) * moveFrameCount;
+
+                }
+                else {
+                    bool remainSideAnimation = (movePointer != 0);
+                    if (remainSideAnimation) {
+                        movePointer -= Math.Sign(movePointer);
+                        spriteRenderer.sprite = GetSpriteMovePointer(movePointer);
                     }
                     else {
-                        bool remainSideAnimation = (movePointer != 0);
-                        if (remainSideAnimation) {
-                            movePointer -= Math.Sign(movePointer);
-                            spriteRenderer.sprite = GetSpriteMovePointer(movePointer);
-                        }
-                        else {
-                            idlePointer++;
-                            if (idlePointer >= idleFrameCount) idlePointer = 0;
-                            spriteRenderer.sprite = idleSpriteSequence[idlePointer];
-                        }
+                        idlePointer++;
+                        if (idlePointer >= idleFrameCount) idlePointer = 0;
+                        spriteRenderer.sprite = idleSpriteSequence[idlePointer];
                     }
                 }
             }
-
             prePosition = transform.position;
         }
 

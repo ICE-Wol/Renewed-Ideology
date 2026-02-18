@@ -25,6 +25,10 @@ public class HealthBarDownCtrl : MonoBehaviour {
             foreach (var d in Damageable.damageableSet) {
                 if (d.isBoss) {
                     targetBoss = d;
+                    if (isTime) {
+                        image.fillAmount = targetBoss.curTime / targetBoss.maxTime;
+                    }
+                    else image.fillAmount = targetBoss.curHealth / targetBoss.maxHealth;
                     break;
                 }
             }
@@ -35,9 +39,9 @@ public class HealthBarDownCtrl : MonoBehaviour {
         }
         else {
             if (isTime) {
-                image.fillAmount = (float)targetBoss.curTime / targetBoss.maxTime;
+                image.fillAmount = targetBoss.curTime / targetBoss.maxTime;
             }
-            else image.fillAmount = (float)targetBoss.curHealth / targetBoss.maxHealth;
+            else image.fillAmount = targetBoss.curHealth / targetBoss.maxHealth;
             if (isCircular) {
                 rt.position = Camera.main.WorldToScreenPoint(targetBoss.transform.position);
             }

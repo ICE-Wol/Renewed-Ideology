@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Scripts;
 using _Scripts.Tools;
 using MEC;
 using UnityEngine;
@@ -8,6 +9,7 @@ using Random = UnityEngine.Random;
 public class TimeLineStage0 : MonoBehaviour
 {
     public int timer;
+    public bool startFromBoss;
     
     [Header("180 开幕7way狙")]
     public FairyMovement st0F0Prefab;
@@ -90,12 +92,20 @@ public class TimeLineStage0 : MonoBehaviour
     private bool hasFinalBossActivated = false;
     IEnumerator<float> GenStageBoss(int waitFrame) {
         hasFinalBossActivated = true;
-        yield return Calc.WaitForFrames(waitFrame);
+        //yield return Calc.WaitForFrames(waitFrame);
         st0Boss = BossManager.instance.GenerateBossWithSpellCardSet("东风谷早苗",
             SpellPracticeManager.Difficulty.Demo, 0, 1);
+        yield return 0;
     }
-    
+
+    private void Start() {
+        if (startFromBoss) timer = 5000;
+    }
+
     private void Update() {
+        
+        if(PracticeManager.instance.spellPracticeStartInfo.isSpellPracticeMode)
+            return;
         if(timer == 180) {
             Timing.RunCoroutine(GenerateOpeningFairy(Vector3.zero, 15, 30,false));
         }
@@ -141,8 +151,12 @@ public class TimeLineStage0 : MonoBehaviour
                     SpellPracticeManager.Difficulty.Demo, 0, 0);
         }
 
-        if (st0MidBoss == null && !hasFinalBossActivated) {
+        if (timer > 5000 && st0MidBoss == null && st0Boss == null && !hasFinalBossActivated) {
             Timing.RunCoroutine(GenStageBoss(100));
+        }
+        
+        if(timer > 5103 && hasFinalBossActivated && st0Boss == null) {
+            Timing.RunCoroutine(PauseManager.instance.TriggerEndPause(true));
         }
         
         timer++;

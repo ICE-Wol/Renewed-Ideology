@@ -16,6 +16,7 @@ public class BossList : ScriptableObject
     public struct BossInfo {
         public string bossName;
         public BossCtrl bossPrefab;
+        public Sprite bossPortrait;
         public SpellCardSet[] spellCardSets;
 
         [Serializable]

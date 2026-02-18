@@ -115,10 +115,12 @@ public class MenuCtrl : MonoBehaviour
 
     private void ChangeMenu() {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+            AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
             curMenuPointer++;
         }
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+            AudioManager.Manager.PlaySound(AudioNames.SeMoveUpAndDown);
             curMenuPointer--;
         }
 

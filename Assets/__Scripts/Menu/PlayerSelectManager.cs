@@ -73,7 +73,8 @@ public class PlayerSelectManager : MonoBehaviour
             moveDownPage = playerMenuPages[(int)curPlayer];
             moveDownPage.SetClonedValue();
             selectedPlayer = curPlayer;
-            TitleAndBottomAppear(false);
+            //黑底不必关掉
+            //TitleAndBottomAppear(false);
         }
         // if (!isSelecting && Input.GetKeyDown(KeyCode.X)) {
         //     isSelecting = true;

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jadeBulletPrefab: {fileID: 1886652902694531072, guid: 1797f9733bdf6e641b7ba89bd2b9f57a, type: 3}
-  bulletNum: 100
+  bulletNum: 180
   radius: 1.5
   randDir: 0
   isCreationFinished: 0
@@ -54,7 +54,11 @@ MonoBehaviour:
   isOddWave: 0
   isRandom: 0
   evenColor: {r: 0.5424528, g: 0.2916963, b: 0.5216885, a: 1}
-  centerPos: {x: 0, y: 0, z: 0}
+  centerPos: {x: 0, y: 2, z: 0}
   starPos: []
+  oriPos: []
   bulletPos: []
   bullets: []
+  maxLerpTime: 60
+  lerpType: 6
+  timer: 0

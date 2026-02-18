@@ -1,0 +1,21 @@
+{
+    "name": "Prota.Unity",
+    "rootNamespace": "Prota.Unity",
+    "references": [
+        "Prota.Utils",
+        "Unity.Mathematics",
+        "Unity.TextMeshPro",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.RenderPipelines.Core.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

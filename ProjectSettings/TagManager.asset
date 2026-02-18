@@ -2,10 +2,11 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Boss
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - MagicSquare
   - SCBackground
   - RevertGameScene
-  - 
-  - 
-  - 
+  - PauseBackGround
+  - ScreenEdge
+  - Bullet
   - 
   - 
   - 
@@ -67,3 +68,5 @@ TagManager:
   - name: UI
     uniqueID: 3922566987
     locked: 0
+  m_RenderingLayers:
+  - Default

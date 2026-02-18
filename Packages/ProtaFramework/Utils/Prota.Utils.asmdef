@@ -1,0 +1,23 @@
+{
+    "name": "Prota.Utils",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5a46ad82eac024e4fbb6a0516a5def17",
+        "GUID:a0df86add9087514abc756c5ae98ea8e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "System.Runtime.CompilerServices.Unsafe.dll",
+        "Microsoft.NET.StringTools.dll",
+        "Antlr4.Runtime.Standard.dll",
+        "C5.dll",
+        "KdTreeLib.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

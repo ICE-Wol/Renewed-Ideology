@@ -32,7 +32,7 @@ public class TitleLineManager : MonoBehaviour {
         lines = new SpriteRenderer[lineCount];
         curRadius = new float[lineCount];
         curLength = new float[lineCount];
-        Timing.RunCoroutine(GenerateLine());
+        Timing.RunCoroutine(GenerateLine().CancelWith(gameObject));
     }
     
     /*private IEnumerator<float> GenerateLine() {
@@ -142,7 +142,7 @@ public class TitleLineManager : MonoBehaviour {
 
             lines[i].color = ColorPicker(i,
                 (1f - curLineColorOffset) * Color.red + curLineColorOffset * Color.cyan,
-                (1f - curLineColorOffset) * Color.yellow + curLineColorOffset * new Color(0, 1, 0, 1));
+                (1f - curLineColorOffset) * Color.yellow + curLineColorOffset * Color.magenta);
             if (isSecond)
                 lines[i].color = ColorPicker(i,
                     (1f - curLineColorOffset) * Color.green + curLineColorOffset * new Color(1, 0.5f, 0, 1),

@@ -3,12 +3,63 @@ using _Scripts.EnemyBullet;
 using _Scripts.EnemyBullet.MoveMethod;
 using _Scripts.Player;
 using MEC;
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 namespace _Scripts.Tools {
+    public enum LerpType {
+        Linear,
+        SInFOutQuad,
+        SInFOutCubic,
+        FInSOutCubic,
+        SInOutFMid,
+        FInOutSMid,
+        
+        EaseInOutQuad,
+    }
     public static class Calc {
         //if too big, the following traces will be a rectangle.
         private const float Epsilon = 0.00001f;
+        
+        public static float GetFunctionedValueOfT(float t, LerpType type) {
+            if (type == LerpType.SInFOutQuad) {
+                return t * t;
+            }
+            else if (type == LerpType.SInFOutCubic) {
+                return t * t * t;
+            }
+            else if (type == LerpType.FInSOutCubic) {
+                return Mathf.Pow(t, 1 / 3f);
+            }
+            if (type == LerpType.SInOutFMid) {
+                return Mathf.Sin((t - 0.5f) * Mathf.PI) + 1;
+            }
+            else if (type == LerpType.FInOutSMid) {
+                return Mathf.Asin(2 * t - 1f) / Mathf.PI + 0.5f;
+            }
+            else if (type == LerpType.Linear) {
+                return t; // Linear interpolation
+            }
+            else if (type == LerpType.EaseInOutQuad) {
+                return t < 0.5f ? 2 * t * t : 1 - Mathf.Pow(-2 * t + 2, 2) / 2f;  
+            }
+            
+            else {
+                Debug.LogError("Unknown LerpType: " + type + "Fallback to linear interpolation");
+                return t; // Fallback to linear interpolation
+            }
+        }
+        public static float Lerp(float start, float end, float t, LerpType type) {
+            return Mathf.Lerp(start, end, GetFunctionedValueOfT(t, type));
+        }
+
+        public static Vector3 Lerp(Vector3 start, Vector3 end, float t, LerpType type) {
+            return new Vector3(
+                Lerp(start.x, end.x, t, type),
+                Lerp(start.y, end.y, t, type),
+                Lerp(start.z, end.z, t, type)
+            );
+        }
 
         public static float GetDirBetweenPosAndNeg180(this float dir) {
             if (dir > 180) {
@@ -96,7 +147,191 @@ namespace _Scripts.Tools {
             return point;
         }
 
-        
+        /// <summary>
+        /// 圆上按索引 i 取点。angle = startAngle + i * step（度），返回 (radius * cos(angle), radius * sin(angle), 0)。
+        /// </summary>
+        /// <param name="radius">半径</param>
+        /// <param name="startAngle">起始角度（度，0 为右，逆时针为正）</param>
+        /// <param name="step">每步角度（度）</param>
+        /// <param name="i">索引</param>
+        /// <param name="centered">若为 true 且调用带 count 的重载，则围绕 startAngle 对称分布</param>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, float step, int i, bool centered)
+        {
+            if (!centered)
+            {
+                float angleDeg = startAngle + i * step;
+                return new Vector3(radius * Mathf.Cos(Mathf.Deg2Rad * angleDeg), radius * Mathf.Sin(Mathf.Deg2Rad * angleDeg), 0f);
+            }
+            // centered 在无 count 时按“不居中”处理
+            float a = startAngle + i * step;
+            return new Vector3(radius * Mathf.Cos(Mathf.Deg2Rad * a), radius * Mathf.Sin(Mathf.Deg2Rad * a), 0f);
+        }
+
+        /// <summary>圆上取点，不居中。angle = startAngle + i * step</summary>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, float step, int i)
+        {
+            return PositionOnCircle(radius, startAngle, step, i, false);
+        }
+
+        /// <summary>以 origin 为圆心的圆上取点，angle = startAngle + i * step</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, float startAngle, float step, int i, bool centered = false)
+        {
+            var v = PositionOnCircle(radius, startAngle, step, i, centered);
+            return new Vector3(origin.x + v.x, origin.y + v.y, 0f);
+        }
+
+        /// <summary>
+        /// 圆上取点，共 count 个点。step = 360f / count。centered 时围绕 startAngle 对称分布。
+        /// </summary>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, float step, int i, int count, bool centered)
+        {
+            float angleDeg = centered
+                ? startAngle + (i - (count - 1) * 0.5f) * step
+                : startAngle + i * step;
+            return new Vector3(radius * Mathf.Cos(Mathf.Deg2Rad * angleDeg), radius * Mathf.Sin(Mathf.Deg2Rad * angleDeg), 0f);
+        }
+
+        /// <summary>以 origin 为圆心的圆上取点，共 count 个点，step = 360f/count</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, float startAngle, float step, int i, int count, bool centered)
+        {
+            var v = PositionOnCircle(radius, startAngle, step, i, count, centered);
+            return new Vector3(origin.x + v.x, origin.y + v.y, 0f);
+        }
+
+        /// <summary>圆上均匀 count 个点，step = 360f/count，不居中</summary>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, int i, int count)
+        {
+            return PositionOnCircle(radius, startAngle, 360f / count, i, count, false);
+        }
+
+        /// <summary>圆上均匀 count 个点，step = 360f/count，可选居中</summary>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, int i, int count, bool centered)
+        {
+            return PositionOnCircle(radius, startAngle, 360f / count, i, count, centered);
+        }
+
+        /// <summary>以 origin 为圆心的圆上均匀 count 个点，step = 360f/count</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, float startAngle, int i, int count, bool centered = false)
+        {
+            var v = PositionOnCircle(radius, startAngle, i, count, centered);
+            return new Vector3(origin.x + v.x, origin.y + v.y, 0f);
+        }
+
+        /// <summary>
+        /// 圆上在 [startAngle, endAngle] 之间均匀取 count 个点，返回第 i 个点。
+        /// i=0 对应 startAngle，i=count-1 对应 endAngle。
+        /// </summary>
+        /// <param name="radius">半径</param>
+        /// <param name="startAngle">起始角度（度）</param>
+        /// <param name="endAngle">结束角度（度）</param>
+        /// <param name="i">索引 [0, count-1]</param>
+        /// <param name="count">总点数（至少为 1）</param>
+        public static Vector3 PositionOnCircle(float radius, float startAngle, float endAngle, int i, int count)
+        {
+            float step = count <= 1 ? 0f : (endAngle - startAngle) / (count - 1);
+            float angleDeg = startAngle + i * step;
+            return new Vector3(radius * Mathf.Cos(Mathf.Deg2Rad * angleDeg), radius * Mathf.Sin(Mathf.Deg2Rad * angleDeg), 0f);
+        }
+
+        /// <summary>以 origin 为圆心的圆上 [startAngle, endAngle] 均匀 count 个点，第 i 个点</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, float startAngle, float endAngle, int i, int count)
+        {
+            var v = PositionOnCircle(radius, startAngle, endAngle, i, count);
+            return new Vector3(origin.x + v.x, origin.y + v.y, 0f);
+        }
+
+        /// <summary>圆上均匀 count 个点，起始角 0°，不居中</summary>
+        public static Vector3 PositionOnCircle(float radius, int i, int count)
+        {
+            return PositionOnCircle(radius, 0f, 360f / count, i, count, false);
+        }
+
+        /// <summary>圆上均匀 count 个点，起始角 0°，可选居中</summary>
+        public static Vector3 PositionOnCircle(float radius, int i, int count, bool centered)
+        {
+            return PositionOnCircle(radius, 0f, 360f / count, i, count, centered);
+        }
+
+        /// <summary>以 origin 为圆心的圆上均匀 count 个点，起始角 0°</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, int i, int count, bool centered = false)
+        {
+            var v = PositionOnCircle(radius, i, count, centered);
+            return new Vector3(origin.x + v.x, origin.y + v.y, 0f);
+        }
+
+        /// <summary>圆上按角度取点，angle 为度，0 为右，逆时针为正</summary>
+        public static Vector3 PositionOnCircle(float radius, float angle)
+        {
+            return new Vector3(radius * Mathf.Cos(angle * Mathf.Deg2Rad), radius * Mathf.Sin(angle * Mathf.Deg2Rad), 0f);
+        }
+
+        /// <summary>以 origin 为圆心的圆上按角度取点</summary>
+        public static Vector3 PositionOnCircle(Vector2 origin, float radius, float angle)
+        {
+            return new Vector3(origin.x + radius * Mathf.Cos(angle * Mathf.Deg2Rad), origin.y + radius * Mathf.Sin(angle * Mathf.Deg2Rad), 0f);
+        }
+
+        /// <summary>返回 Vector2 的圆上取点（同上逻辑，仅返回类型不同）</summary>
+        public static Vector2 PositionOnCircleV2(float radius, float startAngle, float step, int i, bool centered = false)
+        {
+            Vector3 v = PositionOnCircle(radius, startAngle, step, i, centered);
+            return new Vector2(v.x, v.y);
+        }
+
+        public static Vector2 PositionOnCircleV2(float radius, float startAngle, float step, int i)
+        {
+            return PositionOnCircleV2(radius, startAngle, step, i, false);
+        }
+
+        /// <summary>以 origin 为圆心的圆上取点，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(Vector2 origin, float radius, float startAngle, float step, int i, bool centered = false)
+        {
+            return origin + PositionOnCircleV2(radius, startAngle, step, i, centered);
+        }
+
+        public static Vector2 PositionOnCircleV2(float radius, float startAngle, int i, int count, bool centered = false)
+        {
+            Vector3 v = PositionOnCircle(radius, startAngle, i, count, centered);
+            return new Vector2(v.x, v.y);
+        }
+
+        /// <summary>以 origin 为圆心的圆上取点，共 count 个点，step = 360f/count，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(Vector2 origin, float radius, float startAngle, int i, int count, bool centered = false)
+        {
+            return origin + PositionOnCircleV2(radius, startAngle, i, count, centered);
+        }
+
+        /// <summary>圆上 [startAngle, endAngle] 均匀 count 个点，第 i 个点，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(float radius, float startAngle, float endAngle, int i, int count)
+        {
+            Vector3 v = PositionOnCircle(radius, startAngle, endAngle, i, count);
+            return new Vector2(v.x, v.y);
+        }
+
+        /// <summary>以 origin 为圆心的圆上 [startAngle, endAngle] 均匀 count 个点，第 i 个点，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(Vector2 origin, float radius, float startAngle, float endAngle, int i, int count)
+        {
+            return origin + PositionOnCircleV2(radius, startAngle, endAngle, i, count);
+        }
+
+        /// <summary>圆上按角度取点，angle 为度，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(float radius, float angle)
+        {
+            return new Vector2(radius * Mathf.Cos(angle * Mathf.Deg2Rad), radius * Mathf.Sin(angle * Mathf.Deg2Rad));
+        }
+
+        /// <summary>以 origin 为圆心的圆上按角度取点，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(Vector2 origin, float radius, float angle)
+        {
+            return origin + new Vector2(radius * Mathf.Cos(angle * Mathf.Deg2Rad), radius * Mathf.Sin(angle * Mathf.Deg2Rad));
+        }
+
+        /// <summary>以 origin 为圆心的圆上均匀 count 个点，起始角 0°，返回 Vector2</summary>
+        public static Vector2 PositionOnCircleV2(Vector2 origin, float radius, int i, int count, bool centered = false)
+        {
+            return origin + PositionOnCircleV2(radius, 0f, i, count, centered);
+        }
+
         public static float WaitForFrames(int frames) {
             var t = Timing.RunCoroutine(GameManager.WaitForFrames(frames));
             return Timing.WaitUntilDone(t);

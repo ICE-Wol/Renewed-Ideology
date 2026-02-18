@@ -9,8 +9,14 @@ using UnityEngine;
 public class SpellCardInfo : ScriptableObject {
     public BulletGenerator bulletGenerator;
     public bool isSpellCard;
+    public SpellPracticeManager.Difficulty difficulty = SpellPracticeManager.Difficulty.Demo;
     public string spellName;
     public string cardName;
+
+    public bool useDefaultHealth = true;
+    public int DefaultHealth => isSpellCard ? 80000 : 100000;
+    public bool useDefaultTime = true;
+    public float DefaultTime => isSpellCard ? 30 : 45;
     
     public int maxHealth;
     public float maxTime;

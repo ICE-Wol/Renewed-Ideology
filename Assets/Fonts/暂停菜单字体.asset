@@ -11,7 +11,7 @@ Texture2D:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
   m_IsAlphaChannelOptional: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Width: 1
   m_Height: 1
   m_CompleteImageSize: 1
@@ -236,7 +236,23 @@ MonoBehaviour:
     m_Height: 1023
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
-    m_LigatureSubstitutionRecords: []
+    m_LigatureSubstitutionRecords:
+    - m_ComponentGlyphIDs: 3300000030000000
+      m_LigatureGlyphID: 36184
+    - m_ComponentGlyphIDs: 330000002b000000
+      m_LigatureGlyphID: 36183
+    - m_ComponentGlyphIDs: 3300000035000000
+      m_LigatureGlyphID: 3596
+    - m_ComponentGlyphIDs: 2400000030000000
+      m_LigatureGlyphID: 36182
+    - m_ComponentGlyphIDs: 37000000280000002f000000
+      m_LigatureGlyphID: 36058
+    - m_ComponentGlyphIDs: 37000000480000004f000000
+      m_LigatureGlyphID: 1630
+    - m_ComponentGlyphIDs: 3700000030000000
+      m_LigatureGlyphID: 36185
+    - m_ComponentGlyphIDs: 3700000025000000
+      m_LigatureGlyphID: 36098
     m_GlyphPairAdjustmentRecords: []
     m_MarkToBaseAdjustmentRecords: []
     m_MarkToMarkAdjustmentRecords: []

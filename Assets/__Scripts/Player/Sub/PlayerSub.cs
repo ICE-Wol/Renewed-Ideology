@@ -58,7 +58,7 @@ namespace _Scripts {
         
         void Update() {
 
-            if (_timer % fireInterval == 0 && Input.GetKey(KeyCode.Z)) {
+            if (!isDestroyed && !PlayerCtrl.instance.hitLock && _timer % fireInterval == 0 && Input.GetKey(KeyCode.Z)) {
                 Fire();
             }
             

@@ -108,7 +108,7 @@ public class SpellPracticeManager : MonoBehaviour
                     SetBlinkingMenu(spellPracticeMenuType);
                 }
                 if(Input.GetKeyDown(KeyCode.X)) {
-                    //todo 退回到主菜单
+                    SceneManager.LoadScene(0);
                 }
 
                 break;

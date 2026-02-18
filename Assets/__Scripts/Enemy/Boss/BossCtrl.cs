@@ -60,13 +60,13 @@ public class BossCtrl : MonoBehaviour {
      * 实际上不用这么做
      * 放在so里动态生成就好了
      */
-    public void ActivateBulletGenerator() {
+    public void CreateBulletGenerator() {
         //attackPatternSet[curScNumber].SetActive(true);
         curAttackPattern = Instantiate(spellCardInfos[curScNumber].bulletGenerator,transform);
         enchantMovementRef = curAttackPattern;
         movement.stayFrames = enchantMovementRef.waveFrameInterval;
     }
-    public void DeactivateBulletGenerator() {
+    public void DestroyBulletGenerator() {
         //attackPatternSet[curScNumber].SetActive(false);
         Destroy(curAttackPattern.gameObject);
     }
@@ -167,24 +167,27 @@ public class BossCtrl : MonoBehaviour {
                 if (curScNumber + 1 < maxScNumber) {
                     curScNumber++;
                     
+                    var curScInfo = spellCardInfos[curScNumber];
+                    
                     //print("curScNumber: " + curScNumber + " spellCardInfosCount " + spellCardInfos.Count);
-                    damageable.maxTime = spellCardInfos[curScNumber].maxTime;
-                    damageable.maxHealth = spellCardInfos[curScNumber].maxHealth;
+                    damageable.maxTime = curScInfo.useDefaultTime ? curScInfo.DefaultTime : curScInfo.maxTime;
+                    damageable.maxHealth = curScInfo.useDefaultHealth ? curScInfo.DefaultHealth : curScInfo.maxHealth;
 
-                    SpellAnnouncement.instance.scNameText.text = spellCardInfos[curScNumber].spellName + "「" +
-                                      spellCardInfos[curScNumber].cardName + "」";
+                    SpellAnnouncement.instance.scNameText.text = curScInfo.spellName + "「" +
+                                                                 curScInfo.cardName + "」";
                         
-                    if(spellCardInfos[curScNumber].hasInitPos) {
+                    if(curScInfo.hasInitPos) {
                         movement.hasInitPos = true;
-                        movement.initPos = spellCardInfos[curScNumber].initPos;
+                        movement.initPos = curScInfo.initPos;
                         movement.initPosFinished = false;
-                        movement.hasFixedPos = spellCardInfos[curScNumber].hasFixedPos;
+                        movement.hasFixedPos = curScInfo.hasFixedPos;
                     }
                     
                     Timing.RunCoroutine(HealthRecharge().CancelWith(gameObject));
                     Timing.RunCoroutine(TimeRecharge().CancelWith(gameObject));
-                }//let boss die
+                }
                 else {
+                    //如果没有剩余符卡，那么转到死亡状态
                     ChangeState(BossState.Dead);
                 } 
                 break;
@@ -231,12 +234,11 @@ public class BossCtrl : MonoBehaviour {
                 DestroyImmediate(gameObject);
                 
                 break;
-            default: break;
         }
         //在change state里调用change state
         //会导致全局状态被递归后的状态覆盖
         //为避免屎山崩塌，故在此打补丁
-        //事实上不是这里的问题，而是消弹圈是全局的问题
+        //事实上不是这里的问题，而是消弹圈是全局的问题(现已改成单独物体控制)
         //把boss的间隔调大一点就好了
         if (bossState == BossState.Dead) return;
         bossState = state;
@@ -253,14 +255,16 @@ public class BossCtrl : MonoBehaviour {
                     if (!movement.initPosFinished) 
                         return;
                 if (damageable.curHealth >= damageable.maxHealth  &&
-                    damageable.curTime >= damageable.maxTime &&
-                    GameManager.Manager.IsEraseFinished()) {
+                    damageable.curTime >= damageable.maxTime
+                    /* 改成物体控制之后就没办法直接判断消弹是否结束了
+                     * 去掉这个条件也无关紧要
+                    && GameManager.Manager.IsEraseFinished()*/) {
                     if (spellCardInfos[curScNumber].isSpellCard) {
                         ChangeState(BossState.SpellCardAnnounce);
                     }
                     else {
                         ChangeState(BossState.NonSpellCard);
-                        ActivateBulletGenerator();
+                        CreateBulletGenerator();
                     }
                 }
                 
@@ -268,7 +272,7 @@ public class BossCtrl : MonoBehaviour {
             case BossState.SpellCardAnnounce:
                 if (SpellAnnouncement.instance.isAnnounceFinished) {
                     ChangeState(BossState.SpellCard);
-                    ActivateBulletGenerator();
+                    CreateBulletGenerator();
                 }
 
                 break;
@@ -279,7 +283,7 @@ public class BossCtrl : MonoBehaviour {
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
                     ChangeState(BossState.SpellCardBreak);
                     item.setItemDropEnable = !(damageable.curHealth > 0.001f);
-                    DeactivateBulletGenerator();
+                    DestroyBulletGenerator();
                 }
 
                 break;
@@ -312,7 +316,7 @@ public class BossCtrl : MonoBehaviour {
                 if (damageable.curHealth <= 0 || damageable.curTime <= 0) {
                     AudioManager.Manager.PlaySound(AudioNames.SeShootTan);
                     BonusBannerCtrl.instance.ActivateBonusState(false,hasBonus,0);
-                    DeactivateBulletGenerator();
+                    DestroyBulletGenerator();
                     Timing.KillCoroutines("Shoot");
                     item.setItemDropEnable = !(damageable.curHealth > 0.001f);
 

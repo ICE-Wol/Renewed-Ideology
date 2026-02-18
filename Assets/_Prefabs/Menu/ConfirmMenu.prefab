@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2123404052873958766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3961749999884443515}
+  - component: {fileID: 6563322455990411990}
+  m_Layer: 0
+  m_Name: ConfirmMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3961749999884443515
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123404052873958766}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6563322455990411990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123404052873958766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf55d3f71a3a77849ad1c268e68a6404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuBackground: {fileID: 0}
+  menuHead:
+    menu: {fileID: 0}
+    node: {fileID: 0}
+    chiContent: "\u771F\u7684\u8981\u8FD9\u6837\u5417\uFF1F"
+    engContent: Are You Sure
+    parent: {fileID: 0}
+    children: []
+  menuNodes:
+  - menu: {fileID: 0}
+    node: {fileID: 0}
+    chiContent: "\u53BB\u610F\u5DF2\u51B3"
+    engContent: Yes Yes Yes
+    parent: {fileID: 0}
+    children: []
+  - menu: {fileID: 0}
+    node: {fileID: 0}
+    chiContent: "\u6211\u518D\u60F3\u60F3..."
+    engContent: No No No
+    parent: {fileID: 0}
+    children: []
+  subMenuPrefab: {fileID: 0}
+  subMenu: {fileID: 0}
+  menuBgColor1: {r: 0, g: 0, b: 0, a: 0}
+  menuBgColor2: {r: 0, g: 0, b: 0, a: 0}
+  bgBegXPos: 0
+  bgEndXPos: 0
+  bgLerpRate: 0
+  bgLerpTarRate: 0
+  tarColorLerp: []
+  curColorLerp: []
+  menuNodeChiPrefab: {fileID: 6907883623116932243, guid: f8c1e55fe21b45949aa040a087a5f3e8, type: 3}
+  menuNodeEngPrefab: {fileID: 6907883623116932243, guid: 69524a7273289f340b3b46869fca83a5, type: 3}
+  lineSpacing: 75
+  initLocalX: 150
+  curPointer: 0
+  isLocked: 0
+  timer: 0

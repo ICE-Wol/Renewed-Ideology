@@ -154,7 +154,7 @@ public class WaterSealBomb : MonoBehaviour
                         explodeTimer++;
                         if (explodeTimer >= 120) {
                             waterOrbs[i].GetComponentInChildren<WaterOrb>().isExploded = true;
-                            waterOrbs[i].GetComponentInChildren<WaterOrb>().waterOrbPair.isExploded = true;
+                            //waterOrbs[i].GetComponentInChildren<WaterOrb>().waterOrbPair.isExploded = true;
                         }
                     }
                     

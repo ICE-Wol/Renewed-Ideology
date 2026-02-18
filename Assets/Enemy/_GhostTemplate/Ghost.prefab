@@ -52,6 +52,7 @@ SpriteRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -102,6 +103,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1000562665728487942}
   particlePrefab: {fileID: 2353508529479257627, guid: 3ae153aca4b9c094997bd07a311ab415, type: 3}
   color: {r: 0, g: 0.81110525, b: 1, a: 0}
+  alpha: 0
   scale: 1
   offset: 0.1
   speed: 15

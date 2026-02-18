@@ -9,8 +9,6 @@ namespace _Scripts.Player {
         
         public int life;
         public int bomb;
-        public GameObject bombPrefab;
-        public GameObject bombObject;
         
         public int maxLifeFrag;
         public int maxLife;
@@ -115,18 +113,6 @@ namespace _Scripts.Player {
         
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.X)) {
-                if (bomb > 0) {
-                    if(BossManager.instance.curBoss != null)
-                        BossManager.instance.curBoss.hasBonus = false;
-                    if (bombObject == null)
-                        bombObject = Instantiate(bombPrefab, transform.position, Quaternion.identity);
-                    bomb -= 1;
-                    //PlayerStatusManager.instance.RefreshSlot();
-                    PlayerCtrl.instance.InvincibleTimer = 300;
-                }
-            }
-            
             #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.E)) {
                 Power += 100;

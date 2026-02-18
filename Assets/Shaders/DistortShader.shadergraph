@@ -1593,7 +1593,7 @@
     "m_ObjectId": "14052821fb934388ae26c2bfe56e12b0",
     "m_Title": "最终uv",
     "m_Position": {
-        "x": -907.333251953125,
+        "x": -906.66650390625,
         "y": 2045.333740234375
     }
 }
@@ -4165,10 +4165,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -207.2000274658203,
-            "y": 1913.5999755859375,
-            "width": 117.60001373291016,
-            "height": 33.5999755859375
+            "x": -207.3333740234375,
+            "y": 1916.666748046875,
+            "width": 119.33338165283203,
+            "height": 36.0
         }
     },
     "m_Slots": [
@@ -5582,7 +5582,7 @@
     "m_ObjectId": "c8da042acc0f4ac6ab0f52bdd174ab9a",
     "m_Title": "uv坐标系中, 从中心到当前像素的向量",
     "m_Position": {
-        "x": -1799.33349609375,
+        "x": -1798.6669921875,
         "y": 1661.333251953125
     }
 }
@@ -5759,6 +5759,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "curve",
     "m_FunctionSource": "",
+    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "if(r <= 0 || r >= 1) { refMult = 1; return; }\n\nrefMult = min(pow(r, strength), 1);\n\n//refMult = 0.1 * cos(r / 2.0 / 3.1415926) + 0.9;\n"
 }
 
@@ -6390,7 +6391,7 @@
     "m_Title": "屏幕坐标: 扭曲中心到像素向量",
     "m_Position": {
         "x": -4016.666748046875,
-        "y": 16.66667938232422
+        "y": 16.666683197021486
     }
 }
 
@@ -6768,7 +6769,7 @@
     "m_ObjectId": "ff33a7690f2c4116a2b574de5da18d32",
     "m_Title": "半径乘数",
     "m_Position": {
-        "x": -4618.66650390625,
+        "x": -4617.99951171875,
         "y": -188.0
     }
 }

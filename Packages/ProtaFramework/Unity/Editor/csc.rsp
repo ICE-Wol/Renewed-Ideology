@@ -1,0 +1,4 @@
+-nullable:disable
+-warnaserror:CS0114
+-nowarn:0809
+-nowarn:IDE1006

@@ -24,13 +24,27 @@ namespace _Scripts.Player {
         private int _timer;
         private int _invincibleTimer;
         private int _invincibleTimerMax;
-        public int GetHitInvTime;
+        public int getHitInvTime;
 
         public int InvincibleTimer {
             get => _invincibleTimer;
             set {
                 _invincibleTimer = value;
                 _invincibleTimerMax = value;
+            }
+        }
+        
+        public GameObject bombPrefab;
+        public GameObject bombObject;
+        
+        private int _bombTimer;
+        private int _bombTimerMax;
+
+        public int BombTimer {
+            get => _bombTimer;
+            set {
+                _bombTimer = value;
+                _bombTimerMax = value;
             }
         }
 
@@ -81,7 +95,7 @@ namespace _Scripts.Player {
             if (_timer % frameSpeed == 0) {
                 //get the direction
                 int hor = (int)_direction.x;
-                if (_hitLock) hor = 0;
+                if (hitLock) hor = 0;
                 if (hor == 0) {
                     //Only when move pointer returned to zero can idle animation being played.
                     if (_movePointer == 0) {
@@ -123,7 +137,8 @@ namespace _Scripts.Player {
                 Instantiate(playerHitEffect, transform.position, Quaternion.identity);
                 GameManager.Manager.reverseColorCtrl.StartReverseColorEffectAtCenter(transform.position);
                 GameManager.Manager.StartEraseBullets(transform.position);
-                InvincibleTimer = GetHitInvTime;
+                InvincibleTimer = getHitInvTime;
+                BombTimer = getHitInvTime;
                 Timing.RunCoroutine(GetHitCoroutine());
                 state.life--;
                 state.Power -= 50;
@@ -139,9 +154,9 @@ namespace _Scripts.Player {
             Timing.RunCoroutine(PauseManager.instance.TriggerEndPause(false));
         }
 
-        private bool _hitLock = false;
+        public bool hitLock = false;
         public IEnumerator<float> GetHitCoroutine() {
-            _hitLock = true;
+            hitLock = true;
             var dist = 6f;
             var maxDist = 3f;
             transform.position = dist * Vector2.down;
@@ -158,7 +173,7 @@ namespace _Scripts.Player {
                 if (dist.Equal(maxDist,0.05f)) break;
                 yield return Timing.WaitForOneFrame;
             }
-            _hitLock = false;
+            hitLock = false;
         }
 
         public bool CheckInvincibility() => _invincibleTimer > 0;
@@ -171,10 +186,36 @@ namespace _Scripts.Player {
             if (InvincibleTimer == 0) { }
         }
         
+        public bool CheckBombAvailable() {
+            return state.bomb > 0 && BombTimer <= 0;
+        }
+        
+        private void SetBombTimer() {
+            if (BombTimer > 0) {
+                BombTimer--;
+            }
+        }
+        
+        public void Bomb() {
+            if (CheckBombAvailable()) {
+                if(BossManager.instance.curBoss != null)
+                    BossManager.instance.curBoss.hasBonus = false;
+                AudioManager.Manager.PlaySound(AudioNames.SeMarisaBomb);
+                bombObject = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+                BombTimer = _bombTimerMax;
+                state.bomb--;
+                InvincibleTimer = 300;
+            }
+        }
+        
         void Update() {
             _timer++;
             SetInvincibleEffect();
-            if (!_hitLock) Movement();
+            SetBombTimer();
+            if (!hitLock) Movement();
+            if(Input.GetKeyDown(KeyCode.X)) {
+                Bomb();
+            }
             PlayAnim();
         }
 

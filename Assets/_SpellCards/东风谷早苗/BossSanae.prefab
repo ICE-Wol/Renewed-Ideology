@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c22de1af2ba38408b488080c364abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleMaxRadius: 5.62375
+  idleMaxRadius: 8
   damageable: {fileID: 1217753865382516884}
   meshRenderer: {fileID: 3062157475383031584}
   meshFilter: {fileID: 5240462133763730089}

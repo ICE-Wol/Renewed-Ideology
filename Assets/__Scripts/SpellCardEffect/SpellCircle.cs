@@ -43,7 +43,8 @@ public class SpellCircle: MonoBehaviour {
 
     private float _randApproachX;
     private float _randApproachY;
-    public float idleMaxRadius = 8f;
+    private float _idleMaxRadius;
+    private float _idleBeginTime;
     public void OnState() {
         switch (_curState) {
             case SpellCircleState.Collapse:
@@ -57,7 +58,8 @@ public class SpellCircle: MonoBehaviour {
             case SpellCircleState.Expand:
                 break;
             case SpellCircleState.Idle:
-                radius = idleMaxRadius * damageable.curTime/ damageable.maxTime;
+                //符卡圈收缩之前时间已经流逝了一部分，所以偶会发生跳变
+                radius = _idleMaxRadius * damageable.curTime/ _idleBeginTime;
                 SetRadius();
                 break;
             case SpellCircleState.Shrink:
@@ -239,6 +241,8 @@ public class SpellCircle: MonoBehaviour {
         }
         
         radius = 5f;
+        _idleMaxRadius = radius;
+        _idleBeginTime = damageable.curTime;
         SetRadius();
         SetState(SpellCircleState.Idle);
     }

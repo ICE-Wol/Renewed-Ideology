@@ -21,9 +21,8 @@ namespace _Scripts {
             }
         }
 
-        public Image bossPortraitImage;
-        public RectTransform bossPortraitObject;
-        public RectTransform spellNameObject;
+        public SpriteRenderer bossPortrait;
+        public Transform spellNameObject;
         public TMP_Text scNameText;
         public SpellBannerCtrl spellBannerCtrl;
         public Renderer spellBgFull;
@@ -64,9 +63,9 @@ namespace _Scripts {
             isBreaking = false;
             isAnnounceFinished = false;
             
-            spellNameObject.anchoredPosition = nStart;
+            spellNameObject.position = nStart;
             spellNameObject.localScale = nScale;
-            bossPortraitObject.anchoredPosition = pStart;
+            bossPortrait.transform.position = pStart;
             
             
             ModifySpellCardBackgroundAlpha(0f);
@@ -80,7 +79,6 @@ namespace _Scripts {
 
             
             spellBannerCtrl.enabled = false;
-            spellBannerCtrl.ResetBanners();
             
         }
 
@@ -106,18 +104,18 @@ namespace _Scripts {
         private void Update() {
             if (isAnnouncing) {
                 if (_timer <= midTimerFlag) {
-                    bossPortraitObject.anchoredPosition =
-                        bossPortraitObject.anchoredPosition.ApproachValue(pStay, 16f * Vector2.one);
-                    spellNameObject.anchoredPosition =
-                        spellNameObject.anchoredPosition.ApproachValue(nStay, 16f * Vector2.one);
+                    bossPortrait.transform.position =
+                        bossPortrait.transform.position.ApproachValue(pStay, 16f * Vector3.one);
+                    spellNameObject.position =
+                        spellNameObject.position.ApproachValue(nStay, 16f * Vector3.one);
                     if (_timer == midTimerFlag) {
                         spellBannerCtrl.BannerDisappear();
                     }
                 } else if (_timer <= endTimerFlag) {
-                    bossPortraitObject.anchoredPosition =
-                        bossPortraitObject.anchoredPosition.ApproachValue(pEnd, 16f * Vector2.one);
-                    spellNameObject.anchoredPosition =
-                        spellNameObject.anchoredPosition.ApproachValue(nEnd, 16f * Vector2.one);
+                    bossPortrait.transform.position =
+                        bossPortrait.transform.position.ApproachValue(pEnd, 16f * Vector3.one);
+                    spellNameObject.position =
+                        spellNameObject.position.ApproachValue(nEnd, 16f * Vector3.one);
                     spellNameObject.localScale =
                         spellNameObject.localScale.ApproachValue(Vector2.one, 16f * Vector3.one);
                     isAnnounceFinished = true;
@@ -126,8 +124,8 @@ namespace _Scripts {
                 }
 
                 if (isBreaking) {
-                    spellNameObject.anchoredPosition =
-                        spellNameObject.anchoredPosition.ApproachValue(nEnd + 300f * Vector2.up, 16f * Vector2.one);
+                    spellNameObject.position =
+                        spellNameObject.position.ApproachValue(nEnd + 300f * Vector2.up, 16f * Vector3.one);
                 }
 
                 //_alpha.ApproachRef(1f, 16f);

@@ -1,0 +1,356 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5717295622249227232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7072713400798307332}
+  - component: {fileID: 886398727492779064}
+  m_Layer: 0
+  m_Name: PauseMenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7072713400798307332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717295622249227232}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1856707872478624447}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &886398727492779064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717295622249227232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc2a330d87274f4aa6d44eacbffeeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 1664987607625560419, guid: 3cdfec90278843e4aafa64aebcc7a6ca, type: 3}
+  confirmMenuPrefab: {fileID: 6563322455990411990, guid: bebdf6a9dc708c34faae131a95afb1a5, type: 3}
+  currentMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  confirmMenu: {fileID: 0}
+  isConfirming: 0
+  flowerStemTransformApproacher: {fileID: 7533623985532388580}
+  flowerStemColorApproacher: {fileID: 1906703454233040106}
+  pauseMenuInfo:
+  - type: 0
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u6682\u65F6\u4F11\u606F"
+      engContent: Take A  Break
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u7EE7\u7EED\u6E38\u620F"
+      engContent: Return To Game
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 1
+      function: 2
+      chiContent: "\u91CD\u65B0\u5F00\u59CB"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 1
+      chiContent: "\u67E5\u770B\u5361\u724C"
+      engContent: Check Your Cards
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 1
+      function: 3
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Title
+  - type: 1
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u6EE1\u8EAB\u75AE\u75CD"
+      engContent: Battered And Bruised
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 5
+      chiContent: "\u7EE7\u7EED\u6E38\u620F"
+      engContent: Continue
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 2
+      chiContent: "\u91CD\u65B0\u5F00\u59CB"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 1
+      chiContent: "\u67E5\u770B\u5361\u724C"
+      engContent: Check Your Cards
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 3
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Title
+  - type: 2
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u653B\u7565\u5B8C\u6210"
+      engContent: Glorious Victory
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 2
+      chiContent: "\u518D\u6765\u4E00\u5C40"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 3
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Title
+  - type: 3
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u6682\u65F6\u4F11\u606F"
+      engContent: Take A Break
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u7EE7\u7EED\u6E38\u620F"
+      engContent: Return To Game
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 2
+      chiContent: "\u91CD\u65B0\u5F00\u59CB"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 1
+      chiContent: "\u67E5\u770B\u5361\u724C"
+      engContent: Check Your Cards
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 4
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Practice Page
+  - type: 4
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u653B\u7565\u5931\u8D25"
+      engContent: Battered And Bruised
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 2
+      chiContent: "\u91CD\u65B0\u5F00\u59CB"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 1
+      chiContent: "\u67E5\u770B\u5361\u724C"
+      engContent: Check Your Cards
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 4
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Practice Page
+  - type: 5
+    head:
+      tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 0
+      chiContent: "\u653B\u7565\u6210\u529F"
+      engContent: Glorious Victory
+    nodes:
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 2
+      chiContent: "\u518D\u6765\u4E00\u5C40"
+      engContent: Start Over
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 1
+      chiContent: "\u67E5\u770B\u5361\u724C"
+      engContent: Check Your Cards
+    - tmpComp: {fileID: 0}
+      node: {fileID: 0}
+      hasConfirmMenu: 0
+      function: 4
+      chiContent: "\u7ED3\u675F\u6E38\u620F"
+      engContent: Return To Practice Page
+  leftPos: {x: -300, y: -50}
+  rightPos: {x: 300, y: -50}
+  leftColor: {r: 1, g: 0.6785756, b: 0, a: 0}
+  rightColor: {r: 0, g: 0.16467714, b: 1, a: 0}
+--- !u!1 &7775885408128036156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856707872478624447}
+  - component: {fileID: 2810168296508081219}
+  - component: {fileID: 8925384761734585440}
+  - component: {fileID: 1906703454233040106}
+  - component: {fileID: 7533623985532388580}
+  m_Layer: 0
+  m_Name: FlowerStem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1856707872478624447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775885408128036156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072713400798307332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -300, y: -50}
+  m_SizeDelta: {x: 217.5, y: 632.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2810168296508081219
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775885408128036156}
+  m_CullTransparentMesh: 1
+--- !u!114 &8925384761734585440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775885408128036156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.68333334, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 436d2bf3d9fd734449b58d04cf629834, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1906703454233040106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775885408128036156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e0793ec0ee3124bb6249651abfd0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  activateColorApproach: 1
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  colorApproachRate: {x: 8, y: 8, z: 8, w: 8}
+  activateAlphaApproach: 1
+  initAlpha: 0
+  targetAlpha: 1
+  alphaApproachRate: 8
+--- !u!114 &7533623985532388580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775885408128036156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed74eacb14051748ab14858645d7e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatePosApproach: 1
+  targetPos: {x: 0, y: 0, z: 0}
+  posApproachRate: {x: 8, y: 8, z: 8}
+  activateRotApproach: 1
+  targetRot: {x: 0, y: 0, z: 0}
+  rotApproachRate: {x: 8, y: 8, z: 8}
+  activateScaleApproach: 0
+  targetScale: {x: 0, y: 0, z: 0}
+  scaleApproachRate: {x: 8, y: 8, z: 8}

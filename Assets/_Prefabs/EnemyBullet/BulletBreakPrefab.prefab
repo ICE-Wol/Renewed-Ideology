@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4406932645186822769}
   - component: {fileID: 8617933154532712459}
   - component: {fileID: 3181226755281055358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletBreakPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8617933154532712459}
-  initScale: 1
+  initScale: 0.5
   initAlpha: 0.8
   shrinkSpeed: 0.04

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Scripts;
 using MEC;
 using UnityEngine;
 
@@ -19,10 +20,12 @@ public class BossManager : MonoBehaviour
     public BossList bossList;
     public BossCtrl curBoss;
 
+   
     public BossCtrl GenerateBossWithSpellCardSet(string bossName, SpellPracticeManager.Difficulty difficulty,
         int stageIndex, int bossOrder) {
         foreach (var bossInfo in bossList.bossInfos) {
             if (bossInfo.bossName == bossName) {
+                SpellAnnouncement.instance.bossPortrait.sprite = bossInfo.bossPortrait;
                 foreach (var spellCardSet in bossInfo.spellCardSets) {
                     if (spellCardSet.difficulty == difficulty && spellCardSet.stageIndex == stageIndex &&
                         spellCardSet.bossOrder == bossOrder) {
@@ -43,6 +46,7 @@ public class BossManager : MonoBehaviour
     public BossCtrl GenerateBossWithSpellCardInfo(string bossName, List<SpellCardInfo> info) {
         foreach (var bossInfo in bossList.bossInfos) {
             if (bossInfo.bossName == bossName) {
+                SpellAnnouncement.instance.bossPortrait.sprite = bossInfo.bossPortrait;
                 var go = Instantiate(bossInfo.bossPrefab, instance.transform);
                 //boss的spellCardInfos是空的
                 //虽然会被自动序列化，但是保险起见还是新建一个吧
@@ -62,6 +66,7 @@ public class BossManager : MonoBehaviour
         int stageIndex, int bossOrder, int cardNum) {
         foreach (var bossInfo in bossList.bossInfos) {
             if (bossInfo.bossName == bossName) {
+                SpellAnnouncement.instance.bossPortrait.sprite = bossInfo.bossPortrait;
                 foreach (var spellCardSet in bossInfo.spellCardSets) {
                     if (spellCardSet.difficulty == difficulty && spellCardSet.stageIndex == stageIndex &&
                         spellCardSet.bossOrder == bossOrder) {

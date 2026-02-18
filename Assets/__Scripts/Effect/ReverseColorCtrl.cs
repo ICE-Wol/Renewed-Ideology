@@ -62,7 +62,7 @@ public class ReverseColorCtrl : MonoBehaviour
 
     public void StartReverseColorEffectAtCenter(Vector3 initCenter) {
         center = initCenter;
-        Timing.RunCoroutine(StartReverseColorEffect());
+        Timing.RunCoroutine(StartReverseColorEffect().CancelWith(transform.gameObject));
     }
     
 
