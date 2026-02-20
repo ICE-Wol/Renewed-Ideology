@@ -25,12 +25,10 @@ public class BulletEraser : MonoBehaviour
         //     }
         // }
         var copyList = new List<BulletRuntimeState>();
-        foreach (var b in TimelineRunner.instance.snapshot.states) {
-            copyList.Add(b);
-        }
-        foreach (var b in copyList) {
+        foreach (var b in TimelineRunner.instance.bulletManager.instances.Keys) {
             if (b.isAlive && Vector2.Distance(b.position, transform.position) < radius) {
                 b.isAlive = false;
+                TimelineRunner.instance.bulletManager.instances.Remove(b);
             }
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using _Scripts.EnemyBullet;
 using _Scripts.Tools;
 using UnityEngine;
-using _Scripts.Tools;
+using Random = UnityEngine.Random;
 
 public abstract class PatternBuilder
 {
@@ -64,16 +64,23 @@ public static class PatternBuilderDSL
         });
         return track;
     }
-    
+
     public static BulletTrack InitTrack(this BulletTrack track, float startTime, float endTime, BulletType bulletType, float fogDuration)
     {
         track.spawnTime = startTime;
         track.despawnTime = endTime;
-        track.bulletSegments.Add(new BeginFogSegment() {
+        track.bulletSegments.Add(new BeginFogSegment()
+        {
             startTime = startTime,
             endTime = startTime + fogDuration,
             bulletType = bulletType,
         });
+        return track;
+    }
+    
+    public static BulletTrack SetLayer(this BulletTrack track, int layer)
+    {
+        track.layer = layer;
         return track;
     }
 }
@@ -354,13 +361,13 @@ public class PatternBuilder_Test_MountainOfFaith : PatternBuilder
                 pattern.CreateTrack()
                 .InitTrack(2f + j / 50f, 30f, BulletType.Scale, 0.3f)
                 .PositionOnCircle(posCenter3[i], radius3, angle)
-                    .ChainedAccelerate()
-                        .Speed(5f - (2f + j / 50f), 0f, 0f, LerpType.Linear)
-                        .Speed(20f, 0f, 6f, LerpType.FInSOutCubic)
-                        .Angle(20f, shootAngle, shootAngle, LerpType.Linear)
-                    .End()
-                    .RotationFollow(0f, 30f, 4f)
-                    .HSVColorChange(2f + j / 50f, 30f, ColorPalette.lightBlue, Color.cyan);
+                .ChainedAccelerate()
+                    .Speed(5f - (2f + j / 50f), 0f, 0f, LerpType.Linear)
+                    .Speed(20f, 0f, 6f, LerpType.FInSOutCubic)
+                    .Angle(20f, shootAngle, shootAngle, LerpType.Linear)
+                .End()
+                .RotationFollow(0f, 30f, 4f)
+                .HSVColorChange(2f + j / 50f, 30f, ColorPalette.lightBlue, Color.cyan);
             }
         }
 
@@ -375,27 +382,223 @@ public class PatternBuilder_Test_0_2 : PatternBuilder
         int emmitorCount = 10;
         for (int i = 0; i < emmitorCount; i++)
         {
-            var emmitorTrack = pattern.CreateEmitterTrack()
-            .InitTrack(0f, 10f, BulletType.JadeM, Color.red, 0.3f)
-            .PositionOnCircle(Vector2.zero, 1f, emmitorCount, i)
+            float angle = i * 360f / emmitorCount;
+            var emmitorTrack = pattern.CreateTrack()
+            .InitTrack(0f, 2f, BulletType.JadeM, Color.red, 0.3f)
+            .PositionOnCircle(new Vector2(0f, 1f), 0.5f, i, emmitorCount)
             .ChainedAccelerate()
-                .Speed(5f, 5f + i / 5f, 0f, LerpType.Linear)
+                .Speed(Random.Range(1f, 2f), 0f, LerpType.FInSOutCubic)
+                .Angle(angle, angle, LerpType.Linear)
             .End()
             .RotationFollow(0f, 10f, 4f);
 
-            for(int j = 0; j < 10; j++)
+            float innerCount = 20;
+            for (int j = 0; j < innerCount; j++)
             {
-                var emmitorPosition = pattern.bulletStateToIDMap[emmitorTrack.id].position;
+                float innerAngle = i * 360f / emmitorCount + j * 360f / innerCount;
                 pattern.CreateTrack()
-                .InitTrack(5f, 10f, BulletType.JadeS, Color.red, 0.3f)
-                .PositionOnCircle(emmitorPosition, 1f, emmitorCount, i)
+                .InitTrack(2f, 10f, BulletType.JadeS, Color.red, 0.3f)
+                .SetLayer(1)
+                .CirclePositionFromRefBullet(emmitorTrack, 2f, innerAngle, 0.5f)
                 .ChainedAccelerate()
-                    .Speed(5f, 2f + j / 5f, 5f, LerpType.Linear)
+                    .Speed(2f, 0f, 0f, LerpType.Linear)
+                    .Speed(5f, 3f, 2f, LerpType.Linear)
+                    .Angle(innerAngle, innerAngle, LerpType.Linear)
                 .End()
-                .RotationFollow(5f, 10f, 4f)
-                .HSVColorChange(5f, 10f, ColorPalette.orange, ColorPalette.lightYellow);
+                .RotationFollow(2f, 10f, 4f)
+                .HSVColorChange(2f, 10f, Color.red, ColorPalette.lightYellow);
             }
         }
+        return pattern;
+    }
+}
+
+
+public class PatternBuilder_Test_0_3 : PatternBuilder
+{
+    public override PatternTimeline Build()
+    {
+        int bulletWays = 20;
+        int bulletCount = 10;
+        for (int j = 0; j < bulletCount; j++)
+        {
+            for (int i = 0; i < bulletWays; i++)
+            {
+                float initAngle = i * 360f / bulletWays;
+                float offsetAngle = j * 3f;
+                float angle = initAngle + offsetAngle;
+                float offsetTime = j / (float)bulletCount * 1.5f;
+                var bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 0.8f + offsetTime, BulletType.Bacteria, Color.green, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 2f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(1f, 2f, LerpType.FInSOutCubic)
+                    .Angle(angle)
+                .End()
+                .RotationFollow(0f, 10f, 4f);
+
+                var bulletTrackSub = pattern.CreateTrack()
+                .InitTrack(0.8f + offsetTime, 1.6f + offsetTime, BulletType.Rice, Color.green, 0.3f)
+                .SetLayer(1)
+                .ExtendFromRefBullet(bulletTrack, 0.8f + offsetTime)
+                .ChainedAccelerate()
+                    .Speed(2f, 3f, LerpType.FInSOutCubic)
+                    .Angle(angle)
+                .End()
+                .RotationFollow(4f);
+
+                var bulletTrackSubSub = pattern.CreateTrack()
+                .InitTrack(1.6f + offsetTime, 10f + offsetTime, BulletType.Bacteria, Color.green, 0.3f)
+                .SetLayer(2)
+                .ExtendFromRefBullet(bulletTrackSub, 1.6f + offsetTime)
+                .ChainedAccelerate()
+                    .Speed(1f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Angle(angle)
+                .End()
+                .RotationFollow(4f);
+
+            }
+        }
+
+        return pattern;
+    }
+}
+
+public class PatternBuilder_Test_0_3_1 : PatternBuilder
+{
+    public override PatternTimeline Build()
+    {
+        int bulletWays = 15;
+        int bulletCount = 20;
+        for (int j = 0; j < bulletCount; j++)
+        {
+            for (int i = 0; i < bulletWays; i++)
+            {
+                float initAngle = i * 360f / bulletWays;
+                float offsetAngle = j * 1.5f;
+                float angle = initAngle + offsetAngle;
+                float stage2OffsetAngle = j * 10f;
+                float offsetTime = j / (float)bulletCount * 1f;
+
+                Color endColor = Calc.LerpColorInHSV(Color.cyan, Color.orange, j / (float)bulletCount);
+
+                var bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 2f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle, angle + stage2OffsetAngle, LerpType.Linear)
+                    .Angle(0.8f, angle + stage2OffsetAngle, angle, LerpType.FInOutSMid)
+                //.Angle(2f, angle, angle + 180f - stage2OffsetAngle * 2f, LerpType.FInOutSMid)
+                .End()
+                .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, endColor)
+                .BeginFog(2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, endColor);
+
+
+                initAngle = i * 360f / bulletWays;
+                offsetAngle = -j * 1.5f;
+                angle = initAngle + offsetAngle;
+                offsetTime = j / (float)bulletCount * 1f;
+                bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 2f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle, angle - stage2OffsetAngle, LerpType.Linear)
+                    .Angle(0.8f, angle - stage2OffsetAngle, angle, LerpType.FInOutSMid)
+                //.Angle(2f, angle, angle + 180f - stage2OffsetAngle * 2f, LerpType.FInOutSMid)
+                .End()
+                .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, endColor)
+                .BeginFog(2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, endColor);
+
+            }
+        }
+
+        return pattern;
+    }
+}
+
+public class PatternBuilder_Test_0_3_2 : PatternBuilder
+{
+    public override PatternTimeline Build()
+    {
+        int bulletWays = 15;
+        int bulletCount = 20;
+        for (int j = 0; j < bulletCount; j++)
+        {
+            for (int i = 0; i < bulletWays; i++)
+            {
+                float initAngle = i * 360f / bulletWays;
+                float offsetAngle = j * 1.5f;
+                float angle = initAngle + offsetAngle;
+                float stage2OffsetAngle = j * 10f;
+                float offsetTime = j / (float)bulletCount * 1f;
+
+                Color midColor = Calc.LerpColorInHSV(Color.cyan, Color.orange, j / (float)bulletCount);
+                Color endColor = Calc.LerpColorInHSV(Color.lightBlue, Color.purple, j / (float)bulletCount);
+
+                var bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 2f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle + 90f, angle + stage2OffsetAngle + 90f, LerpType.Linear)
+                    .Angle(0.8f, angle + stage2OffsetAngle + 90f, angle + 90f, LerpType.FInOutSMid)
+                    .Angle(5f, angle + 90f, angle + 90f - (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                .End()
+                .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
+                .BeginFog(2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, midColor)
+                .HSVColorChangeDuration(2.4f + offsetTime, 1f, Color.lightBlue, endColor);
+
+
+                initAngle = i * 360f / bulletWays;
+                offsetAngle = -j * 1.5f;
+                angle = initAngle + offsetAngle;
+                offsetTime = j / (float)bulletCount * 1f;
+                bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 2f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle - 90f, angle - stage2OffsetAngle - 90f, LerpType.Linear)
+                    .Angle(0.8f, angle - stage2OffsetAngle - 90f, angle - 90f, LerpType.FInOutSMid)
+                    .Angle(5f, angle - 90f, angle - 90f + (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                .End()
+                .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
+                .BeginFog(2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, midColor)
+                .HSVColorChangeDuration(2.4f + offsetTime, 1f, Color.lightBlue, endColor);
+
+            }
+        }
+
         return pattern;
     }
 }

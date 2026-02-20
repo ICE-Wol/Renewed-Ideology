@@ -57,23 +57,20 @@ public abstract class BulletSegment
 
     public virtual void Apply(ref BulletRuntimeState state, int tick)
     {
-        using (s_ApplyMarker.Auto())
+        if (!_startEventTriggered && tick >= StartTick)
         {
-            if (!_startEventTriggered && tick >= StartTick)
-            {
-                OnSegmentStart(ref state);
-                _startEventTriggered = true;
-            }
-
-            if (!_endEventTriggered && tick >= EndTick)
-            {
-                OnSegmentEnd(ref state);
-                _endEventTriggered = true;
-            }
-
-            if (!IsActiveTick(tick))
-                return;
+            OnSegmentStart(ref state);
+            _startEventTriggered = true;
         }
+
+        if (!_endEventTriggered && tick >= EndTick)
+        {
+            OnSegmentEnd(ref state);
+            _endEventTriggered = true;
+        }
+
+        if (!IsActiveTick(tick))
+            return;
     }
     public void Append(BulletTrack track)
     {
@@ -238,7 +235,7 @@ public class HSVColorChangeSegment : BulletSegment
 public static class HSVColorChangeSegmentDSL
 {
     public static BulletTrack HSVColorChange(
-        this BulletTrack track, 
+        this BulletTrack track,
         float startTime,
         float endTime,
         Color colorStart, Color colorEnd)
@@ -252,6 +249,22 @@ public static class HSVColorChangeSegmentDSL
         });
         return track;
     }
+    
+    public static BulletTrack HSVColorChangeDuration(
+        this BulletTrack track,
+        float startTime,
+        float duration,
+        Color colorStart, Color colorEnd)
+    {
+        track.bulletSegments.Add(new HSVColorChangeSegment()
+        {
+            startTime = startTime,
+            endTime = startTime + duration,
+            colorStart = colorStart,
+            colorEnd = colorEnd,
+        });
+        return track;
+    }
 }
 
 /// <summary>
@@ -259,28 +272,83 @@ public static class HSVColorChangeSegmentDSL
 /// 用法：继承本类并重写 OnTrigger(ref state)；只需设置 triggerTime，无需设 startTime/endTime。
 /// </summary>
 [Serializable]
-public class TriggerSegment : BulletSegment
+public abstract class TriggerSegment : BulletSegment
 {
     /// <summary>触发时刻（秒），内部会同步为 startTime=endTime，使该 tick 只生效一次。</summary>
-    public float triggerTime;
-
-    public override void Apply(ref BulletRuntimeState state, int tick)
+    public float triggerTime
     {
-        if (startTime != triggerTime) { startTime = endTime = triggerTime; }
-        base.Apply(ref state, tick);
-        if (!IsActiveTick(tick)) return;
-        OnTrigger(ref state);
+        get => startTime;
+        set => startTime = endTime = value;
     }
-
-    /// <summary>在 triggerTime 那一 tick 调用一次，重写以实现到点事件。</summary>
-    public virtual void OnTrigger(ref BulletRuntimeState state) { }
 }
 
 public class MarkForDestroySegment : TriggerSegment
 {
-    public override void OnTrigger(ref BulletRuntimeState state)
+    public override void Apply(ref BulletRuntimeState state, int tick)
     {
         state.isAlive = false;
+    }
+}
+
+public class CirclePositionFromRefBullet : TriggerSegment
+{
+    public BulletTrack refBulletTrack;
+    public float angle;
+    public float radius;
+
+    public override void Apply(ref BulletRuntimeState state, int tick)
+    {
+        var timeline = refBulletTrack.parentTimeline;
+        state.position = timeline.bulletStateToIDMap[refBulletTrack.id].position + Calc.Deg2Dir(angle) * radius;
+        state.rotation = angle;
+    }
+}
+
+public static class CirclePositionFromRefBulletDSL
+{
+    public static BulletTrack CirclePositionFromRefBullet(
+        this BulletTrack track,
+        BulletTrack emmitorTrack,
+        float triggerTime,
+        float angle,
+        float radius)
+    {
+        track.emitterId = emmitorTrack.id;
+        track.bulletSegments.Add(new CirclePositionFromRefBullet()
+        {
+            triggerTime = triggerTime,
+            refBulletTrack = emmitorTrack,
+            angle = angle,
+            radius = radius,
+        });
+        return track;
+    }
+}
+
+public class ExtendFromRefBullet : TriggerSegment
+{
+    public BulletTrack refBulletTrack;
+
+    public override void Apply(ref BulletRuntimeState state, int tick)
+    {
+        state.position = refBulletTrack.parentTimeline.bulletStateToIDMap[refBulletTrack.id].position;
+        state.rotation = refBulletTrack.parentTimeline.bulletStateToIDMap[refBulletTrack.id].rotation;
+    }
+}
+
+public static class ExtendFromRefBulletDSL
+{
+    public static BulletTrack ExtendFromRefBullet(
+        this BulletTrack track,
+        BulletTrack refBulletTrack,
+        float triggerTime)
+    {
+        track.bulletSegments.Add(new ExtendFromRefBullet()
+        {
+            triggerTime = triggerTime,
+            refBulletTrack = refBulletTrack,
+        });
+        return track;
     }
 }
 
@@ -311,6 +379,19 @@ public static class RotationFollowSegmentDSL
         });
         return track;
     }
+
+    public static BulletTrack RotationFollow(
+        this BulletTrack track,
+        float rate)
+    {
+        track.bulletSegments.Add(new RotationFollowSegment()
+        {
+            startTime = track.spawnTime,
+            endTime = track.despawnTime,
+            rate = rate,
+        });
+        return track;
+    }
 }
 [Serializable]
 public class BeginFogSegment : BulletSegment
@@ -322,11 +403,18 @@ public class BeginFogSegment : BulletSegment
     public override void OnSegmentStart(ref BulletRuntimeState state)
     {
         //state.sprite = BulletSpriteCollection.instance.bulletFog;
-        state.sprite = GameManager.Manager.enemyBulletBasics.GetBulletSprite(BulletType.Point);
+        if (GameManager.Manager.enemyBulletBasics.bulletBasics[(int)bulletType].size == BulletSize.Small)
+        {
+            state.sprite = GameManager.Manager.enemyBulletBasics.GetBulletSprite(BulletType.Point);
+        }
+        else
+        {
+            state.sprite = GameManager.Manager.enemyBulletBasics.GetBulletSprite(bulletType);
+        }
         state.type = bulletType;
         //在这里设置颜色会导致初始出现黑圈
-        //state.color = color;
-        //state.alpha = startAlpha;
+        state.color = color;
+        state.alpha = startAlpha;
     }
 
     public override void OnSegmentEnd(ref BulletRuntimeState state)
@@ -344,6 +432,25 @@ public class BeginFogSegment : BulletSegment
         float curAlpha = Mathf.Lerp(startAlpha, 1f, GetPrecentage(tick));
         state.scale = new Vector2(curScale, curScale);
         state.alpha = curAlpha;
+    }
+}
+
+public static class BeginFogSegmentDSL
+{
+    public static BulletTrack BeginFog(
+        this BulletTrack track,
+        float startTime,
+        float duration,
+        BulletType bulletType, Color color)
+    {
+        track.bulletSegments.Add(new BeginFogSegment()
+        {
+            startTime = startTime,
+            endTime = startTime + duration,
+            bulletType = bulletType,
+            color = color,
+        });
+        return track;
     }
 }
 public struct BulletRuntimeStateResetTag

@@ -8,6 +8,17 @@ public static class ColorPalette
     static Color RGB(byte r, byte g, byte b)
         => new Color(r / 255f, g / 255f, b / 255f);
 
+    // Unity 基本色（与 UnityEngine.Color 一致）
+    public static Color red => Color.red;
+    public static Color green => Color.green;
+    public static Color blue => Color.blue;
+    public static Color white => Color.white;
+    public static Color black => Color.black;
+    public static Color yellow => Color.yellow;
+    public static Color cyan => Color.cyan;
+    public static Color magenta => Color.magenta;
+    public static Color gray => Color.gray;
+
     // Reds
     public static Color indianRed => RGB(205, 92, 92);
     public static Color lightCoral => RGB(240, 128, 128);

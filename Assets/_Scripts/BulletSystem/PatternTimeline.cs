@@ -75,6 +75,7 @@ public class PatternTimeline
                         parentID = track.parentID,
                         position = track.startPosition,
                         rotation = track.startRotation,
+                        direction = track.startRotation,
                         color = Color.white,
                     };
                     snapshot.states.Add(newState);
@@ -127,15 +128,18 @@ public class PatternTimeline
                         {
                             Vector2 pos = track.startPosition;
                             float rot = track.startRotation;
-                            if (track.emitterId >= 0 && bulletStateToIDMap.TryGetValue(track.emitterId, out var emitterState))
-                            {
-                                pos += emitterState.position;
-                                rot += emitterState.rotation;
-                            }
+                            float dir = track.startRotation;
+                            // if (track.emitterId >= 0 && bulletStateToIDMap.TryGetValue(track.emitterId, out var emitterState))
+                            // {
+                            //     pos += emitterState.position;
+                            //     rot += emitterState.rotation;
+                            //     dir += emitterState.direction;
+                            // }
                             if (track.parentID != -1)
                             {
                                 pos += bulletTrackToIDMap[track.parentID].startPosition;
                                 rot += bulletTrackToIDMap[track.parentID].startRotation;
+                                dir += bulletTrackToIDMap[track.parentID].startRotation;
                             }
                             newStates.Add(new BulletRuntimeState()
                             {

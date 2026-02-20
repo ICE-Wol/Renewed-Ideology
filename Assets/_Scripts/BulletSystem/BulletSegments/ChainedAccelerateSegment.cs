@@ -90,6 +90,7 @@ public class ChainedAccelerateBuilder
     public BulletTrack track;
     public ChainedAccelerateSegment segment;
     public float segmentStartTime;
+    public float segmentEndTime;
     public float speedCursor;
     public float angleCursor;
 
@@ -97,6 +98,7 @@ public class ChainedAccelerateBuilder
     {
         this.track = track;
         segmentStartTime = track.spawnTime;
+        segmentEndTime = track.despawnTime;
         speedCursor = track.spawnTime;
         angleCursor = track.spawnTime;
         segment = new ChainedAccelerateSegment();
@@ -129,6 +131,64 @@ public class ChainedAccelerateBuilder
         angleCursor += duration;
         return this;
     }
+
+    public ChainedAccelerateBuilder Speed(float fromSpeed, float toSpeed, LerpType ease)
+    {
+        segment.speedPhases.Add(new ChainedAccelerateSegment.SpeedPhase()
+        {
+            startTime = segmentStartTime,
+            endTime = segmentEndTime,
+            fromSpeed = fromSpeed,
+            toSpeed = toSpeed,
+            ease = ease,
+        });
+        speedCursor += segmentEndTime - segmentStartTime;
+        return this;
+    }
+
+    public ChainedAccelerateBuilder Angle(float fromAngle, float toAngle, LerpType ease)
+    {
+        segment.anglePhases.Add(new ChainedAccelerateSegment.AnglePhase()
+        {
+            startTime = segmentStartTime,
+            endTime = segmentEndTime,
+            fromAngle = fromAngle,
+            toAngle = toAngle,
+            ease = ease,
+        });
+        angleCursor += segmentEndTime - segmentStartTime;
+        return this;
+    }
+
+    public ChainedAccelerateBuilder Speed(float speed)
+    {
+        segment.speedPhases.Add(new ChainedAccelerateSegment.SpeedPhase()
+        {
+            startTime = segmentStartTime,
+            endTime = segmentEndTime,
+            fromSpeed = speed,
+            toSpeed = speed,
+            ease = LerpType.Linear,
+        });
+        speedCursor += segmentEndTime - segmentStartTime;
+        return this;
+    }
+
+    public ChainedAccelerateBuilder Angle(float angle)
+    {
+        segment.anglePhases.Add(new ChainedAccelerateSegment.AnglePhase()
+        {
+            startTime = segmentStartTime,
+            endTime = segmentEndTime,
+            fromAngle = angle,
+            toAngle = angle,
+            ease = LerpType.Linear,
+        });
+        angleCursor += segmentEndTime - segmentStartTime;
+        return this;
+    }
+
+
 
     public BulletTrack End()
     {

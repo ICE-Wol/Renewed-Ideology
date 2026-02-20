@@ -21,9 +21,13 @@ public class TimelineRunner : MonoBehaviour
     public BulletSnapshot snapshot = new();
     [SerializeField]
     public List<PatternBuilder> patternBuilders = new();
+
+    public float timeStamp = 0f;
+    public bool isStarted = false;
     void Awake()
     {
-        if(instance == null)
+        timeStamp = Time.time;
+        if (instance == null)
         {
             instance = this;
         }
@@ -32,36 +36,46 @@ public class TimelineRunner : MonoBehaviour
             Destroy(gameObject);
         }
         bulletManager.Awake();
-        
-        patternBuilders.Add(new PatternBuilder_Test_MountainOfFaith());
+    }
+
+    /// <summary>
+    /// 清空所有子弹并重新执行时间线初始化（与首次启动时 46-53 行逻辑一致）。
+    /// 可在 Inspector 按钮或运行时 UI 中调用。
+    /// </summary>
+    [ContextMenu("Restart Timeline")]
+    public void RestartTimeline()
+    {
+        snapshot.states.Clear();
+        bulletManager.Sync(snapshot);
+        TimelineClock.SetTime(0);
+        //patternBuilders.Clear();
         //patternBuilders.Add(new PatternBuilder_Test_0_2());
         foreach (var patternBuilder in patternBuilders)
-        {
             patternBuilder.Build();
-            snapshot = patternBuilders[0].pattern.Evaluate(0, snapshot);
+    }
+
+    public void Update()
+    {
+        if (isStarted == false && Time.time - timeStamp > 2f)
+        {
+            isStarted = true;
+            TimelineClock.SetTime(0);
+            //patternBuilders.Add(new PatternBuilder_Test_MountainOfFaith());
+            patternBuilders.Add(new PatternBuilder_Test_0_3_2());
+            foreach (var patternBuilder in patternBuilders)
+            {
+                patternBuilder.Build();
+                //snapshot = patternBuilders[0].pattern.Evaluate(0, snapshot);
+            }
+        }
+        if (isStarted)
+        {
+            UpdateTick();
+            
         }
     }
-    void Update()
+    public void UpdateTick()
     {
-        // // 检测数字键输入并输出对应数字
-        // if (Keyboard.current != null)
-        // {
-        //     // 检查数字键 0-9
-        //     if (Keyboard.current.digit0Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 0"); snapshot = pattern.Evaluate(0); TimelineClock.SetTime(0); }
-        //     else if (Keyboard.current.digit1Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 1"); snapshot = pattern.Evaluate(1); TimelineClock.SetTime(1); }
-        //     else if (Keyboard.current.digit2Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 2"); snapshot = pattern.Evaluate(2); TimelineClock.SetTime(2); }
-        //     else if (Keyboard.current.digit3Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 3"); snapshot = pattern.Evaluate(3); TimelineClock.SetTime(3); }
-        //     else if (Keyboard.current.digit4Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 4"); snapshot = pattern.Evaluate(4); TimelineClock.SetTime(4); }
-        //     else if (Keyboard.current.digit5Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 5"); snapshot = pattern.Evaluate(5); TimelineClock.SetTime(5); }
-        //     else if (Keyboard.current.digit6Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 6"); snapshot = pattern.Evaluate(6); TimelineClock.SetTime(6); }
-        //     else if (Keyboard.current.digit7Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 7"); snapshot = pattern.Evaluate(7); TimelineClock.SetTime(7); }
-        //     else if (Keyboard.current.digit8Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 8"); snapshot = pattern.Evaluate(8); TimelineClock.SetTime(8); }
-        //     else if (Keyboard.current.digit9Key.wasPressedThisFrame) { Debug.Log("按下了数字键: 9"); snapshot = pattern.Evaluate(9); TimelineClock.SetTime(9); }
-        //
-        // }
-
-
-
         int lastTick = TimelineClock.GetTickCount();
         TimelineClock.Tick(Time.deltaTime);
         int currentTick = TimelineClock.GetTickCount();

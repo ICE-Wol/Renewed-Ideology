@@ -73,38 +73,37 @@ public class BulletTrack
             return state;
         if (!IsActiveTick(tick))
             return null;
-        using (s_EvaluateMarker.Auto())
+
+        EnsureSegmentsSorted();
+
+        if (tick < _lastProcessedTick)
         {
-            EnsureSegmentsSorted();
-
-            if (tick < _lastProcessedTick)
-            {
-                _nextToActivate = 0;
-                _activeSegments.Clear();
-            }
-            _lastProcessedTick = tick;
-
-            while (_nextToActivate < _segmentsSortedByStart.Count)
-            {
-                var seg = _segmentsSortedByStart[_nextToActivate];
-                if (seg.StartTick > tick)
-                    break;
-                _activeSegments.Add(seg);
-                _nextToActivate++;
-            }
-
-            for (int i = _activeSegments.Count - 1; i >= 0; i--)
-            {
-                var seg = _activeSegments[i];
-                if (seg.EndTick + 1 < tick)
-                {
-                    _activeSegments.RemoveAt(i);
-                    continue;
-                }
-                if (tick <= seg.EndTick || tick == seg.EndTick + 1)
-                    seg.Apply(ref state, tick);
-            }
+            _nextToActivate = 0;
+            _activeSegments.Clear();
         }
+        _lastProcessedTick = tick;
+
+        while (_nextToActivate < _segmentsSortedByStart.Count)
+        {
+            var seg = _segmentsSortedByStart[_nextToActivate];
+            if (seg.StartTick > tick)
+                break;
+            _activeSegments.Add(seg);
+            _nextToActivate++;
+        }
+
+        for (int i = _activeSegments.Count - 1; i >= 0; i--)
+        {
+            var seg = _activeSegments[i];
+            if (seg.EndTick + 1 < tick)
+            {
+                _activeSegments.RemoveAt(i);
+                continue;
+            }
+            if (tick <= seg.EndTick || tick == seg.EndTick + 1)
+                seg.Apply(ref state, tick);
+        }
+
         return state;
     }
 
