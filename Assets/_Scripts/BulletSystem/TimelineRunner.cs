@@ -61,7 +61,7 @@ public class TimelineRunner : MonoBehaviour
             isStarted = true;
             TimelineClock.SetTime(0);
             //patternBuilders.Add(new PatternBuilder_Test_MountainOfFaith());
-            patternBuilders.Add(new PatternBuilder_Test_0_3_2());
+            patternBuilders.Add(new PatternBuilder_Test_0_3_3());
             foreach (var patternBuilder in patternBuilders)
             {
                 patternBuilder.Build();
@@ -109,7 +109,7 @@ public static class TimelineClock
 {
     public static float Time { get; private set; }
     public static float Speed { get; set; } = 1f;
-    public static int tickPerSecond = 90;
+    public static int tickPerSecond = 60;
     public static float tickInterval => 1f / tickPerSecond;
 
     public static void Tick(float deltaTime)

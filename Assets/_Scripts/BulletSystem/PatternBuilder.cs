@@ -547,9 +547,14 @@ public class PatternBuilder_Test_0_3_2 : PatternBuilder
                 float angle = initAngle + offsetAngle;
                 float stage2OffsetAngle = j * 10f;
                 float offsetTime = j / (float)bulletCount * 1f;
+                //float gapAngle = 140f;
+                //float gapAngle = 90f;
+                float gapAngle = 0f;
+
+                //三个关键图案，第二个和第三个可以考虑叠两层
 
                 Color midColor = Calc.LerpColorInHSV(Color.cyan, Color.orange, j / (float)bulletCount);
-                Color endColor = Calc.LerpColorInHSV(Color.lightBlue, Color.purple, j / (float)bulletCount);
+                Color endColor = Calc.LerpColorInHSV(Color.lightBlue, Color.yellow, j / (float)bulletCount);
 
                 var bulletTrack = pattern.CreateTrack()
                 .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
@@ -558,11 +563,12 @@ public class PatternBuilder_Test_0_3_2 : PatternBuilder
                     .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
                     .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
                     .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
-                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 2f, LerpType.FInSOutCubic)
                     .Angle(0.8f, angle, angle, LerpType.Linear)
-                    .Angle(0.8f, angle + 90f, angle + stage2OffsetAngle + 90f, LerpType.Linear)
-                    .Angle(0.8f, angle + stage2OffsetAngle + 90f, angle + 90f, LerpType.FInOutSMid)
-                    .Angle(5f, angle + 90f, angle + 90f - (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(0.8f, angle + gapAngle, angle + stage2OffsetAngle + gapAngle, LerpType.Linear)
+                    .Angle(0.8f, angle + stage2OffsetAngle + gapAngle, angle + gapAngle, LerpType.FInOutSMid)
+                //.Angle(15f, angle + gapAngle, angle + gapAngle - (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(10f, angle + gapAngle, angle + gapAngle - (180f - stage2OffsetAngle * 2f) / 2f, LerpType.FInSOutCubic)
                 .End()
                 .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
                 .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
@@ -583,11 +589,12 @@ public class PatternBuilder_Test_0_3_2 : PatternBuilder
                     .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
                     .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
                     .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
-                    .Speed(10f, 1f, 3f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 2f, LerpType.FInSOutCubic)
                     .Angle(0.8f, angle, angle, LerpType.Linear)
-                    .Angle(0.8f, angle - 90f, angle - stage2OffsetAngle - 90f, LerpType.Linear)
-                    .Angle(0.8f, angle - stage2OffsetAngle - 90f, angle - 90f, LerpType.FInOutSMid)
-                    .Angle(5f, angle - 90f, angle - 90f + (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(0.8f, angle - gapAngle, angle - stage2OffsetAngle - gapAngle, LerpType.Linear)
+                    .Angle(0.8f, angle - stage2OffsetAngle - gapAngle, angle - gapAngle, LerpType.FInOutSMid)
+                //.Angle(15f, angle - gapAngle, angle - gapAngle + (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(10f, angle - gapAngle, angle - gapAngle + (180f - stage2OffsetAngle * 2f) / 2f, LerpType.FInSOutCubic)
                 .End()
                 .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
                 .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
@@ -595,6 +602,86 @@ public class PatternBuilder_Test_0_3_2 : PatternBuilder
                 .RotationFollow(0f, 10f, 4f)
                 .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, midColor)
                 .HSVColorChangeDuration(2.4f + offsetTime, 1f, Color.lightBlue, endColor);
+
+            }
+        }
+
+        return pattern;
+    }
+}
+
+public class PatternBuilder_Test_0_3_3 : PatternBuilder
+{
+    public override PatternTimeline Build()
+    {
+        int bulletWays = 15;
+        int bulletCount = 20;
+        for (int j = 0; j < bulletCount; j++)
+        {
+            for (int i = 0; i < bulletWays; i++)
+            {
+                float initAngle = i * 360f / bulletWays;
+                float offsetAngle = j * 1.5f * 3f;
+                float angle = (initAngle + offsetAngle) / 3f + 90f;
+                float stage2OffsetAngle = j * 10f;
+                float offsetTime = j / (float)bulletCount * 1f;
+                //float gapAngle = 140f;
+                float gapAngle = 90f;
+                //float gapAngle = 0f;
+
+                //三个关键图案，第二个和第三个可以考虑叠两层
+
+                Color midColor = Calc.LerpColorInHSV(Color.cyan, Color.orange, j / (float)bulletCount);
+                Color endColor = Calc.LerpColorInHSV(Color.lightBlue, Color.yellow, j / (float)bulletCount);
+
+                var bulletTrack = pattern.CreateTrack()
+                .InitTrack(0f + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 3f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 2f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle + gapAngle, angle + stage2OffsetAngle + gapAngle, LerpType.Linear)
+                    .Angle(0.8f, angle + stage2OffsetAngle + gapAngle, angle + gapAngle, LerpType.FInOutSMid)
+                //.Angle(15f, angle + gapAngle, angle + gapAngle - (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(10f, angle + gapAngle, angle + gapAngle - (180f - stage2OffsetAngle * 2f)/2f, LerpType.FInSOutCubic)
+                .End()
+                .BeginFog(0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
+                .BeginFog(2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(0.8f + offsetTime, 0.8f, Color.cyan, midColor)
+                .HSVColorChangeDuration(2.4f + offsetTime, 1f, Color.lightBlue, endColor);
+
+
+                initAngle = i * 360f / bulletWays;
+                offsetAngle = -j * 1.5f * 2f;
+                angle = (initAngle + offsetAngle) /2f + 270f;
+                offsetTime = j / (float)bulletCount * 1f;
+
+                float delayTime = 1.5f;
+                bulletTrack = pattern.CreateTrack()
+                .InitTrack(delayTime + offsetTime, 20f + offsetTime, BulletType.Bacteria, Color.lightBlue, 0.3f)
+                .PositionOnCircle(new Vector2(0f, 3f), 0.5f, offsetAngle, i, bulletWays)
+                .ChainedAccelerate()
+                    .Speed(0.8f, 3f, 0.5f, LerpType.SInFOutCubic)
+                    .Speed(0.8f, 0.5f, 3f, LerpType.FInSOutCubic)
+                    .Speed(0.8f, 3f, 1f, LerpType.FInSOutCubic)
+                    .Speed(10f, 1f, 2f, LerpType.FInSOutCubic)
+                    .Angle(0.8f, angle, angle, LerpType.Linear)
+                    .Angle(0.8f, angle - gapAngle, angle - stage2OffsetAngle - gapAngle, LerpType.Linear)
+                    .Angle(0.8f, angle - stage2OffsetAngle - gapAngle, angle - gapAngle, LerpType.FInOutSMid)
+                //.Angle(15f, angle - gapAngle, angle - gapAngle + (180f - stage2OffsetAngle * 2f), LerpType.FInOutSMid)
+                    .Angle(10f, angle - gapAngle, angle - gapAngle + (180f - stage2OffsetAngle * 2f)/2f, LerpType.FInSOutCubic)
+                .End()
+                .BeginFog(delayTime + 0.8f + offsetTime, 0.3f, BulletType.Rice, Color.cyan)
+                .BeginFog(delayTime + 1.6f + offsetTime, 0.3f, BulletType.Bacteria, midColor)
+                .BeginFog(delayTime + 2.4f + offsetTime, 0.3f, BulletType.Rice, Color.lightBlue)
+                .RotationFollow(0f, 10f, 4f)
+                .HSVColorChangeDuration(delayTime + 0.8f + offsetTime, 0.8f, Color.cyan, midColor)
+                .HSVColorChangeDuration(delayTime + 2.4f + offsetTime, 1f, Color.lightBlue, endColor);
 
             }
         }
